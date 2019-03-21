@@ -85,14 +85,6 @@
                         <nav id="dropdown">
                             <ul class="mobile-menu-nav">
                                 <li><a data-toggle="collapse" data-target="#Charts" href="#">Home</a>
-                                    <ul class="collapse dropdown-header-top">
-                                        <li><a href="index.html">Dashboard One</a></li>
-                                        <li><a href="index-2.html">Dashboard Two</a></li>
-                                        <li><a href="index-3.html">Dashboard Three</a></li>
-                                        <li><a href="index-4.html">Dashboard Four</a></li>
-                                        <li><a href="analytics.html">Analytics</a></li>
-                                        <li><a href="widgets.html">Widgets</a></li>
-                                    </ul>
                                 </li>
                                 <li><a data-toggle="collapse" data-target="#demoevent" href="#">Email</a>
                                     <ul id="demoevent" class="collapse dropdown-header-top">
@@ -187,40 +179,14 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
-                        <li class="active"><a data-toggle="tab" href="#Home"><i class="notika-icon notika-house"></i> Home</a>
+                        <li class="active"><a href="index.html"><i class="notika-icon notika-house"></i> Home</a>
                         </li>
-                        <li><a data-toggle="tab" href="#mailbox"><i class="notika-icon notika-mail"></i> Email</a>
+                        <li><a href="#Interface"><i class="notika-icon notika-edit"></i> Simular</a>
                         </li>
-                        <li><a data-toggle="tab" href="#Interface"><i class="notika-icon notika-edit"></i> Interface</a>
-                        </li>
-                        <li><a data-toggle="tab" href="#Charts"><i class="notika-icon notika-bar-chart"></i> Charts</a>
-                        </li>
-                        <li><a data-toggle="tab" href="#Tables"><i class="notika-icon notika-windows"></i> Tables</a>
-                        </li>
-                        <li><a data-toggle="tab" href="#Forms"><i class="notika-icon notika-form"></i> Forms</a>
-                        </li>
-                        <li><a data-toggle="tab" href="#Appviews"><i class="notika-icon notika-app"></i> App views</a>
-                        </li>
-                        <li><a data-toggle="tab" href="#Page"><i class="notika-icon notika-support"></i> Pages</a>
+                        <li><a data-toggle="tab" href="#Page"><i class="notika-icon notika-support"></i> Perfil</a>
                         </li>
                     </ul>
                     <div class="tab-content custom-menu-content">
-                        <div id="Home" class="tab-pane in active notika-tab-menu-bg animated flipInX">
-                            <ul class="notika-main-menu-dropdown">
-                                <li><a href="index.html">Dashboard One</a>
-                                </li>
-                                <li><a href="index-2.html">Dashboard Two</a>
-                                </li>
-                                <li><a href="index-3.html">Dashboard Three</a>
-                                </li>
-                                <li><a href="index-4.html">Dashboard Four</a>
-                                </li>
-                                <li><a href="analytics.html">Analytics</a>
-                                </li>
-                                <li><a href="widgets.html">Widgets</a>
-                                </li>
-                            </ul>
-                        </div>
                         <div id="mailbox" class="tab-pane notika-tab-menu-bg animated flipInX">
                             <ul class="notika-main-menu-dropdown">
                                 <li><a href="inbox.html">Inbox</a>
@@ -377,42 +343,7 @@
                             <div class="curved-ctn">
                                 <h2>Sales Statistics</h2>
                                 <p>Vestibulum purus quam scelerisque, mollis nonummy metus</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-5 col-xs-12">
-                    <div class="statistic-right-area notika-shadow mg-tb-30 sm-res-mg-t-0">
-                        <div class="past-day-statis">
-                            <h2>For The Past 30 Days</h2>
-                            <p>Fusce eget dolor id justo luctus the commodo vel pharetra nisi. Donec velit of libero.</p>
-                        </div>
-						<div class="dash-widget-visits"></div>
-                        <div class="past-statistic-an">
-                            <div class="past-statistic-ctn">
-                                <h3><span class="counter">3,20,000</span></h3>
-                                <p>Page Views</p>
-                            </div>
-                            <div class="past-statistic-graph">
-                                <div class="stats-bar"></div>
-                            </div>
-                        </div>
-                        <div class="past-statistic-an">
-                            <div class="past-statistic-ctn">
-                                <h3><span class="counter">1,03,000</span></h3>
-                                <p>Total Clicks</p>
-                            </div>
-                            <div class="past-statistic-graph">
-                                <div class="stats-line"></div>
-                            </div>
-                        </div>
-                        <div class="past-statistic-an">
-                            <div class="past-statistic-ctn">
-                                <h3><span class="counter">24,00,000</span></h3>
-                                <p>Site Visitors</p>
-                            </div>
-                            <div class="past-statistic-graph">
-                                <div class="stats-bar-2"></div>
+                                <div id="dynamic-chart" class="flot-chart flot-chr-pro"></div>
                             </div>
                         </div>
                     </div>
