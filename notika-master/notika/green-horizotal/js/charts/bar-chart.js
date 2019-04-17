@@ -8,21 +8,26 @@
 	var barchart1 = new Chart(ctx, {
 		type: 'bar',
 		data: {
-			labels: ["Red", "Blue", "Yellow", "Green"],
+			labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho"],
 			datasets: [{
-				label: 'Bar Chart',
-				data: [12, 19, 3, 5, 2, 3],
+				label: 'Humidade Semanal',
+				data: [24, 17, 26, 23, 21, 17],
 				backgroundColor: [
 					'rgba(255, 99, 132, 0.2)',
 					'rgb(50,205,50, 0.2)',
 					'rgba(255, 206, 86, 0.2)',
-					'rgba(75, 192, 192, 0.2)'
+					'rgba(75, 192, 192, 0.2)',
+					'rgb(255, 0, 93, 0.2)',
+					'rgb(0, 252, 218, 0.2)'
 				],
 				borderColor: [
 					'rgba(255,99,132,1)',
-					'rgba(54, 162, 235, 1)',
+					'rgb(50,205,50, 1)',
 					'rgba(255, 206, 86, 1)',
-					'rgba(75, 192, 192, 1)'
+					'rgba(75, 192, 192, 1)',
+					'rgb(255, 0, 93, 1)',
+					'rgb(0, 252, 218, 1)'
+					
 				],
 				borderWidth: 1
 			}]
