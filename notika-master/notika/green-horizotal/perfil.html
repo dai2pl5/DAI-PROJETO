@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Simular</title>
+    <title>Perfil</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -131,7 +131,7 @@
                                 </li>
                                 <li><a data-toggle="collapse" data-target="#demoevent" href="simular.html">Simular</a>
                                 </li>
-                                <li><a data-toggle="collapse" data-target="#democrou" href="#">Perfil</a>
+                                <li><a data-toggle="collapse" data-target="#democrou" href="perfil.html">Perfil</a>
                                 </li>
                             </ul>
                         </nav>
@@ -150,9 +150,9 @@
                     <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
                         <li><a href="index.html"><i class="notika-icon notika-house"></i> Home</a>
                         </li>
-                        <li class="active"><a href="simular.html"><i class="notika-icon notika-edit"></i> Simular</a>
+                        <li><a href="simular.html"><i class="notika-icon notika-edit"></i> Simular</a>
                         </li>
-                        <li><a data-toggle="tab" href="#Page"><i class="notika-icon notika-support"></i> Perfil</a>
+                        <li class="active"><a href="perfil.html"><i class="notika-icon notika-support"></i> Perfil</a>
                         </li>
                     </ul>
                 </div>
@@ -170,10 +170,10 @@
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="breadcomb-wp">
                                     <div class="breadcomb-icon">
-                                        <i class="notika-icon notika-form"></i>
+                                        <i class="notika-icon notika-support"></i>
                                     </div>
                                     <div class="breadcomb-ctn">
-                                        <h2>Simulação</h2>
+                                        <h2>Perfil</h2>
                                         <p>Insira em baixo toda <span class="bread-ntd">a informação por favor.</span></p>
                                     </div>
                                 </div>
@@ -198,7 +198,7 @@
                             <div class="form-group">
                                 <label>Nome</label>
                                 <div class="nk-int-st">
-                                    <input type="text" class="form-control input-sm" placeholder="Introduza o nome">
+                                    <input type="text" class="form-control input-sm" placeholder="João Pedro Sá Carneiro" id="name" disabled>
                                 </div>
                             </div>
                         </div>
@@ -206,7 +206,7 @@
                             <div class="form-group">
                                 <label>Localização</label>
                                 <div class="nk-int-st">
-                                    <input type="text" class="form-control input-sm" placeholder="Introduza o localização">
+                                    <input type="text" class="form-control input-sm" placeholder="Rua de Santa Margarida nº34" id="local" disabled>
                                 </div>
                             </div>
                         </div>
@@ -214,7 +214,7 @@
                             <div class="form-group">
                                 <label>E-mail</label>
                                 <div class="nk-int-st">
-                                    <input type="text" class="form-control input-sm" placeholder="Introduza o E-mail">
+                                    <input type="text" class="form-control input-sm" placeholder="joao.carneiro@gmail.com" id="mail" disabled>
                                 </div>
                             </div>
                         </div>
@@ -223,7 +223,7 @@
                                 <label>Tipo de Habitação</label>
                             </div>
                             <div class="bootstrap-select fm-cmp-mg">
-                                <select class="selectpicker">
+                                <select class="selectpicker" id="tipo_habitacao" disabled>
                                     <option value="Casa isolada">Casa isolada</option>
                                     <option value="Casas geminadas">Casas geminadas</option>
                                     <option value="Casas em banda">Casas em banda</option>
@@ -238,13 +238,13 @@
                                 <label>Coberturas</label>
                             </div>
                             <div class="chosen-select-act fm-cmp-mg">
-                                <select class="chosen" multiple data-placeholder="Escolhe as coberturas...">
-                                    <option value="Recheio">Recheio</option>
-                                    <option value="Paredes">Paredes</option>
-                                    <option value="Furto">Furto</option>
-                                    <option value="Incêndio">Incêndio</option>
-                                    <option value="Sismo">Sismo</option>
-                                    <option value="Tsunami">Tsunami</option>
+                                <select class="chosen" multiple data-placeholder="Escolhe as coberturas..." id="coberturas" disabled>
+                                    <option value="recheio" id="recheio" selected>Recheio</option>
+                                    <option value="paredes" id="paredes" selected>Paredes</option>
+                                    <option value="Furto" id="furto" selected>Furto</option>
+                                    <option value="incendio" id="incendio" selected="false">Incêndio</option>
+                                    <option value="sismo" id="sismo" selected>Sismo</option>
+                                    <option value="tsunami" id="tsunami" selected>Tsunami</option>
                                 </select>
                             </div>
                         </div>
@@ -253,32 +253,12 @@
                                 <label>Data de Nascimento</label>
                                 <div class="input-group date nk-int-st">
                                     <span class="input-group-addon"></span>
-                                    <input type="text" class="form-control" value="03/10/2019">
+                                    <input type="text" class="form-control" value="03/10/1980" id="data" disabled>
                                 </div>
                             </div>
                         </div>
                         <div class="form-example-int mg-t-15">
-                            <div class="form-group nk-datapk-ctm form-elet-mg" id="data_2">
-                                <label>Data de compra da habitação</label>
-                                <div class="input-group date nk-int-st">
-                                    <span class="input-group-addon"></span>
-                                    <input type="text" class="form-control" value="03/10/2019">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-example-int mg-t-15">
-                            <div class="themesaller-forms mg-t-30">
-                                <div class="spacer-b16a">
-                                    <label for="budget">Prémio</label>
-                                    <input type="text" id="budget" class="slider-input">
-                                </div>
-                                <div class="slider-wrapper purple-slider">
-                                    <div id="slider8"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-example-int mg-t-15">
-                            <button class="btn btn-primary notika-btn-primary">Submit</button>
+                            <button class="btn btn-primary notika-btn-primary" onclick="edit()">Editar</button>
                         </div>
                     </div>
                 </div>
@@ -300,6 +280,9 @@
         </div>
     </div>
     <!-- End Footer area-->
+    <!-- Selects JS
+		============================================ -->
+    <script src="selects.js"></script>
     <!-- jquery
 		============================================ -->
     <script src="js/vendor/jquery-1.12.4.min.js"></script>
