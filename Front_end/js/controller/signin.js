@@ -18,7 +18,7 @@ function signin(){
                alert('Deu merda');
             } else {
                 alert("submitted with success");
-                console.log(response)
+                console.log(response);
                 //window.location.href = "";
                 }
         }).then(function (result) {
