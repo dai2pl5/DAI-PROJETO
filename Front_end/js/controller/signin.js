@@ -26,5 +26,5 @@ function signin(){
         }).catch(function (err) {
             console.log(err);
         });
-    }
+}
     
