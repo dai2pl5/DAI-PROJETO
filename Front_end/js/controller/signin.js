@@ -19,7 +19,7 @@ function signin(){
             } else {
                 alert("submitted with success");
                 console.log(response);
-                window.location.href = "../../DAI-PROJETO/notika-master/notika/green-horizotal/perfil_teste.html";
+                window.location.href = "../notika-master/notika/green-horizotal/perfil_teste.html";
                 }
         }).then(function (result) {
             console.log(result);
