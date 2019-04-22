@@ -18,13 +18,13 @@ function signin(){
                alert('Deu merda');
             } else {
                 alert("submitted with success");
-                console.log(response)
-                //window.location.href = "";
+                console.log(response);
+                window.location.href = "../notika-master/notika/green-horizotal/perfil_teste.html";
                 }
         }).then(function (result) {
             console.log(result);
         }).catch(function (err) {
             console.log(err);
         });
-    }
+}
     
