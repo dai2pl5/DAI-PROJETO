@@ -108,7 +108,7 @@
                                         <a href="#">Alterar Dados</a>
                                     </div>
                                     <div class="hd-mg-va">
-                                        <a href="#">LogOut</a>
+                                        <a onclick="logout('token')">Logout</a>
                                     </div>
                                 </div>
                             </li>
@@ -198,7 +198,7 @@
                             <div class="form-group">
                                 <label>Nome</label>
                                 <div class="nk-int-st">
-                                    <input type="text" class="form-control input-sm" placeholder="O seu username" id="name" >
+                                    <input type="text" class="form-control input-sm" id="name" >
                                 </div>
                             </div>
                         </div>
@@ -206,7 +206,7 @@
                             <div class="form-group">
                                 <label>Username</label>
                                 <div class="nk-int-st">
-                                    <input type="text" class="form-control input-sm" placeholder="Username" id="username">
+                                    <input type="text" class="form-control input-sm" id="username">
                                 </div>
                             </div>
                         </div>
@@ -214,52 +214,11 @@
                             <div class="form-group">
                                 <label>E-mail</label>
                                 <div class="nk-int-st">
-                                    <input type="text" class="form-control input-sm" placeholder="@" id="mail">
+                                    <input type="text" class="form-control input-sm" id="mail">
                                 </div>
                             </div>
                         </div>
-                        <div class="form-example-int mg-t-15">
-                            <div class="nk-int-mk sl-dp-mn">
-                                <label>Tipo de Habitação</label>
-                            </div>
-                            <div class="bootstrap-select fm-cmp-mg">
-                                <select class="selectpicker" id="tipo_habitacao">
-                                    <option value="Casa isolada">Casa isolada</option>
-                                    <option value="Casas geminadas">Casas geminadas</option>
-                                    <option value="Casas em banda">Casas em banda</option>
-                                    <option value="Condomínio fechado">Condomínio fechado</option>
-                                    <option value="Propriedade horizontal">Propriedade horizontal</option>
-                                    <option value="Apartamento">Apartamento</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-example-int mg-t-15">
-                            <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                <label>Coberturas</label>
-                            </div>
-                            <div class="chosen-select-act fm-cmp-mg">
-                                <select class="chosen" multiple data-placeholder="Escolhe as coberturas..." id="coberturas">
-                                    <option value="recheio" id="recheio" selected>Recheio</option>
-                                    <option value="paredes" id="paredes" selected>Paredes</option>
-                                    <option value="Furto" id="furto" selected>Furto</option>
-                                    <option value="incendio" id="incendio" selected="false">Incêndio</option>
-                                    <option value="sismo" id="sismo" selected>Sismo</option>
-                                    <option value="tsunami" id="tsunami" selected>Tsunami</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-example-int mg-t-15">
-                            <div class="form-group nk-datapk-ctm form-elet-mg" id="data_2">
-                                <label>Data de Nascimento</label>
-                                <div class="input-group date nk-int-st">
-                                    <span class="input-group-addon"></span>
-                                    <input type="text" class="form-control" value="03/10/1980" id="data">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-example-int mg-t-15">
-                            <button class="btn btn-primary notika-btn-primary" onclick="edit()">Editar</button>
-                        </div>
+        
                     </div>
                 </div>
             </div>
@@ -282,7 +241,6 @@
     <!-- End Footer area-->
     <!-- Selects JS
 		============================================ -->
-    <script src="selects.js"></script>
     <!-- jquery
 		============================================ -->
     <script src="js/vendor/jquery-1.12.4.min.js"></script>
