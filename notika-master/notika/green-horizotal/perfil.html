@@ -206,7 +206,7 @@
                             <div class="form-group">
                                 <label>Localização</label>
                                 <div class="nk-int-st">
-                                    <input type="text" class="form-control input-sm" value="Rua de Santa Margarida nº34" id="local" disabled>
+                                    <input type="text" class="form-control input-sm" value="Rua de Santa Margarida nº34" id="username" disabled>
                                 </div>
                             </div>
                         </div>
@@ -228,9 +228,10 @@
                             </div>
                         </div>
                         <div class="form-example-int mg-t-15">
-                            <button class="btn btn-primary notika-btn-primary" onclick="edit()">Editar</button>
-                            <button class="btn btn-primary notika-btn-primary" id="edit" onclick="edit()">Aplicar</button>
+                            <button class="btn btn-primary notika-btn-primary" id="edit" onclick="edit()">Editar</button>
+                            <button class="btn btn-primary notika-btn-primary" style="visibility: hidden" id="apply" onclick="edit()">Aplicar</button>
                         </div>
+                            
                     </div>
                 </div>
             </div>

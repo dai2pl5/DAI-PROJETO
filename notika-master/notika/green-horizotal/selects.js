@@ -13,10 +13,7 @@ function edit() {
     document.getElementById("local").disabled =  false
     document.getElementById("mail").disabled = false
     document.getElementById("data").disabled = false
-    document.getElementById("tipo_habitacao").disabled = false
-    document.getElementById("coberturas").disabled = false
-}
-window.onload = showButton();
-function showButton() {
-  document.getElementById("edit").style.visibility = "hidden";
+    document.getElementById("apply").removeAttribute("style")
+    document.getElementById("edit").setAttribute("style", "visibility: hidden")
+    document.getElementById("apply").setAttribute("style", "float: right")
 }
