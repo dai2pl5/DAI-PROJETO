@@ -19,6 +19,7 @@ function userData(){
         console.log(user.name);
         username.value = user.username;
         name.value = user.name;
+        mail.value = user.email;
     }
         //chama a função fetchAsync()
         fetchAsync().then(function(data){
