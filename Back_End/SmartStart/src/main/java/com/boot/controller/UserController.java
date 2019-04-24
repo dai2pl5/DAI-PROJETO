@@ -34,7 +34,7 @@ public class UserController {
     @GetMapping("/user/me")
     @PreAuthorize("hasRole('USER')")
     public UserSummary getCurrentUser(@CurrentUser UserPrincipal currentUser) {
-        UserSummary userSummary = new UserSummary(currentUser.getId(), currentUser.getUsername(), currentUser.getName());
+        UserSummary userSummary = new UserSummary(currentUser.getId(), currentUser.getUsername(), currentUser.getName(), currentUser.getEmail());
         return userSummary;
     }
 
@@ -50,14 +50,14 @@ public class UserController {
         return new UserIdentityAvailability(isAvailable);
     }
 
-    @GetMapping("/users/{id}")
+   /* @GetMapping("/users/{id}")
     public ResponseEntity<User> getUserById(@PathVariable(value = "id") long id) {
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("User", "id", id));
 
         return ResponseEntity.ok().body(user);
-    }
-    /*
+    }*/
+    
     @GetMapping("/users/{username}")
     public UserProfile getUserProfile(@PathVariable(value = "username") String username) {
         User user = userRepository.findByUsername(username)
@@ -68,7 +68,7 @@ public class UserController {
 
         return userProfile;
     }
-    */
+    
     @PostMapping("/user/addHome")
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<ApiResponse> userAddHome(@CurrentUser UserPrincipal currentUser, @Valid @RequestBody HomeRequest homeRequest){

@@ -1,5 +1,6 @@
 package com.boot.security;
 
+import com.boot.model.Role;
 import com.boot.model.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
@@ -9,6 +10,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class UserPrincipal implements UserDetails {
@@ -28,19 +30,24 @@ public class UserPrincipal implements UserDetails {
 
     @JsonIgnore
     private String password;
+    
+    private Set<Role> roles;
 
     private Collection<? extends GrantedAuthority> authorities;
 
-    public UserPrincipal(Long id, String name, String username, String email, String password, Collection<? extends GrantedAuthority> authorities) {
+    public UserPrincipal(Long id, String name, String username, String email, String password, Collection<? extends GrantedAuthority> authorities, Set<Role> roles) {
         this.id = id;
         this.name = name;
         this.username = username;
         this.email = email;
         this.password = password;
         this.authorities = authorities;
+        this.roles = roles;
     }
 
-    public static UserPrincipal create(User user) {
+
+
+	public static UserPrincipal create(User user) {
         List<GrantedAuthority> authorities = user.getRoles().stream().map(role ->
                 new SimpleGrantedAuthority(role.getName().name())
         ).collect(Collectors.toList());
@@ -51,11 +58,24 @@ public class UserPrincipal implements UserDetails {
                 user.getUsername(),
                 user.getEmail(),
                 user.getPassword(),
-                authorities
+                authorities,
+                user.getRoles()
         );
     }
 
-    public Long getId() {
+    public Set<Role> getRoles() {
+		return roles;
+	}
+
+
+
+	public void setRoles(Set<Role> roles) {
+		this.roles = roles;
+	}
+
+
+
+	public Long getId() {
         return id;
     }
 

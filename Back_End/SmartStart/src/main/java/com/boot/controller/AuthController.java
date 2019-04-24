@@ -20,12 +20,14 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.net.URI;
@@ -76,7 +78,7 @@ public class AuthController {
     }
     
     
-    @PostMapping("/signup")
+    @PostMapping("/signup/client")
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignUpRequest signUpRequest) {
         if(userRepository.existsByUsername(signUpRequest.getUsername())) {
             return new ResponseEntity<Object>(new ApiResponse(false, "Username is already taken!"),
@@ -106,5 +108,58 @@ public class AuthController {
                 .buildAndExpand(result.getUsername()).toUri();
 
         return ResponseEntity.created(location).body(new ApiResponse(true, "User registered successfully"));
+    }
+    
+    @PostMapping("/signup/insurer")
+    public ResponseEntity<?> registerInsurer(@Valid @RequestBody SignUpRequest signUpRequest) {
+        if(userRepository.existsByUsername(signUpRequest.getUsername())) {
+            return new ResponseEntity<Object>(new ApiResponse(false, "Username is already taken!"),
+                    HttpStatus.BAD_REQUEST);
+        }
+
+        if(userRepository.existsByEmail(signUpRequest.getEmail())) {
+            return new ResponseEntity<Object>(new ApiResponse(false, "Email Address already in use!"),
+                    HttpStatus.BAD_REQUEST);
+        }
+
+        // Creating user's account
+        User user = new User(signUpRequest.getName(), signUpRequest.getUsername(),
+                signUpRequest.getEmail(), signUpRequest.getPassword());
+
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+
+        Role userRole = roleRepository.findByName(RoleName.ROLE_INSURER)
+                .orElseThrow(() -> new AppException("User Role not set."));
+
+        user.setRoles(Collections.singleton(userRole));
+
+        User result = userRepository.save(user);
+
+        URI location = ServletUriComponentsBuilder
+                .fromCurrentContextPath().path("/api/users/{username}")
+                .buildAndExpand(result.getUsername()).toUri();
+
+        return ResponseEntity.created(location).body(new ApiResponse(true, "User registered successfully"));
+    }
+    
+    @GetMapping("/logout")
+    public ResponseEntity<?> logoutUser(HttpServletResponse response, HttpServletRequest request){
+    	
+    	if(!(request.getCookies() == null)) {
+    		
+    		Cookie[] cookies = request.getCookies();
+    		
+    		for(Cookie cookie : cookies) {
+    			if("token".equals(cookie.getName())) {
+    				System.out.println(cookie.getValue());
+    				 cookie.setMaxAge(0);
+    				 response.addCookie(cookie);
+    				 return ResponseEntity.ok(cookie);
+    				 
+    			}
+    		}
+    	}
+    	return null;
+    	
     }
 }

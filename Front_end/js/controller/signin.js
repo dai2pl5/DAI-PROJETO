@@ -27,4 +27,8 @@ function signin(){
             console.log(err);
         });
 }
+
+function redirectUser(){
+
     
+}
