@@ -7,7 +7,9 @@ function logout(){
         credentials: "include",
         method: 'GET',
         });
-        const user = await response.json();
+        const rep = await response.json();
+        window.location.href = "../../../Front_end/index.html";
+        
     }
         //chama a função fetchAsync()
         fetchAsync().then(function(data){
