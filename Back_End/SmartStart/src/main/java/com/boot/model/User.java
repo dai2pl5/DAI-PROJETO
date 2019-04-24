@@ -1,6 +1,7 @@
 package com.boot.model;
 
 import com.boot.model.audit.DateAudit;
+import com.boot.model.Home;
 import org.hibernate.annotations.NaturalId;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -52,7 +53,12 @@ public class User extends DateAudit {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
-
+    
+    @OneToMany(cascade = CascadeType.ALL,
+    		orphanRemoval = false,
+            mappedBy = "user")    
+    private Set<Home> houses;
+    
     public User() {
 
     }
@@ -62,6 +68,7 @@ public class User extends DateAudit {
         this.username = username;
         this.email = email;
         this.password = password;
+        this.houses = new HashSet<Home>();
     }
 
     public Long getId() {
