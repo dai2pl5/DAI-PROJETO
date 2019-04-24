@@ -2658,8 +2658,6 @@ hr {
 /*----------------------------------------*/
 /*  34.  Data Table CSS
 /*----------------------------------------*/
-
-/*
 .dataTables_filter, .dataTables_length {
     padding: 20px 15px;
 	padding-top: 0px;
@@ -2751,11 +2749,10 @@ hr {
 }
 #data-table-basic_filter label, #data-table-basic_length label{
 	margin-bottom: 0px;
-}*/
+}
 /*----------------------------------------*/
 /*  35.  Form Element CSS
 /*----------------------------------------*/
-/*
 .nk-int-st input[type="text"], .nk-int-st textarea, .nk-int-st [type="number"], .nk-int-st [type="password"]{
 	box-shadow: none;
     border-top: 0px solid #ccc;
@@ -2875,7 +2872,7 @@ textarea.auto-size {
 .contact-form-int{
 	margin-top:15px;
 }
-*/
+
 /*----------------------------------------*/
 /*  36.  Form Components CSS
 /*----------------------------------------*/
