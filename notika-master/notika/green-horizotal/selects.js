@@ -16,3 +16,7 @@ function edit() {
     document.getElementById("tipo_habitacao").disabled = false
     document.getElementById("coberturas").disabled = false
 }
+window.onload = showButton();
+function showButton() {
+  document.getElementById("edit").style.visibility = "hidden";
+}
