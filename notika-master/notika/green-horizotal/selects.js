@@ -10,7 +10,7 @@ function coberturas() {
 }
 function edit() {
     document.getElementById("name").disabled = false
-    document.getElementById("local").disabled =  false
+    document.getElementById("username").disabled =  false
     document.getElementById("mail").disabled = false
     document.getElementById("data").disabled = false
     document.getElementById("apply").removeAttribute("style")
