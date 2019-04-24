@@ -16,9 +16,9 @@ function userData(){
         });
         const user = await response.json();
         console.log(user);
-        username.innerHTML = user.username;
-        mail.innerHTML = user.email;
-        name.innerHTML = user.name;
+        console.log(user.name);
+        username.value = user.username;
+        name.value = user.name;
     }
         //chama a função fetchAsync()
         fetchAsync().then(function(data){
@@ -27,6 +27,16 @@ function userData(){
             console.log(reason.message);
         });
 
+}
+
+
+function logout(cname) {
+    var d = new Date(); //Create an date object
+    d.setTime(d.getTime() - (1000*60*60*24)); //Set the time to the past. 1000 milliseonds = 1 second
+    var expires = "expires=" + d.toGMTString(); //Compose the expirartion date
+    window.document.cookie = cname+"="+"; "+expires;//Set the cookie with name and the expiration date
+    window.location.href = "../../../Front_end/index.html";
+ 
 }
 
 

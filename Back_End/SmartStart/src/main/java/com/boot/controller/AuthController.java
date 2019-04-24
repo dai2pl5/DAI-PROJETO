@@ -8,6 +8,7 @@ import com.boot.payload.ApiResponse;
 import com.boot.payload.JwtAuthenticationResponse;
 import com.boot.payload.LoginRequest;
 import com.boot.payload.SignUpRequest;
+import com.boot.repository.HomeRepository;
 import com.boot.repository.RoleRepository;
 import com.boot.repository.UserRepository;
 import com.boot.security.JwtTokenProvider;
@@ -19,7 +20,6 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -43,6 +43,9 @@ public class AuthController {
 
     @Autowired
     RoleRepository roleRepository;
+    
+    @Autowired
+    HomeRepository homeRepository;
 
     @Autowired
     PasswordEncoder passwordEncoder;
@@ -50,7 +53,6 @@ public class AuthController {
     @Autowired
     JwtTokenProvider tokenProvider;
     
-    @CrossOrigin(origins = "localhost:8080")
     @PostMapping("/signin")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest, HttpServletResponse response) {
 
@@ -66,7 +68,6 @@ public class AuthController {
         String jwt = tokenProvider.generateToken(authentication);
         
         Cookie cookie = new Cookie("token", jwt);
-        cookie.setDomain("127.0.0.1");
         cookie.setPath("/");
         cookie.setHttpOnly(true);
         cookie.setMaxAge(30000);
