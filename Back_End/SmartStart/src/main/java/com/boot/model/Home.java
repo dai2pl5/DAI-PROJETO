@@ -9,6 +9,7 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import com.boot.model.User;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="home", uniqueConstraints= {
@@ -28,7 +29,6 @@ public class Home {
 	
 	private int area;
 	
-	@NotBlank
 	private int ano;
 	
 	@NotBlank
@@ -38,8 +38,11 @@ public class Home {
 	@ManyToOne()
     @JoinColumn(name = "user_id", nullable = false)
 	@OnDelete(action = OnDeleteAction.CASCADE)
+	@JsonIgnore()
 	private User user;
 
+	public Home() {}
+	
 	public Home(String morada, int area, int ano, String topologia, User user) {
 	        this.morada = morada;
 	        this.area = area;

@@ -118,4 +118,13 @@ public class User extends DateAudit {
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
+
+	public Set<Home> getHouses() {
+		return houses;
+	}
+
+	public void setHouses(Set<Home> houses) {
+		this.houses = houses;
+	}
+    
 }

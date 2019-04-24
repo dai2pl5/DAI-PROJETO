@@ -5,16 +5,12 @@ import javax.validation.constraints.Size;
 
 public class HomeRequest {
 	
-	@NotBlank
-	@Size(max=50)
 	private String morada;
 	
 	private int area;
 	
 	private int ano;
 	
-	@NotBlank
-	@Size(max=2)
 	private String topologia;
 
 	public String getMorada() {
