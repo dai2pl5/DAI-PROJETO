@@ -198,7 +198,7 @@
                             <div class="form-group">
                                 <label>Nome</label>
                                 <div class="nk-int-st">
-                                    <input type="text" class="form-control input-sm" placeholder="João Pedro Sá Carneiro" id="name" disabled>
+                                    <input type="text" class="form-control input-sm" value="João Pedro Sá Carneiro" id="name" disabled>
                                 </div>
                             </div>
                         </div>
@@ -206,7 +206,7 @@
                             <div class="form-group">
                                 <label>Localização</label>
                                 <div class="nk-int-st">
-                                    <input type="text" class="form-control input-sm" placeholder="Rua de Santa Margarida nº34" id="local" disabled>
+                                    <input type="text" class="form-control input-sm" value="Rua de Santa Margarida nº34" id="local" disabled>
                                 </div>
                             </div>
                         </div>
@@ -214,38 +214,8 @@
                             <div class="form-group">
                                 <label>E-mail</label>
                                 <div class="nk-int-st">
-                                    <input type="text" class="form-control input-sm" placeholder="joao.carneiro@gmail.com" id="mail" disabled>
+                                    <input type="text" class="form-control input-sm" value="joao.carneiro@gmail.com" id="mail" disabled>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="form-example-int mg-t-15">
-                            <div class="nk-int-mk sl-dp-mn">
-                                <label>Tipo de Habitação</label>
-                            </div>
-                            <div class="bootstrap-select fm-cmp-mg">
-                                <select class="selectpicker" id="tipo_habitacao" disabled>
-                                    <option value="Casa isolada">Casa isolada</option>
-                                    <option value="Casas geminadas">Casas geminadas</option>
-                                    <option value="Casas em banda">Casas em banda</option>
-                                    <option value="Condomínio fechado">Condomínio fechado</option>
-                                    <option value="Propriedade horizontal">Propriedade horizontal</option>
-                                    <option value="Apartamento">Apartamento</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-example-int mg-t-15">
-                            <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-                                <label>Coberturas</label>
-                            </div>
-                            <div class="chosen-select-act fm-cmp-mg">
-                                <select class="chosen" multiple data-placeholder="Escolhe as coberturas..." id="coberturas" disabled>
-                                    <option value="recheio" id="recheio" selected>Recheio</option>
-                                    <option value="paredes" id="paredes" selected>Paredes</option>
-                                    <option value="Furto" id="furto" selected>Furto</option>
-                                    <option value="incendio" id="incendio" selected="false">Incêndio</option>
-                                    <option value="sismo" id="sismo" selected>Sismo</option>
-                                    <option value="tsunami" id="tsunami" selected>Tsunami</option>
-                                </select>
                             </div>
                         </div>
                         <div class="form-example-int mg-t-15">
@@ -259,6 +229,7 @@
                         </div>
                         <div class="form-example-int mg-t-15">
                             <button class="btn btn-primary notika-btn-primary" onclick="edit()">Editar</button>
+                            <button class="btn btn-primary notika-btn-primary" id="edit" onclick="edit()">Aplicar</button>
                         </div>
                     </div>
                 </div>
