@@ -133,9 +133,9 @@
                             </li>
                             <li><a href="simular.html"><i class="notika-icon notika-edit"></i> Simular</a>
                             </li>
-                            <li><a href="perfil.html"><i class="notika-icon notika-support"></i> Perfil</a>
+                            <li class="active"><a href="perfil.html"><i class="notika-icon notika-support"></i> Perfil</a>
                             </li>
-                            <li class="active"><a href="index.html"><i class="notika-icon notika-support"></i> Habitações</a>
+                            <li><a href="casas.html"><i class="notika-icon notika-support"></i> Habitações</a>
                             </li>
                         </ul>
                     </div>
@@ -147,60 +147,108 @@
     
     <!-- End Status area-->
     <!-- area da cobertura -->
-    <div class="sale-statistic-area">
+    <div class="form-element-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="sale-statistic-inner notika-shadow mg-tb-30">
-                        <div class="curved-inner-pro">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <h2>Habitações</h2>
-                                <table class="table table-sc-ex">
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Habitação</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Vivenda</td>
-                                            <td><button style="float: right" class="btn"><i class="glyphicon glyphicon-eye-open"></i></button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>apartamento</td>
-                                            <td><button style="float: right" class="btn"><i class="glyphicon glyphicon-eye-open"></i></button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Casinha</td>
-                                            <td><button style="float: right" class="btn"><i class="glyphicon glyphicon-eye-open"></i></button></td>
-                                        </tr>
-                                        
-                                    </tbody>
-                                </table>
+                    <div class="form-element-list">
+                        
+                        <div class="cmp-tb-hd bcs-hd">
+                            <h2>Adicionar seguradora</h2>
+                            <p>Preencha os campos relativamente à seguradora </p>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-support"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Nome">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-mail"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Email">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-phone"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Contacto">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-map"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Localização">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-next"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Código Postal">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="form-group ic-cmp-int">
+                                    <div class="form-ic-cmp">
+                                        <i class="notika-icon notika-mail"></i>
+                                    </div>
+                                    <div class="nk-int-st">
+                                        <input type="text" class="form-control" placeholder="Mensagem">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="form-example-int mg-t-15">
-                                <a href="add-seguradora.html">
-                                  <button style="left:42%" class="btn btn-primary notika-btn-primary" href="seguradoras.html" id="edit"
-                                    onclick="edit()">Adicionar Habitação</button>
-                                </a>
-                              </div>
+                            <button style="left:42%" class="btn btn-primary notika-btn-primary" id="edit" onclick="edit()">Submeter</button>
+                            
+                        </div>
+                        
+                        </div>
                     </div>
-                    
                 </div>
             </div>
-        </div>
-    </div>
+
+    
     <!-- End area da cobertura-->
     <!-- Start chart area-->
     
     <!-- Start Footer area-->
-    
+    <!--<div class="footer-copyright-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="footer-copy-right">
+                        <p>Copyright © 2018
+                            . All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  -->
     <!-- End Footer area-->
     <!-- jquery
 		============================================ -->
