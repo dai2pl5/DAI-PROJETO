@@ -38,7 +38,7 @@ function redirectUser(){
         method: 'GET',
         });
         const user = await response.json();
-        const role = (user.roles[0].name);
+        const role = user.roles[0].name;
         if(role === "ROLE_USER"){
             window.location.href = "../notika-master/notika/green-horizotal/perfil_teste.html";
         }else if(role === "ROLE_INSURER"){

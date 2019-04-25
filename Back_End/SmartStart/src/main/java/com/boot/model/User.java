@@ -1,7 +1,9 @@
 package com.boot.model;
 
 import com.boot.model.audit.DateAudit;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.boot.model.Home;
+import com.boot.model.Package;
 import org.hibernate.annotations.NaturalId;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -46,6 +48,7 @@ public class User extends DateAudit {
 
     @NotBlank
     @Size(max = 100)
+    @JsonIgnore()
     private String password;
 
     @ManyToMany(fetch = FetchType.LAZY)
@@ -59,6 +62,11 @@ public class User extends DateAudit {
             mappedBy = "user")    
     private Set<Home> houses;
     
+    @OneToMany(cascade = CascadeType.ALL,
+    		orphanRemoval = false,
+            mappedBy = "user") 
+    private Set<Package> packages;
+    
     public User() {
 
     }
@@ -69,6 +77,7 @@ public class User extends DateAudit {
         this.email = email;
         this.password = password;
         this.houses = new HashSet<Home>();
+        this.packages = new HashSet<Package>();
     }
 
     public Long getId() {

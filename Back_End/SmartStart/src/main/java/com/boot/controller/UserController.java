@@ -33,9 +33,12 @@ public class UserController {
 
     @GetMapping("/user/me")
     @PreAuthorize("hasRole('USER')")
-    public UserSummary getCurrentUser(@CurrentUser UserPrincipal currentUser) {
-        UserSummary userSummary = new UserSummary(currentUser.getId(), currentUser.getUsername(), currentUser.getName(), currentUser.getEmail());
-        return userSummary;
+    public ResponseEntity<User> getCurrentUser(@CurrentUser UserPrincipal currentUser) {
+    	User user = userRepository.findById(currentUser.getId())
+    			.orElseThrow(() -> new ResourceNotFoundException("User", "id", currentUser.getId()));
+    	
+    	
+        return ResponseEntity.ok().body(user);
     }
 
     @GetMapping("/user/checkUsernameAvailability")

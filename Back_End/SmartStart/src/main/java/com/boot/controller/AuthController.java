@@ -143,7 +143,7 @@ public class AuthController {
     }
     
     @GetMapping("/logout")
-    public ResponseEntity<?> logoutUser(HttpServletResponse response, HttpServletRequest request){
+    public ResponseEntity<ApiResponse> logoutUser(HttpServletResponse response, HttpServletRequest request){
     	
     	if(!(request.getCookies() == null)) {
     		
@@ -151,15 +151,17 @@ public class AuthController {
     		
     		for(Cookie cookie : cookies) {
     			if("token".equals(cookie.getName())) {
-    				System.out.println(cookie.getValue());
+    				 System.out.println(cookie.getName());
+    				 cookie.setValue("");
+    				 cookie.setPath("/");
     				 cookie.setMaxAge(0);
     				 response.addCookie(cookie);
-    				 return ResponseEntity.ok(cookie);
+    				 return ResponseEntity.ok().body(new ApiResponse(true, "User logged out"));
     				 
     			}
     		}
     	}
-    	return null;
-    	
+    	return new  ResponseEntity<ApiResponse>(new ApiResponse(false, "User logged out"),
+    			HttpStatus.BAD_REQUEST);
     }
 }
