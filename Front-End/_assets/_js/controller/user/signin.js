@@ -40,7 +40,7 @@ function redirectUser(){
         const user = await response.json();
         const role = user.roles[0].name;
         if(role === "ROLE_USER"){
-            window.location.href = "../notika-master/notika/green-horizotal/perfil_teste.html";
+            window.location.href = "../notika-master/notika/green-horizotal/perfil.html";
         }else if(role === "ROLE_INSURER"){
             //window.location.href("ainda não sei");
         }else if(role === "ROLE_ADMIN"){
