@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    
+    <title>SmartStart - Plataforma de Seguros</title>
+    <link rel="icon" type="image/ico" href="_assets/_img/favicon.ico">
+   
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Signika:300,400,600,700" />
+    <link rel="stylesheet" type="text/css" href="_assets/_libs/font-awesome/css/font-awesome.css" /> 
+    <link rel="stylesheet" type="text/css" href="_assets/_libs/no-ui-slider/jquery.nouislider.css" />
+    <link rel="stylesheet" type="text/css" href="_assets/_libs/animate.css" /> 
+    <link rel="stylesheet" type="text/css" href="_assets/_css/style.css" />  
+    <link rel="stylesheet" type="text/css" href="_assets/_css/reset.css" />  
+    <link rel="stylesheet" type="text/css" href="_assets/_css/demo.css" />  
+
+</head>
+<body>
+
+    <div id="loader">
+
+        <div class="loader-spinner">
+        </div>
+    
+    </div>
+                 
+    <div id="contact-popup">
+    
+        <div id="contact-popup-background">
+        </div>
+    
+        <div id="contact-popup-content" class="animated speed">
+
+            <div id="contact-popup-close"><i class="fa fa-times"></i></div>
+
+            <div id="google-map" data-lat="41.450734" data-lng="-8.293491" data-zoom-level="18">
+            </div>
+            
+            <div class="padding">
+
+                <i class="fa fa-envelope-o background-icon"></i>
+                
+                <h3>Contactos</h3>
+                <h3 class="right">(+351) 000 000 000</h3>
+                
+                <h2><span>Contacte-nos!</span></h2>
+                <form method="post" class="form">
+                
+                    
+                    <input type="text" name="Name" placeholder="Nome..." class="contact-form-element contact-form-client-name" />
+                    <input type="text" name="Phone number" placeholder="Contacto..." class="contact-form-element last" />
+                    <input type="text" name="E-mail" placeholder="Email..." class="contact-form-element contact-form-client-email" />
+                    <input type="text" name="Title" placeholder="Assunto..." class="contact-form-element contact-form-client-message-title last" />
+                    
+                    
+                    <textarea name="Message" rows="5" cols="5" placeholder="Mensagem..." class="contact-form-element"></textarea>
+                    <button class="button button-navy-blue send-contact" type="button">Enviar! <i class="fa fa-paper-plane-o"></i></button>      
+                             
+                    <div class="contact-form-thanks">
+                            
+                        <div class="contact-form-thanks-content">
+                        
+                            A sua mensagem foi enviada com sucesso.. 
+                            <span class="contact-form-thanks-close">Fechar</span>
+                        
+                        </div>
+                    
+                    </div>         
+                                                                         
+                </form>
+            
+            </div>
+        
+        </div>
+    
+    </div>  
+    
+    <!--======================= START SIMULADOR ===============-->
+
+    <div id="quote-popup">
+    
+        <div id="quote-popup-background">
+        </div>
+    
+        <div id="quote-popup-content" class="animated speed">
+        
+            <div id="quote-popup-close"><i class="fa fa-times"></i></div>
+            
+            <ul id="quote-popup-tabs">
+            
+               
+                <li data-quote-tab-for="segurohabitacao">Seguro Habitação</li>
+            
+            </ul>
+
+            <div class="quote-forms">
+
+                
+                <!--house insurance-->
+                <div class="quote-form" data-quote-form-for="house-insurance">
+                
+                    <i class="fa fa-home background-icon"></i>
+                
+                    <div class="quote-form-background" style="background-image: url( '_assets/_img/house.JPG' );">
+                    </div>
+                    
+                    <div class="quote-form-content">
+
+                        <h2>Simulador <span>Habitação</span></h2>
+                        <div class="form">
+                        
+                            
+                            <span class="custom-dropdown">
+                            
+                                <select name="tipohabitacao" class="custom-dropdown-select quote-form-element">
+                                
+                                    <option value="-">Tipo de Habitação</option>
+                                    <option value="moradia">Moradia</option>
+                                    <option value="Apartment">Apartamento</option>
+                                    
+                                
+                                </select>
+                            
+                            </span>
+                            
+                            <span class="custom-dropdown last">
+                            
+                                <select name="tipocobertura" class="custom-dropdown-select quote-form-element">
+                                
+                                    <option value="-">Tipo de Cobertura</option>
+                                    <option value="Semi-detached">Paredes</option>
+                                    <option value="Detached">Recheio</option>
+                                    <option value="Link-detached">Paredes e Recheio</option>
+                                
+                                </select>
+                            
+                            </span>
+                            
+                            <input type="text" class="quote-form-element" name="area" placeholder="Área(m2)" />
+                            <input type="text" class="quote-form-element last" name="codigopostal" placeholder="Código-Postal" />
+                             <span class="custom-dropdown">
+                            
+                                <select name="tipoocupacao" class="custom-dropdown-select quote-form-element">
+                                
+                                    <option value="-">Tipo de ocupação</option>
+                                    <option value="principal">Habitação Principal</option>
+                                    <option value="principal">Habitação Secundária</option>
+                                    <option value="arrendamento">Arrendamento</option>
+                                    <option value="emigrante">Emigrante</option>
+                                    
+                                
+                                </select>
+                            
+                            </span>
+                            
+                            <span class="custom-dropdown last">
+                            
+                                <select name="anoimovel" class="custom-dropdown-select quote-form-element">
+                                
+                                    <option value="-">Ano do Imóvel</option>
+                                    <option value="anterior1960">Anterior a 1960</option>
+                                    <option value="1969">1960 a 1985</option>
+                                    <option value="1986">1986 a 1999</option>
+                                    <option value="2000">2000 ou posterior</option>
+                                
+                                </select>
+                            
+                            </span>
+                             <span class="custom-dropdown">
+                            
+                                <select name="tipologia" class="custom-dropdown-select quote-form-element">
+                                
+                                    <option value="-">Tipologia</option>
+                                    <option value="t1">T1</option>
+                                    <option value="t2">T2</option>
+                                    <option value="t3">T3</option>
+                                    <option value="t4">T4</option>
+                                    <option value="t5">T5</option>
+                                    <option value="t6">T6</option>
+                                    <option value="t7">T7</option>
+                                    
+                                
+                                </select>
+                            
+                            </span>
+                            
+                            <span class="custom-dropdown last">
+                            
+                                <select name="materialcobertura" class="custom-dropdown-select quote-form-element">
+                                
+                                    <option value="-">Material de Cobertura</option>
+                                    <option value="placacimento">Placa de Cimento</option>
+                                    <option value="telha">Telha</option>
+                                    
+                                
+                                </select>
+                            
+                            </span>
+                             <span class="custom-dropdown">
+                            
+                                <select name="protecaoincendios" class="custom-dropdown-select quote-form-element">
+                                
+                                    <option value="-">Prevenção e proteção contra incêndio?</option>
+                                    <option value="sim">Possui</option>
+                                    <option value="nao">Não possui</option>
+                                    
+                                    
+                                
+                                </select>
+                            
+                            </span>
+                            
+                            <span class="custom-dropdown last">
+                            
+                                <select name="protecaointrusao" class="custom-dropdown-select quote-form-element">
+                                
+                                    <option value="-">Prevenção e proteção contra intrusão?</option>
+                                    <option value="sim">Possui</option>
+                                    <option value="nao">Não possui</option>
+                                    
+                                
+                                </select>
+                            
+                            </span>
+                               <span class="custom-dropdown">
+                            
+                                <select name="tipoconstrucaoexterior" class="custom-dropdown-select quote-form-element">
+                                
+                                    <option value="-">Tipo de Construção Exterior</option>
+                                    <option value="sim">Materiais Incombustíveis</option>
+                                    <option value="nao">Pedra, Cal ou Alvenária</option>
+                                    
+                                    
+                                
+                                </select>
+                            
+                            </span>
+                            
+                            <span class="custom-dropdown last">
+                            
+                                <select name="qualidadesegurado" class="custom-dropdown-select quote-form-element">
+                                
+                                    <option value="-">Qualidade em que se segura?</option>
+                                    <option value="proprietario">Proprietário</option>
+                                    <option value="inquilino">Inquilíno</option>
+                                    
+                                
+                                </select>
+                            
+                            </span>
+                        
+                            <button class="button button-navy-blue send-quote" type="button">Simular<i class="fa fa-paper-plane-o"></i></button>
+                        
+                            <div class="quote-form-thanks">
+                            
+                                <div class="quote-form-thanks-content">
+                                
+                                    Será redireccionado para a sua pagina de cliente. 
+                                    <span class="quote-form-thanks-close">Avançar</span>
+                                
+                                </div>
+                            
+                            </div>
+                        
+                        </div>
+
+                    </div>
+                
+                </div>
+            
+            </div>
+        
+        </div>
+    
+    </div>
+
+   
+<body>
+	<header class="cd-main-header">
+		<div class="cd-main-header__logo"><a href="#0"><img src="_assets/_img/logot3.png" style="margin-top:-15px;" alt="Logo"></a></div>
+
+		<nav class="cd-main-nav js-main-nav">
+			<ul class="cd-main-nav__list js-signin-modal-trigger">
+				<!-- inser more links here -->
+				<li><a class="cd-main-nav__item cd-main-nav__item--signin" href="#0" data-signin="login"><i class="fa fa-fw fa-user"></i>&emsp;Área Autenticada</a></li>
+				
+				<li><a class="cd-main-nav__item cd-main-nav__item--signin" class="pointer" data-action="show-contact-popup"><i class="fa fa-fw fa-envelope"></i>&emsp;Contactos</a></li>
+			
+				
+			</ul>
+		</nav>
+	</header>
+	<div class="cd-signin-modal js-signin-modal"> <!-- this is the entire modal form, including the background -->
+		<div class="cd-signin-modal__container"> <!-- this is the container wrapper -->
+			<ul class="cd-signin-modal__switcher js-signin-modal-switcher js-signin-modal-trigger">
+				<li><a href="#0" data-signin="login" data-type="login">Login</a></li>
+				<li><a href="#0" data-signin="signup" data-type="signup">Registar</a></li>
+			</ul>
+
+			<div class="cd-signin-modal__block js-signin-modal-block" data-type="login"> <!-- log in form -->
+				<form class="cd-signin-modal__form">
+					<p class="cd-signin-modal__fieldset">
+						<label class="cd-signin-modal__label cd-signin-modal__label--email cd-signin-modal__label--image-replace" for="emailLogin">E-mail</label>
+						<input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border" id="emailLogin" type="email" placeholder="E-mail">
+						<span class="cd-signin-modal__error">Erro!</span>
+					</p>
+
+					<p class="cd-signin-modal__fieldset">
+						<label class="cd-signin-modal__label cd-signin-modal__label--password cd-signin-modal__label--image-replace" for="passwordLogin">Password</label>
+						<input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border" id="passwordLogin" type="text"  placeholder="Password">
+						<a href="#0" class="cd-signin-modal__hide-password js-hide-password">Hide</a>
+						<span class="cd-signin-modal__error">Erro!</span>
+					</p>
+
+					<p class="cd-signin-modal__fieldset">
+						<input type="checkbox" id="remember-me" checked class="cd-signin-modal__input ">
+						<label for="remember-me" style="font-size: 10px">Lembrar</label>
+					</p>
+
+					<p class="cd-signin-modal__fieldset">
+						<input class="cd-signin-modal__input cd-signin-modal__input--full-width" type="submit" value="Login" onclick="signin()"
+					</p>
+				</form>
+				
+				<p class="cd-signin-modal__bottom-message js-signin-modal-trigger"><a href="#0" data-signin="reset" style="font-size: 14px">Recuperar password?</a></p>
+			</div> <!-- cd-signin-modal__block -->
+
+			<div class="cd-signin-modal__block js-signin-modal-block" data-type="signup"> <!-- sign up form -->
+				<form class="cd-signin-modal__form">
+					<p class="cd-signin-modal__fieldset">
+						<label class="cd-signin-modal__label cd-signin-modal__label--username cd-signin-modal__label--image-replace" for="username">Username</label>
+						<input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border" id="username" type="text" placeholder="Username">
+						<span class="cd-signin-modal__error">Erro!</span>
+                    </p>
+                    
+                    <p class="cd-signin-modal__fieldset">
+						<label class="cd-signin-modal__label cd-signin-modal__label--username cd-signin-modal__label--image-replace" for="name">Nome</label>
+						<input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border" id="name" type="text" placeholder="Nome">
+						<span class="cd-signin-modal__error">Erro!</span>
+					</p>
+
+					<p class="cd-signin-modal__fieldset">
+						<label class="cd-signin-modal__label cd-signin-modal__label--email cd-signin-modal__label--image-replace" for="email">E-mail</label>
+						<input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border" id="email" type="email" placeholder="E-mail">
+						<span class="cd-signin-modal__error">Erro!</span>
+					</p>
+
+					<p class="cd-signin-modal__fieldset">
+						<label class="cd-signin-modal__label cd-signin-modal__label--password cd-signin-modal__label--image-replace" for="password">Password</label>
+						<input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border" id="password" type="text"  placeholder="Password">
+						<a href="#0" class="cd-signin-modal__hide-password js-hide-password">Hide</a>
+						<span class="cd-signin-modal__error">Erro!</span>
+					</p>
+
+					<p class="cd-signin-modal__fieldset">
+						<input type="checkbox" id="accept-terms" class="cd-signin-modal__input ">
+						<label for="accept-terms" style="font-size: 10px">Concordo com  os<a href="#0" style="font-size: 10px">Termos e condições</a></label>
+					</p>
+
+					<p class="cd-signin-modal__fieldset">
+						<input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding" type="submit" value="Criar conta" onclick="signup()">
+					</p>
+				</form>
+			</div> <!-- cd-signin-modal__block -->
+
+			<div class="cd-signin-modal__block js-signin-modal-block" data-type="reset"> <!-- reset password form -->
+				<p class="cd-signin-modal__message">Recuperar password? Por favor insira o seu email.</p>
+
+				<form class="cd-signin-modal__form">
+					<p class="cd-signin-modal__fieldset">
+						<label class="cd-signin-modal__label cd-signin-modal__label--email cd-signin-modal__label--image-replace" for="reset-email">E-mail</label>
+						<input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border" id="reset-email" type="email" placeholder="E-mail">
+						<span class="cd-signin-modal__error">Erro!</span>
+					</p>
+
+					<p class="cd-signin-modal__fieldset">
+						<input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding" type="submit" value="Recuperar password">
+					</p>
+				</form>
+
+				<p class="cd-signin-modal__bottom-message js-signin-modal-trigger"><a href="#0" data-signin="login">Voltar log-in</a></p>
+			</div> <!-- cd-signin-modal__block -->
+			<a href="#0" class="cd-signin-modal__close js-close">Fechar</a>
+		</div> <!-- cd-signin-modal__container -->
+	</div> <!-- cd-signin-modal -->
+
+           
+            
+            <div class="clear">
+            </div>
+
+        </div>
+
+    </header>
+
+    <div class="heading">
+    
+        <div class="heading-slides">
+        
+            <div class="heading-slide-single" data-slide-id="1" style="background-image: url( '_assets/_img/home6.jpg' );">
+            
+               
+                
+                <div class="heading-content">
+                    
+                    <h2>Uma plataforma criada de<br> acordo com as suas exigências</h2>
+                    <h3>O seguro numa só plataforma!<br /> Simulação gratuita, fácil e intuitiva</h3>
+                    
+                    
+                    <ul class="cd-main-nav__list js-signin-modal-trigger">
+				
+				<button class="cd-main-nav__item cd-main-nav__item--signin button2"  href="#0" data-signin="login" >Simular<i class="fa fa-paper-plane-o"></i></button>
+				
+			</ul>
+        
+                </div>
+            
+            </div>
+            
+            
+            
+            
+            <div class="heading-slide-single" data-slide-id="2" style="background-image: url( '_assets/_img/home6.jpg' );">
+            
+               
+                
+               
+                
+                <div class="heading-content">
+                    
+                    <h2>Uma plataforma criada de<br> acordo com as suas exigências</h2>
+                    <h3>O seguro numa só plataforma!<br /> Simulação gratuita, fácil e intuitiva</h3>
+                    
+                     <ul class="cd-main-nav__list js-signin-modal-trigger">
+				
+				<button class="cd-main-nav__item cd-main-nav__item--signin button2"  href="#0" data-signin="login" style="border: rounded">Simular<i class="fa fa-paper-plane-o"></i></button>
+				
+			</ul>
+                </div>
+            
+            </div>
+        
+        </div>
+
+    </div>
+    <!--===================================       END HEADER       ================================-->
+    
+    
+     <!--=================================== START VISION=================================================-->
+
+    <section class="slogan section-gray-top">
+    
+        <div class="center">
+        
+            <i class="fa fa-bar-chart-o background-icon"></i>
+
+            <div class="left">
+            
+                <h3>INFORMAÇÕES</h3>
+                
+                
+                    <p>Com o desenvolvimento deste produto, a “SmartStart” tem em vista a construção de uma aplicação que visa a comparação de seguros, de modo a que o utilizador que pretende adquirir um seguro veja facilitada a procura do seguro de habitação que pretende adquirir e o finalize a sua adesão. É oferecido ao cliente a monitorização da sua habitação através de alguns sensores que serão instalados se forem aceites da parte do cliente. Os dados registados pelos sensores poderão influenciar o preço do seguro da habitação do ano seguinte. O produto tem como principal objetivo a comparação de seguros de habitação e a facilitação da adesão ao seguro pretendido.</p>
+                   
+                
+              
+            
+            </div>
+            
+            <div class="right">
+            
+                <div class="key-number-values">
+                    
+                    <div class="single single-top single-left">
+                    
+                        <span class="number">123</span>
+                        <span class="description">Clientes</span>
+                    
+                    </div>
+                    
+                    <div class="single single-top single-right">
+                    
+                        <span class="number">1234</span>
+                        <span class="description">Coberturas</span>
+                    
+                    </div>
+                    
+                    <div class="single single-bottom single-left">
+                    
+                        <span class="number">321</span>
+                        <span class="description">Seguradoras</span>
+                    
+                    </div>
+                    
+                    <div class="single single-bottom single-right">
+                    
+                        <span class="number">4321</span>
+                        <span class="description">Seguros</span>
+                    
+                    </div>
+                
+                </div>
+            
+            </div>
+            
+            <div class="clear">
+            </div>
+        
+        </div>
+    
+    </section>
+    <!--=================================== END VISION=================================================-->
+    
+    
+    
+    <section class="insurances-slider section-gray">
+    
+        <div class="center">
+        
+            <div class="green-line">
+            </div>
+            
+            <div class="images">
+            
+                <div class="image" style="background-image: url( '_assets/_img/home4.jpg' );" data-insurance-key="house">
+                </div>
+                
+                <div class="image" style="background-image: url( '_assets/_img/home4.jpg' );" data-insurance-key="travel">
+                </div>
+                
+                <div class="image" style="background-image: url( '_assets/_img/home4.jpg' );" data-insurance-key="life">
+                </div>
+
+                <div class="image" style="background-image: url( '_assets/_img/home4.jpg' );" data-insurance-key="car">
+                </div>
+            </div>
+        
+            <div class="content">
+
+                <div class="descriptions">
+
+                    <div class="description" data-insurance-key="house">
+                    
+                        <h3>Seguro multirriscos-habitação</h3>
+                        <h2>Seguro Habitação</h2>
+                        
+                        <p>O seguro multirriscos habitação pode garantir:
+a reparação de danos causados  na própria habitação como na habitação de terceiros, por ocorrência de riscos
+distintos do incêndio como, por exemplo, inundações, tempestades e riscos eléctricos;
+a reparação de danos causados nos bens móveis da habitação;
+indemnização por furto ou roubo;
+a responsabilidade civil do segurado e pessoas do seu agregado familiar;
+indemnizações por morte do segurado ou cônjuge, em consequência de incêndio, queda de raio, explosão ou
+roubo, quando ocorrida na habitação.
+O seguro multirriscos tem normalmente um conjunto de coberturas pré-determinadas, sendo possível adicionar
+outras coberturas complementares. O prémio é calculado em função das coberturas contratadas </p>
+<ul class="cd-main-nav__list js-signin-modal-trigger">
+				
+				<button class="cd-main-nav__item cd-main-nav__item--signin "  href="#0" data-signin="login" style="background-color: white; color: black; border: 2px solid #008CBA;">Simular<i class="fa fa-paper-plane-o"></i></button>
+				
+			</ul>
+                        
+                    
+                    </div>
+                    
+                    <div class="description" data-insurance-key="travel">
+                    
+                        <h3>Seguro multirriscos-habitação</h3>
+                       
+                         <h2>Paredes e Recheio</h2>
+                        
+                       <p>Um seguro multirriscos engloba, normalmente, um conjunto de coberturas pré-determinadas em duas vertentes: edifício e recheio. Pode ser subscrito em ambas as modalidades, ou em separado. É também possível adicionar coberturas complementares que terão influência no valor do prémio.
+
+O seguro habitação multirriscos conjunto, paredes e recheio proporciona vastas coberturas, proteção de bens móveis da habitação, proporcionando a reparação de eventuais danos neles causados; indemnização por furto ou roubo e, ainda, por morte do segurado ou cônjuge em consequência de incêndio, queda de raio, explosão ou roubo, quando ocorrida na habitação; garantia da responsabilidade civil do segurado e pessoas do seu agregado familiar se necessário indemnizar terceiros por danos causados.</p>
+                        
+                    </div>
+                    
+                    <div class="description" data-insurance-key="life">
+                    
+                        <h3>Seguro multirriscos-habitação</h3>
+                        <h2>Recheio</h2>
+                        
+                        <p>A avaliação do capital seguro para o recheio da sua casa não depende de uma fórmula. Neste caso, deve saber bem o que tem em casa e estar atento à evolução do mercado. Esta avaliação deve garantir que o valor do seguro é suficiente para repor todos os bens que tem em casa, desde móveis, eletrodomésticos, roupa entre outros bens. Caso tenha objetos especiais, como jóias, quadros, tapeçarias, antiguidades estes devem ser valorizados individualmente na apólice. Caso contrário, a seguradora, por norma, apenas indemniza até 1.500 euros por objeto mesmo que o seu valor seja superior.
+</p>
+                        
+                    
+                    </div>
+
+                    <div class="description" data-insurance-key="car">
+                    
+                        <h3>Seguro multirriscos-habitação</h3>
+                        <h2>Paredes</h2>
+                        <p>A avaliação do capital seguro para paredes é calculada com base na área do imóvel multiplicado pelo valor de reconstrução por m2 correspondente à zona de habitação. O valor do terreno não é contabilizado, pelo que o valor de reconstrução será sempre muito inferior ao valor de mercado. Outros fatores que não são considerados nesta estimativa são os de valorização do imóvel, como a proximidade de transportes públicos e/ou áreas comerciais, exposição ao sol, entre outros.
+
+</p>
+              
+                    </div>
+
+                </div>
+                
+                <ul class="tabs">
+                
+                    <li class="active" data-insurance-key="house">
+                    
+                        <i class="fa fa-home"></i>
+                        <span>Habitação</span>
+                    
+                    </li>
+                    
+                    <li data-insurance-key="travel">
+                        <i class="fa fa-spinner"></i>
+                        <span>Paredes e Recheio</span>
+                    
+                        
+                    
+                    </li>
+                    
+                    <li data-insurance-key="life">
+                    
+                        <i class="fa fa-cart-plus"></i>
+                        <span>Recheio&nbsp;</span>
+                    
+                    </li>
+                    
+                    <li data-insurance-key="car">
+                    
+                        <i class="fa fa-th"></i>
+                        <span>Paredes&nbsp;</span>
+                    
+                    </li>
+
+                </ul>
+            
+            </div>
+            
+            <div class="clear">
+            </div>
+        
+        </div>
+    
+    </section>
+    
+    
+    <!--=================================== START ABOUT US=================================================-->
+
+    <section class="about-us">
+    
+        <div class="center">
+        
+            <div class="green-line">
+            </div>
+        
+            <div class="left">
+            
+                <h3>Acordos realizados</h3>
+                
+                
+                <p>A criação de novos acordos permite-nos aumentar a variedade de ofertas, e consequentemente a competitividade de preços. </p>
+
+                <div class="timeline">
+                
+                    <div class="timeline-element">
+                    
+                        <span class="date">10 Abril, 2019</span>
+                        <p>Acordo realizado com a seguradora Lusitânia</p>
+                    
+                    </div>
+                    
+                    <div class="timeline-element">
+                    
+                        <span class="date">12 Abril, 2019</span>
+                        <p>Acordo realizado com a seguradora AXA</p>
+                    
+                    </div>
+                    
+                    <div class="timeline-element">
+                    
+                        <span class="date">14 Abril, 2019</span>
+                        <p>Acordo realizado com a seguradora Victoria</p>
+                    
+                    </div>
+                     <div class="timeline-element">
+                    
+                        <span class="date">16 Abril, 2019</span>
+                        <p>Acordo realizado com a seguradora Acoreana</p>
+                    
+                    </div>
+                     <div class="timeline-element">
+                    
+                        <span class="date">18 Abril, 2019</span>
+                        <p>Acordo realizado com a seguradora Tranquilidade</p>
+                    
+                    </div>
+                
+                </div>
+
+            </div>
+        
+            <div class="right">
+            
+                <div class="images-slider">
+                
+                    <div class="images-slider-change">
+                    
+                        <div class="images-slider-prev"><i class="fa fa-angle-left"></i></div>
+                        <div class="images-slider-next"><i class="fa fa-angle-right"></i></div>
+                    
+                    </div>
+                
+                    <div class="images-slider-single" style="background-image: url( '_assets/_img/seguradorass.jpg' );">
+                    </div>
+                    
+                    <div class="images-slider-single" style="background-image: url( '_assets/_img/image.png' );">
+                    </div>
+                
+                </div>
+                
+            </div>
+            
+            <div class="clear">
+            </div>
+        
+        </div>
+    
+    </section>
+    <!--=================================== END ABOUT US=================================================-->
+    
+  
+    
+    
+    <!--=====================================FOOTER==========================================-->
+
+    <section class="contact section-gray">
+        <footer>
+    
+        <div class="center">
+            <div class="green-line"></div>
+        
+            <i class="fa fa-envelope-o background-icon"></i>
+            <div class="contact-details">
+
+                <div class="contact-detail-single">
+                
+                    <h3><i class="fa fa-map-marker"></i> Morada</h3>
+                    <p><strong>SmartStart</strong><br /> Universidade do Minho</p>
+                    <p class="without-margin-bottom">Campus de Azurém<br />4800-058 Guimarães</p>
+                     
+                </div>
+
+                <div class="contact-detail-single">
+                
+                    <h3><i class="fa fa-envelope-o"></i> Contactos</h3>
+                    <p><strong>E-mail: </strong><a href="#">startsmart@gmail.com</a></p>     
+                    <p class="without-margin-bottom"><button class="button button-navy-blue" data-action="show-contact-popup">Contacte-nos! <i class="fa fa-paper-plane-o"></i></button></p>
+                
+                </div>
+                
+                <div class="contact-detail-single contact-detail-single-last">
+                
+                    <h2>(+351) 000 000 000</h2> 
+                    <p class="without-margin-bottom">Disponível 8:00am - 22:00pm</p> 
+                
+                </div>
+            
+            </div>
+
+        </div>
+    
+    </section>
+      </footer>
+
+    
+    <!--
+    facebook SDK
+    -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <script src="_assets/_js/controller/user/signin.js"></script>
+    <script src="_assets/_js/controller/user/signup.js"></script>
+    <script src="_assets/_libs/jquery.js"></script>
+    <script src="https://maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="_assets/_libs/no-ui-slider/jquery.nouislider.all.min.js"></script>
+    <script src="_assets/_libs/smoothscroll.js"></script>
+    <script src="_assets/_libs/parallax.js"></script>
+    <script src="_assets/_js/functions.js"></script>
+    <script src="_assets/_js/placeholders.min.js"></script>
+    <script src="_assets/_js/main.js"></script>
+
+</body>
+</html>
