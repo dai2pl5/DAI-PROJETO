@@ -15,7 +15,7 @@ function refresh() {
         console.log(houses);
         //percorrer a variável users e por cada user cria a linha da tabela com os dados presentes
         for (const house of houses) {
-            txt += "<tr><td>" + house.idHome + "</td>" + "<td>" + house.morada + "</td>" + "<td> <button style='float: right' class='btn btn-primary'><i class='glyphicon glyphicon-trash'></i></button> <button style='float: right' class='btn btn-primary'><i class='glyphicon glyphicon-edit'></i></button> </td></tr>"
+            txt += "<tr><td>" + house.idHome + "</td>" + "<td>" + house.morada + "</td>" + "<td> <button style='float: right;' class='btn btn-primary'><i class='glyphicon glyphicon-trash'></i></button> <button style='float: right' class='btn btn-primary'><i class='glyphicon glyphicon-edit'></i></button> </td></tr>"
         }
         txt += "</tbody></table>";
         //envia a tabela construida para a view e mostra no object com ID result
@@ -27,4 +27,10 @@ function refresh() {
         }).catch(function(reason){
             console.log(reason.message);
         });
+}
+
+
+function deleteHouse(){
+
+    
 }
