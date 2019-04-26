@@ -15,7 +15,7 @@ function refresh() {
         console.log(houses);
         //percorrer a variável users e por cada user cria a linha da tabela com os dados presentes
         for (const house of houses) {
-            txt += "<tr><td>" + house.idHome + "</td>" + "<td>" + house.morada + "</td>" + "<td> <button type = 'button' style='float: right;' class='btn btn-primary'><i class='glyphicon glyphicon-trash'></i></button><button type = 'button' style='float: right' onclick='passContentDelete()' class='btn btn-primary'><i class='glyphicon glyphicon-edit'></i></button> </td></tr>"
+            txt += "<tr><td>" + house.idHome + "</td>" + "<td>" + house.morada + "</td>" + "<td><button type = 'button' style='float: right;' class='btn btn-primary'><i class='glyphicon glyphicon-trash'></i></button><button type = 'button' style='float: right' onclick='passContentDelete()' class='btn btn-primary'><i class='glyphicon glyphicon-edit'></i></button> </td></tr>"
         }
         render.innerHTML = txt;
     }
@@ -57,3 +57,4 @@ function passContentDelete(){
         }
     }
 }
+
