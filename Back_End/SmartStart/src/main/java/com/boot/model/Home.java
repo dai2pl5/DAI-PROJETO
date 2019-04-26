@@ -31,6 +31,8 @@ public class Home {
 	
 	private int ano;
 	
+	private double capitalImovel;
+	
 	@NotBlank
 	@Size(max=2)
 	private String topologia;
@@ -43,11 +45,12 @@ public class Home {
 
 	public Home() {}
 	
-	public Home(String morada, int area, int ano, String topologia, User user) {
+	public Home(String morada, int area, int ano, String topologia, double capitalImovel, User user) {
 	        this.morada = morada;
 	        this.area = area;
 	        this.ano = ano;
 	        this.topologia = topologia;
+	        this.capitalImovel = capitalImovel;
 	        this.user = user;
 	}
 	
@@ -97,6 +100,14 @@ public class Home {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	public double getCapitalImovel() {
+		return capitalImovel;
+	}
+
+	public void setCapitalImovel(double capitalImovel) {
+		this.capitalImovel = capitalImovel;
 	}
 	
 	

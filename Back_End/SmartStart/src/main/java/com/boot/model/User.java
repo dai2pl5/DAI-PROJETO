@@ -11,6 +11,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.util.HashSet;
 import java.util.Set;
+import com.boot.model.Configuration;
 
 @Entity
 @Table(name = "users", uniqueConstraints = {
@@ -67,6 +68,11 @@ public class User extends DateAudit {
             mappedBy = "user") 
     private Set<Package> packages;
     
+    @OneToMany(cascade = CascadeType.ALL,
+    		orphanRemoval = false,
+            mappedBy = "user") 
+    private Set<Configuration> configurations;
+    
     public User() {
 
     }
@@ -78,6 +84,7 @@ public class User extends DateAudit {
         this.password = password;
         this.houses = new HashSet<Home>();
         this.packages = new HashSet<Package>();
+        this.configurations = new HashSet<Configuration>();
     }
 
     public Long getId() {
@@ -134,6 +141,22 @@ public class User extends DateAudit {
 
 	public void setHouses(Set<Home> houses) {
 		this.houses = houses;
+	}
+
+	public Set<Package> getPackages() {
+		return packages;
+	}
+
+	public void setPackages(Set<Package> packages) {
+		this.packages = packages;
+	}
+
+	public Set<Configuration> getConfigurations() {
+		return configurations;
+	}
+
+	public void setConfigurations(Set<Configuration> configurations) {
+		this.configurations = configurations;
 	}
     
 }
