@@ -10,6 +10,9 @@ public class HomeRequest {
 	private int ano;
 	
 	private String topologia;
+	
+	private double capitalImovel;
+	
 
 	public String getMorada() {
 		return morada;
@@ -41,6 +44,14 @@ public class HomeRequest {
 
 	public void setTopologia(String topologia) {
 		this.topologia = topologia;
+	}
+
+	public double getCapitalImovel() {
+		return capitalImovel;
+	}
+
+	public void setCapitalImovel(double capitalImovel) {
+		this.capitalImovel = capitalImovel;
 	}
 	
 }
