@@ -32,6 +32,7 @@ public class UserPrincipal implements UserDetails {
     private String password;
     
     private Set<Role> roles;
+    
 
     private Collection<? extends GrantedAuthority> authorities;
 
@@ -43,6 +44,7 @@ public class UserPrincipal implements UserDetails {
         this.password = password;
         this.authorities = authorities;
         this.roles = roles;
+  
     }
 
 
@@ -91,6 +93,8 @@ public class UserPrincipal implements UserDetails {
     public String getUsername() {
         return username;
     }
+    
+    
 
     @Override
     public String getPassword() {

@@ -9,6 +9,8 @@ import com.boot.repository.UserRepository;
 import com.boot.security.UserPrincipal;
 import com.boot.security.CurrentUser;
 
+import java.util.List;
+import java.util.Set;
 
 import javax.validation.Valid;
 
@@ -87,6 +89,7 @@ public class UserController {
     }
     
     @PutMapping("/user/alterHome/{id}")
+    @PreAuthorize("hasRole('USER')")
     public ResponseEntity<Home> alterHome(@PathVariable(value="id") long id, @RequestBody HomeRequest homeRequest){
     	
     	Home home = homeRepository.findById(id);
@@ -101,11 +104,21 @@ public class UserController {
     	return ResponseEntity.ok().body(home);
     }
     
-	    @DeleteMapping("/user/deleteHome/{id}")
-	    public ResponseEntity<ApiResponse> deleteHome(@PathVariable(value="id") long id){
-	    	Home home = homeRepository.findById(id);
-	    	homeRepository.delete(home);
-	    	return ResponseEntity.ok(new ApiResponse(true, "Home deleted sucessfully"));
-	    }
+    @DeleteMapping("/user/deleteHome/{id}")
+    @PreAuthorize("hasRole('USER')")
+	public ResponseEntity<ApiResponse> deleteHome(@PathVariable(value="id") long id){
+	    Home home = homeRepository.findById(id);
+	    homeRepository.delete(home);
+	    return ResponseEntity.ok(new ApiResponse(true, "Home deleted sucessfully"));
+	}
+    
+    @GetMapping("/user/getHouses")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<Set<Home>> getHouses(@CurrentUser UserPrincipal currentUser){
+    	User user = userRepository.findById(currentUser.getId())
+    			.orElseThrow(() -> new ResourceNotFoundException("User", "id", currentUser.getId()));
+    	Set<Home> homes = user.getHouses();
+    	return ResponseEntity.ok().body(homes);
+    }
     
 }

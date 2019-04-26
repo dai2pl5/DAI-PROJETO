@@ -63,7 +63,7 @@ public class User extends DateAudit {
             mappedBy = "user")    
     private Set<Home> houses;
     
-    @OneToMany(cascade = CascadeType.ALL,
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL,
     		orphanRemoval = false,
             mappedBy = "user") 
     private Set<Package> packages;
