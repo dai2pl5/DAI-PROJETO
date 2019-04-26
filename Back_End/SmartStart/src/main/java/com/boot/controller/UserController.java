@@ -86,4 +86,26 @@ public class UserController {
     	return ResponseEntity.ok().body(new ApiResponse(true, "User added to home successfully"));
     }
     
+    @PutMapping("/user/alterHome/{id}")
+    public ResponseEntity<Home> alterHome(@PathVariable(value="id") long id, @RequestBody HomeRequest homeRequest){
+    	
+    	Home home = homeRepository.findById(id);
+    	home.setAno(homeRequest.getAno());
+    	home.setArea(homeRequest.getArea());
+    	home.setCapitalImovel(homeRequest.getCapitalImovel());
+    	home.setMorada(homeRequest.getMorada());
+    	home.setTopologia(homeRequest.getTopologia());
+    	
+    	homeRepository.save(home);
+    	
+    	return ResponseEntity.ok().body(home);
+    }
+    
+	    @DeleteMapping("/user/deleteHome/{id}")
+	    public ResponseEntity<ApiResponse> deleteHome(@PathVariable(value="id") long id){
+	    	Home home = homeRepository.findById(id);
+	    	homeRepository.delete(home);
+	    	return ResponseEntity.ok(new ApiResponse(true, "Home deleted sucessfully"));
+	    }
+    
 }
