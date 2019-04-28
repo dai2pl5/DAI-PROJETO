@@ -20,20 +20,13 @@ function addHome(){
     body: JSON.stringify(data)
     }).then(function(response){
         if (!response.ok) {
-            console.log(response.status); //=> number 100–599
-            console.log(response.statusText); //=> String
-            console.log(response.headers); //=> Headers
-            console.log(response.url); //=> String
+            alertify.notify('Houve um erro ao adicionar a casa!', 'error', 5, function(){  console.log('dismissed'); });
             if (response.status === 409) {
-            alert("Duplicated Email");
             } else {
             throw Error(response.statusText);
             }
         } else {
-            
-            alert("submitted with success");
-
-            
+            alertify.notify('Casa adicionada com sucesso!', 'success', 5, function(){  console.log('dismissed'); });
             }
     }).then(function (result) {
                 console.log(result);

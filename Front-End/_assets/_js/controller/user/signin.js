@@ -2,7 +2,8 @@ function signin(){
     console.log('signin() foi corrido');
     var usernameOrEmail = document.getElementById('emailLogin').value
     var password = document.getElementById('passwordLogin').value
-    
+    var renderIfError = document.getElementById("renderSwal").innerHTML;
+    var render = document.getElementById("renderSwal");
     var data = {
                 usernameOrEmail:usernameOrEmail,
                 password:password
@@ -15,11 +16,9 @@ function signin(){
         body: JSON.stringify(data)
         }).then(function(response){
             if (!response.ok) {
-               alert('Deu merda');
+                render.innerHTML = swal("Erro!", "Tente novamente!", "error").then(function(){render.innerHTML = renderIfError});
             } else {
-                alert("submitted with success");
-                redirectUser();
-                console.log(response);
+                render.innerHTML = swal("Logado com sucesso!", "A ser redirecionado!", "success").then(function(){redirectUser()});
         
                 }
         }).then(function (result) {

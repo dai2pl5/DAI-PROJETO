@@ -8,7 +8,7 @@ function logout(){
         method: 'GET',
         });
         const rep = await response.json();
-        window.location.href = "../../../Front-End/lndex.html";
+        window.location.href = "../Front-End/index.html";
         
     }
         //chama a função fetchAsync()
