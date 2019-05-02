@@ -113,9 +113,10 @@ function updateHome(){
     body: JSON.stringify(data)
     }).then(function(response){
         if (!response.ok) {
-            swal("Erro!", "Tente novamente!", "error")
+            swal("Erro!", "Tente novamente!", "error");
         } else {
-            swal("Alterado com sucesso!", "", "success")
+            swal("Alterado com sucesso!", "", "success");
+            refresh();
             
             }
     }).then(function (result) {
