@@ -38,13 +38,20 @@ function deleteHome(id){
                 headers: {'Content-Type': 'application/json'},
                 method: 'DELETE',
                 credentials : "include"
-            }).then(response =>
-                response.json().then(json => {
-                refresh();
-                return json;
-                
-    }));
-}
+            }).then(function(response){
+                if (!response.ok) {
+                    alertify.notify('Houve um erro ao eliminar a casa!', 'error', 5, function(){  console.log('dismissed'); });
+                } else {
+                    alertify.notify('Casa eliminada com sucesso!', 'success', 5, function(){  console.log('dismissed'); });
+                    refresh();
+                    }
+            }).then(function (result) {
+                        console.log(result);
+                    }).catch(function (err) {
+                            console.log(err);
+                    });
+                }
+
     
 function passContentDelete(){
     var id;
@@ -108,7 +115,7 @@ function updateHome(){
         if (!response.ok) {
             swal("Erro!", "Tente novamente!", "error")
         } else {
-            swal("Logado com sucesso!", "A ser redirecionado!", "success")
+            swal("Alterado com sucesso!", "", "success")
             
             }
     }).then(function (result) {
