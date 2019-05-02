@@ -64,6 +64,57 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
     <!-- Start Header Top Area -->
+    <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Alterar dados</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <i class="fas fa-user prefix grey-text"></i>
+          <input type="text" id="ano" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="ano">Ano</label>
+        </div>
+        <div class="md-form mb-5">
+          <i class="fas fa-envelope prefix grey-text"></i>
+          <input type="email" id="areaHouse" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="areaHouse">Area</label>
+        </div>
+
+        <div class="md-form mb-4">
+          <i class="fas fa-lock prefix grey-text"></i>
+          <input type="text" id="capitalImovel" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="capitalImovel">Capital Imovel</label>
+        </div>
+        <div class="md-form mb-4">
+          <i class="fas fa-lock prefix grey-text"></i>
+          <input type="text" id="morada" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="morada">Morada</label>
+        </div>
+        <div class="md-form mb-4">
+          <i class="fas fa-lock prefix grey-text"></i>
+          <input type="text" id="topologia" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="topologia">Topologia</label>
+        </div>
+        <div class="md-form mb-4" style="display: none">
+          <i class="fas fa-lock prefix grey-text"></i>
+          <input type="text" id="idHome" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="idHome">idHouse</label>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-deep-orange" onclick="updateHome()">Alterar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
     <div class="header-top-area">
         <div class="container">
             <div class="row">
@@ -160,7 +211,11 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Habitação</th>
-                                            <th></th>
+                                            <th style="text-align: right">Ações</th>
+                                            <th style='display:none;'>Ano</th>
+                                            <th style='display:none;'>Area</th>
+                                            <th style='display:none;'>Capital Imovel</th>
+                                            <th style='display:none;'>Topologia</th>
                                         </tr>
                                     </thead>
                                     <tbody id="housesTableBody">
@@ -264,6 +319,7 @@
 
     <script src="js/home/home.js"></script>
     <script src="js/user/logout.js"></script>
+    <script src="node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
 </body>
 
 </html>
