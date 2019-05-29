@@ -80,8 +80,7 @@ public class UserController {
     	String username = currentUser.getUsername();
     	User user = userRepository.findByUsername(username)
     			.orElseThrow(() -> new ResourceNotFoundException("User", "username", username));
-    	Home home = new Home(homeRequest.getMorada(),homeRequest.getArea(),
-    			homeRequest.getAno(), homeRequest.getTopologia(), homeRequest.getCapitalImovel(), user);
+    	Home home = new Home(homeRequest.getMorada(), homeRequest.getArea(), homeRequest.getAno(), homeRequest.getCapitalImovel(), homeRequest.isOwner(), homeRequest.getSolarPanels(), homeRequest.isPrevention(), homeRequest.getTopologia(), user);
     	
     	homeRepository.save(home);
     	

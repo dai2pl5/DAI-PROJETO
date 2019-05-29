@@ -29,9 +29,15 @@ public class Home {
 	
 	private int area;
 	
-	private int ano;
+	private String ano;
 	
 	private double capitalImovel;
+	
+	private boolean owner;
+	
+	private double solarPanels;
+	
+	private boolean prevention;
 	
 	@NotBlank
 	@Size(max=2)
@@ -45,15 +51,23 @@ public class Home {
 
 	public Home() {}
 	
-	public Home(String morada, int area, int ano, String topologia, double capitalImovel, User user) {
-	        this.morada = morada;
-	        this.area = area;
-	        this.ano = ano;
-	        this.topologia = topologia;
-	        this.capitalImovel = capitalImovel;
-	        this.user = user;
+	public Home(String morada, int area, String ano, double capitalImovel,
+			boolean owner, double solarPanels, boolean prevention,String topologia,
+			User user) {
+
+		this.morada = morada;
+		this.area = area;
+		this.ano = ano;
+		this.capitalImovel = capitalImovel;
+		this.owner = owner;
+		this.solarPanels = solarPanels;
+		this.prevention = prevention;
+		this.topologia = topologia;
+		this.user = user;
 	}
-	
+
+
+
 	public long getIdHome() {
 		return idHome;
 	}
@@ -70,7 +84,7 @@ public class Home {
 		this.morada = morada;
 	}
 
-	public double getArea() {
+	public int getArea() {
 		return area;
 	}
 
@@ -78,11 +92,11 @@ public class Home {
 		this.area = area;
 	}
 
-	public int getAno() {
+	public String getAno() {
 		return ano;
 	}
 
-	public void setAno(int ano) {
+	public void setAno(String ano) {
 		this.ano = ano;
 	}
 
@@ -109,6 +123,32 @@ public class Home {
 	public void setCapitalImovel(double capitalImovel) {
 		this.capitalImovel = capitalImovel;
 	}
+
+	public boolean isOwner() {
+		return owner;
+	}
+
+	public void setOwner(boolean owner) {
+		this.owner = owner;
+	}
+
+	public double getSolarPanels() {
+		return solarPanels;
+	}
+
+	public void setSolarPanels(double solarPanels) {
+		this.solarPanels = solarPanels;
+	}
+
+	public boolean isPrevention() {
+		return prevention;
+	}
+
+	public void setPrevention(boolean prevention) {
+		this.prevention = prevention;
+	}
+	
+	
 	
 	
 }
