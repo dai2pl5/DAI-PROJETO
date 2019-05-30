@@ -64,7 +64,6 @@ public class SimulatorController {
 		String[] names = simulatorRequest.getNames();
 		List<Package> packagesSimulation = simulatorService.returnPackages(packages, names); 
 		Double[] finalPrices = simulatorService.finalPrice2(packagesSimulation, homeRequest);
-		System.out.println(packagesSimulation + " " + homeRequest);
 		FinalSimulatorRequest finalSimulatorRequest = new FinalSimulatorRequest();
 		finalSimulatorRequest.setPackages(packagesSimulation);
 		finalSimulatorRequest.setFinalPrices(finalPrices);

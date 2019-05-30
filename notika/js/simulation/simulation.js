@@ -1,5 +1,43 @@
+function showData(response){
+
+    var txt = "";
+    var index = 0;
+    console.log(response);
+    const packages = response.packages;
+    const prices = response.finalPrices;
+    txt += "<div class= 'container'><div class='row'>";
+    console.log(packages[0].description);
+    for(const package of packages){
+        txt += "<div class='col-md-3 col-sm-6'><div class='serviceBox'><div class='service-icon'><i class='fa fa-globe'></i></div>";
+        txt += "<h3 class='title'>" + package.description + "</h3><p class='description'>Preço base: " + package.basePrice + "</p>";
+        var coverages = package.coverages;
+        txt += "<p class='description'>Coberturas: "
+        for(const coverage of coverages){
+            txt += "&nbsp" + checkCoverage(coverage.name) + "&nbsp";
+        }
+        txt += "</p><p class = 'description'>O seu preço: "+ prices[index] + "</p></div></div>"
+        txt += "<a href='something' class='button2'>Comprar</a>"
+        index += 1;
+    }
+
+    txt += "</div></div><p><br><br></p>"
+    var simulationForm = document.getElementById("simulationForm");
+    simulationForm.innerHTML = txt;
+}
+
 function simular(){
-    var names = document.getElementById("coberturas").value;
+
+    var names = [];
+    var select = document.getElementById("coberturas");
+    var options = select && select.options;
+    var opt;
+    for (var i=0, iLen=options.length; i<iLen; i++) {
+      opt = options[i];
+  
+      if (opt.selected) {
+        names.push(opt.value || opt.text);
+      }
+    }
     var morada = document.getElementById("morada").value;
     var ano = document.getElementById("ano").value;
     var area = document.getElementById("area").value;
@@ -9,9 +47,8 @@ function simular(){
     var solarPanels = document.getElementById("solarPanel").value;
     var topologia = document.getElementById("topologia").value;
 
-    console.log(names);
-
     var data = {
+        names : names,
         morada : morada,
         area : area,
         ano : ano,
@@ -22,13 +59,13 @@ function simular(){
         topologia : topologia
     }
 
-    console.log(data);
     fetch('http://localhost:8080/simulator/execute/noDeal',{
-    headers: {'Content-Type': 'application/json'},
-    method: 'POST',
-    credentials: 'include',
-    body: JSON.stringify(data)
-    }).then(function(response){
+        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+        method: 'POST',
+        credentials: 'include',
+        body: JSON.stringify(data)
+    })
+    .then(function (response) {
         if (!response.ok) {
             alertify.notify('Houve um erro na simulação!', 'error', 5, function(){  console.log('dismissed'); });
             if (response.status === 409) {
@@ -37,10 +74,31 @@ function simular(){
             }
         } else {
             alertify.notify('Simulação feita com sucesso!', 'success', 5, function(){  console.log('dismissed'); });
+            
+            
             }
-    }).then(function (result) {
-                console.log(result);
-            }).catch(function (err) {
-                console.log(err);
-            });    
+        return response.json();
+    })
+    .then(function (result) {
+        console.log(result);
+        showData(result);
+        
+    })
+    .catch (function (error) {
+        console.log('Request failed', error);
+    });
+}
+
+function checkCoverage(name){
+    var check = "";
+    if(name === "flood"){
+        check += "<i class='fas fa-water'></i>&nbspInundação";
+        return check;
+    }else if(name === "natural_causes"){
+        check += "<i class='fas fa-globe-europe'></i>&nbspCausas naturais";
+        return check; 
+    }else if(name === "fire"){
+        check += "<i class='fas fa-fire'></i>&nbspIncêndios";
+        return check;
+    }
 }

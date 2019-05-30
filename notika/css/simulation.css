@@ -1,0 +1,90 @@
+.serviceBox{
+  padding: 35px 20px 25px;
+  border: 1px solid #f4f4f4;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease 0s;
+}
+.serviceBox:hover{ border-color: #727cb6 ; }
+.serviceBox:before{
+  content: "";
+  border-top: 20px solid #f7f7f7;
+  border-left: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  transition: all 0.3s ease 0s;
+}
+.serviceBox:hover:before{ border-top-color: #727cb6 ; }
+.serviceBox .service-icon{
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  font-size: 30px;
+  color: #064774;
+  margin-bottom: 35px;
+  z-index: 1;
+  position: relative;
+  transition:all 0.3s ease 0s;
+}
+.serviceBox:hover .service-icon{ color: #fff; }
+.serviceBox .service-icon:before{
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  border: 1px solid #f4f4f4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform: rotate(45deg);
+  transition: all 0.3s ease 0s;
+}
+.serviceBox:hover .service-icon:before{
+  border-color: #727cb6 ;
+  background: #727cb6 ;
+}
+.serviceBox .title{
+  font-size: 20px;
+  font-weight: 700;
+  color: #064774;
+  text-transform: capitalize;
+  margin: 0 0 15px 0;
+}
+.serviceBox .description{
+  font-size: 15px;
+  color: #999;
+  line-height: 27px;
+  margin: 0;
+}
+@media only screen and (max-width:990px){
+  .serviceBox{ margin-bottom: 30px; }
+}
+
+
+a.button3{
+   display : inline-block;
+   padding : 0.3em 1.2em;
+   margin:0 0.3em 0.3em 0;
+   border-radius:2em;
+   box-sizing: border-box;
+   text-decoration:none;
+   font-family:'Roboto',sans-serif;
+   font-weight:300;
+   color:#FFFFFF;
+   background-color:#4eb5f1;
+   text-align:center;
+   transition: all 0.2s;
+  }
+  a.button3:hover{
+   background-color:#4095c6;
+  }
+  @media all and (max-width:30em){
+   a.button3{
+    display:block;
+    margin:0.2em auto;
+   }
+  }

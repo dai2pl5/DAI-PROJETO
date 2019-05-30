@@ -78,6 +78,12 @@
     <!-- modernizr JS
             ============================================ -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <link rel="stylesheet" href="node_modules/alertifyjs/build/css/alertify.min.css" />
+    <!-- include a theme -->
+    <link rel="stylesheet" href="node_modules/alertifyjs/build/css/themes/default.min.css" />
+    <!-- simulation css -->
+    <link rel="stylesheet" href="css/simulation.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 </head>
 
 <body>
@@ -178,7 +184,7 @@
                                     </div>
                                     <div class="breadcomb-ctn">
                                         <h2>Simulação</h2>
-                                        <p>Insira em baixo toda <span class="bread-ntd">a informação por favor.</span></p>
+                                        <p id= "info">Insira em baixo toda a informação por favor.</p>
                                     </div>
                                 </div>
                             </div>
@@ -190,102 +196,120 @@
     </div>
     <!-- Breadcomb area End-->
     <!-- Form Examples area start-->
-    <div class="form-example-area">
-        <div class="container">
+    <div class="form-example-area" ></div>
+        <div class="container" id = "simulationForm">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="form-example-wrap">
                         <div class="cmp-tb-hd">
                             <p>As ofertas que irão ser fornecidas serão baseadas apenas no que irá ser inserido no formulário, irá ser um valor base do seu prémio.</p>
                         </div>
-                        <div class="form-example-int">
-                            <div class="form-group">
-                                <label>Nome</label>
-                                <div class="nk-int-st">
-                                    <input type="text" class="form-control input-sm" placeholder="Introduza o nome">
-                                </div>
-                            </div>
-                        </div>
                         <div class="form-example-int mg-t-15">
                             <div class="form-group">
                                 <label>Localização</label>
                                 <div class="nk-int-st">
-                                    <input type="text" class="form-control input-sm" placeholder="Introduza o localização">
+                                    <input type="text" class="form-control input-sm" placeholder="Introduza o localização" id = "morada">
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-example-int mg-t-15">
-                            <div class="form-group">
-                                <label>E-mail</label>
-                                <div class="nk-int-st">
-                                    <input type="text" class="form-control input-sm" placeholder="Introduza o E-mail">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-example-int mg-t-15">
-                            <div class="nk-int-mk sl-dp-mn">
-                                <label>Tipo de Habitação</label>
-                            </div>
-                            <div class="bootstrap-select fm-cmp-mg">
-                                <select class="selectpicker">
-                                    <option value="Casa isolada">Casa isolada</option>
-                                    <option value="Casas geminadas">Casas geminadas</option>
-                                    <option value="Casas em banda">Casas em banda</option>
-                                    <option value="Condomínio fechado">Condomínio fechado</option>
-                                    <option value="Propriedade horizontal">Propriedade horizontal</option>
-                                    <option value="Apartamento">Apartamento</option>
-                                </select>
-                            </div>
-                        </div>
+                        </div>                    
                         <div class="form-example-int mg-t-15">
                             <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
                                 <label>Coberturas</label>
                             </div>
                             <div class="chosen-select-act fm-cmp-mg">
-                                <select class="chosen" multiple data-placeholder="Escolhe as coberturas...">
-                                    <option value="Recheio">Recheio</option>
-                                    <option value="Paredes">Paredes</option>
-                                    <option value="Furto">Furto</option>
-                                    <option value="Incêndio">Incêndio</option>
-                                    <option value="Sismo">Sismo</option>
-                                    <option value="Tsunami">Tsunami</option>
+                                <select id = "coberturas" class="chosen" multiple data-placeholder="Escolhe as coberturas...">
+                                    <option value = "flood">Inundação</option>
+                                    <option value = "fire">Incêndios</option>
+                                    <option value = "natural_causes">Causas naturais</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-example-int mg-t-15">
-                            <div class="form-group nk-datapk-ctm form-elet-mg" id="data_2">
-                                <label>Data de Nascimento</label>
-                                <div class="input-group date nk-int-st">
-                                    <span class="input-group-addon"></span>
-                                    <input type="text" class="form-control" value="03/10/2019">
+                            <div class="nk-int-mk sl-dp-mn">
+                                <label>Ano de construção</label>
+                            </div>
+                            <div class="bootstrap-select fm-cmp-mg">
+                                <select id = "ano" class="selectpicker" >
+                                    <option value="Entre 1930 e 1960">Entre 1930 e 1960</option>
+                                    <option value="Entre 1960 e 1986">Entre 1960 e 1986</option>
+                                    <option value="Entre 1986 e 2000">Entre 1986 e 2000</option>
+                                    <option value="Depois de 2000">Depois de 2000</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-example-int mg-t-15">
+                            <div class="form-group">
+                                <label>Area do Imovel</label>
+                                <div class="nk-int-st">
+                                    <input type="text" class="form-control input-sm" placeholder="Introduza a area do imovel" id = "area">
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="form-example-int mg-t-15">
+                            <div class="form-group">
+                                <label>Capital Imovel</label>
+                                <div class="nk-int-st">
+                                    <input type="text" class="form-control input-sm" placeholder="Introduza o capital da sua casa" id = "capitalImovel">
                                 </div>
                             </div>
                         </div>
                         <div class="form-example-int mg-t-15">
-                            <div class="form-group nk-datapk-ctm form-elet-mg" id="data_2">
-                                <label>Data de compra da habitação</label>
-                                <div class="input-group date nk-int-st">
-                                    <span class="input-group-addon"></span>
-                                    <input type="text" class="form-control" value="03/10/2019">
+                                <div class="form-group">
+                                    <label>Capital de sistemas de microgeração de energia</label>
+                                    <div class="nk-int-st">
+                                        <input type="text" class="form-control input-sm" placeholder="Introduza o capital dos sistemas de microgeração de energia" id  = "solarPanel">
+                                    </div>
                                 </div>
+                        </div>
+                        <div class="form-example-int mg-t-15">
+                            <div class="nk-int-mk sl-dp-mn">
+                                <label>Topologia</label>
+                            </div>
+                            <div class="bootstrap-select fm-cmp-mg">
+                                <select id = "topologia" class="selectpicker" >
+                                    <option value="T1">T1</option>
+                                    <option value="T2">T2</option>
+                                    <option value="T3">T3</option>
+                                    <option value="T4">T4</option>
+                                    <option value="T5">T5</option>   
+                                </select>
                             </div>
                         </div>
                         <div class="form-example-int mg-t-15">
-                            <div class="themesaller-forms mg-t-30">
-                                <div class="spacer-b16a">
-                                    <label for="budget">Prémio</label>
-                                    <input type="text" id="budget" class="slider-input">
+                                <div class="nk-int-mk sl-dp-mn">
+                                    <label>Qual a qualidade em que se segura?</label>
                                 </div>
-                                <div class="slider-wrapper purple-slider">
-                                    <div id="slider8"></div>
+                                <div class="bootstrap-select fm-cmp-mg">
+                                    <select class="selectpicker" id = "owner">
+                                        <option value=true>Proprietario</option>
+                                        <option value=false>Inquilino</option>  
+                                    </select>
                                 </div>
-                            </div>
                         </div>
+
                         <div class="form-example-int mg-t-15">
-                            <button class="btn btn-primary notika-btn-primary">Simular</button>
+                                    <div class="nk-int-mk sl-dp-mn">
+                                        <label>Tem meios de prevenção?
+                                        </label>
+                                    </div>
+                                <div class="bootstrap-select fm-cmp-mg">
+                                    <select class="selectpicker" id = "prevention">
+                                        <option value=true>Sim</option>
+                                        <option value=false>Não</option>  
+                                    </select>
+                                </div>
                         </div>
+                            
+                        <div class="form-example-int mg-t-15">
+                            
+                            <button class="btn btn-primary notika-btn-primary" onclick="simular()">Simular</button>
+                            
+                        </div>
+                        
                     </div>
+                    <p><br><br></p>
                 </div>
+                
             </div>
         </div>
     </div>
@@ -388,7 +412,10 @@
     <script src="js/main.js"></script>
     <!-- tawk chat JS
 		============================================ -->
-    <script src="js/tawk-chat.js"></script>
+    <script src="js/simulation/simulation.js"></script>
+    <script src="node_modules/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="node_modules/alertifyjs/build/alertify.min.js"></script>
+    
 </body>
 
 </html>
