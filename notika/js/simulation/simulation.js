@@ -9,19 +9,20 @@ function showData(response){
     console.log(packages[0].description);
     for(const package of packages){
         txt += "<div class='col-md-3 col-sm-6'><div class='serviceBox'><div class='service-icon'><i class='fa fa-globe'></i></div>";
-        txt += "<h3 class='title'>" + package.description + "</h3><p class='description'>Preço base: " + package.basePrice + "</p>";
+        txt += "<h3 class='title'>" + package.description + "</h3><p class='description'>Preço base: " + package.basePrice + "€</p>";
         var coverages = package.coverages;
         txt += "<p class='description'>Coberturas: "
         for(const coverage of coverages){
             txt += "&nbsp" + checkCoverage(coverage.name) + "&nbsp";
         }
-        txt += "</p><p class = 'description'>O seu preço: "+ prices[index] + "</p></div></div>"
-        txt += "<a href='something' class='button2'>Comprar</a>"
+        txt += "</p><p class = 'description'>O seu preço: "+ Math.round(prices[index] * 100)/100 + "€</p>"
+        txt += "<button class='btnSimulation btn1Comprar'>Comprar</button></div></div>"
         index += 1;
     }
 
     txt += "</div></div><p><br><br></p>"
     var simulationForm = document.getElementById("simulationForm");
+    document.getElementById("info").innerHTML = "Simulação feita com sucesso! Escolha dos pacotes!";
     simulationForm.innerHTML = txt;
 }
 
