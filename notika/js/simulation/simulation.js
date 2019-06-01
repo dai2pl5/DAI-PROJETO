@@ -1,4 +1,4 @@
-function showData(response){
+function showData(response, afterSim){
 
     var txt = "";
     var index = 0;
@@ -6,7 +6,6 @@ function showData(response){
     const packages = response.packages;
     const prices = response.finalPrices;
     txt += "<div class= 'container'><div class='row'>";
-    console.log(packages[0].description);
     for(const package of packages){
         txt += "<div class='col-md-3 col-sm-6'><div class='serviceBox'><div class='service-icon'><i class='fa fa-globe'></i></div>";
         txt += "<h3 class='title'>" + package.description + "</h3><p class='description'>Preço base: " + package.basePrice + "€</p>";
@@ -15,8 +14,19 @@ function showData(response){
         for(const coverage of coverages){
             txt += "&nbsp" + checkCoverage(coverage.name) + "&nbsp";
         }
-        txt += "</p><p class = 'description'>O seu preço: "+ Math.round(prices[index] * 100)/100 + "€</p>"
-        txt += "<button class='btnSimulation btn1Comprar'>Comprar</button></div></div>"
+        txt += "</p><p class = 'description'>O seu preço: "+ roundNumber(prices[index]) + "€</p>";
+        txt += "<form onsubmit = 'confirmation(event,this)'><input type = 'hidden' name = 'formMorada' style = 'display : none;' value= '  " + afterSim.morada + "'></input>";
+        txt += "<input type = 'hidden' name = 'formAno' style = 'display : none;' value = ' " + afterSim.ano + "'></input>";
+        txt += "<input type = 'hidden' name = 'formArea' style = 'display : none;' value =  '" + afterSim.area + "'></input>";
+        txt += "<input type = 'hidden' name = 'formCapitalImovel' style = 'display : none;' value =  '" + afterSim.capitalImovel + "'></input>";
+        txt += "<input type = 'hidden' name = 'formOwner' style = 'display : none;' value =  '" + afterSim.owner + "'></input>";
+        txt += "<input type = 'hidden' name = 'formPrevention' style = 'display : none;' value = '" + afterSim.prevention + "'></input>";
+        txt += "<input type = 'hidden' name = 'formSolarPanels' style = 'display : none;' value =  '" + afterSim.solarPanels + "'></input>";
+        txt += "<input type = 'hidden' name = 'formTopologia' style = 'display : none;' value =  '" + afterSim.topologia + "'></input>";
+        txt += "<input type = 'hidden' name = 'formPackage' style = 'display : none;' value =  '" + package.idPackage + "'></input>";
+        txt += "<input type = 'hidden' name = 'formPrice' style = 'display : none;' value =  '" + roundNumber(prices[index]) + "'></input>";
+        txt += "<button class='btnSimulation btn1Comprar'>Comprar</button>";
+        txt += "</form></div></div>";
         index += 1;
     }
 
@@ -47,7 +57,9 @@ function simular(){
     var prevention = document.getElementById("prevention").value;
     var solarPanels = document.getElementById("solarPanel").value;
     var topologia = document.getElementById("topologia").value;
-
+    var afterSim = {
+        morada,ano,area,capitalImovel,owner, prevention, solarPanels, topologia
+    }
     var data = {
         names : names,
         morada : morada,
@@ -82,7 +94,7 @@ function simular(){
     })
     .then(function (result) {
         console.log(result);
-        showData(result);
+        showData(result,afterSim);
         
     })
     .catch (function (error) {
@@ -102,4 +114,73 @@ function checkCoverage(name){
         check += "<i class='fas fa-fire'></i>&nbspIncêndios";
         return check;
     }
+}
+
+function confirmation(e,form){
+    e.preventDefault();
+    var data = {
+        morada : form.formMorada.value,
+        area : form.formArea.value,
+        ano : form.formAno.value,
+        capitalImovel : form.formCapitalImovel.value,
+        owner : form.formOwner.value,
+        solarPanels : form.formSolarPanels.value,
+        prevention : form.formPrevention.value,
+        topologia : form.formTopologia.value,
+        price : form.formPrice.value,
+        idPackage : form.formPackage.value    
+    }
+
+    swal({
+        title: "Atenção!",
+        text: "Tem a certeza que quer este pacote?!",
+        icon: "warning",
+        buttons: ["Cancelar", true],
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+            buyInsurance(data);
+        }
+      });
+      
+  
+    
+}
+
+function roundNumber(num){
+
+    var finalNumber = Math.round(num * 100)/100;
+    return finalNumber;
+
+}
+
+function buyInsurance(data){
+    
+    fetch('http://localhost:8080/user/insurance/buyInsurance',{
+        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+        method: 'POST',
+        credentials: 'include',
+        body: JSON.stringify(data)
+        })
+        .then(function (response) {
+            if (!response.ok) {
+                alertify.notify('Houve um erro na compra do seu seguro...', 'error', 5, function(){  console.log('dismissed'); });
+                if (response.status === 409) {
+                } else {
+                throw Error(response.statusText);
+                }
+            } else {
+                swal("Sucesso! Aguarde a confirmação da seguradora.", {
+                    icon: "success",
+                  });
+            }
+            return response.json();
+        })
+        .then(function (result) {
+        console.log(result);
+        })
+        .catch (function (error) {
+            console.log('Request failed', error);
+        });
 }
