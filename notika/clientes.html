@@ -54,9 +54,16 @@
     <!-- responsive CSS
 		============================================ -->
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
     <!-- modernizr JS
 		============================================ -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
+    <link rel="stylesheet" href="node_modules/alertifyjs/build/css/alertify.min.css" />
+    <!-- include a theme -->
+    <link rel="stylesheet" href="node_modules/alertifyjs/build/css/themes/default.min.css" />
+
+
 </head>
 
 <body>
@@ -160,52 +167,19 @@
                         <div class="curved-inner-pro">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <h2>Clientes</h2>
-                                <table class="table table-sc-ex">
+                                <table class="table table-sc-ex" id = "clientTable">
                                     <thead>
                                         <tr>
                                             
-                                            <th>Nome</th>
-                                            <th>Tipo de Seguro</th>
-                                            <th></th>
+                                            <th>Nome do cliente</th>
+                                            <th>Seguro</th>
+                                            <th>Estado</th>
+                                            <th>Ações</th>
+                                            <th style = "display:none;">Id</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            
-                                            <td>João</td>
-                                            <td>Recheio</td>
-                                            <td><button style="float: right" class="btn btn-primary"><i class="glyphicon glyphicon-eye-open"></i></button></td>
-                                        </tr>
-                                        <tr>
-                                            
-                                            <td>João</td>
-                                            <td>Paredes</td>
-                                            <td><button style="float: right" class="btn btn-primary"><i class="glyphicon glyphicon-eye-open" ></i></button></td>
-                                        </tr>
-                                        <tr>
-                                            
-                                            <td>João</td>
-                                            <td>Incêndio</td>
-                                            <td><button style="float: right" class="btn btn-primary"><i class="glyphicon glyphicon-eye-open"></i></button></td>
-                                        </tr>
-                                        <tr>
-                                            
-                                            <td>João</td>
-                                            <td>Terramoto</td>
-                                            <td><button style="float: right" class="btn btn-primary"><i class="glyphicon glyphicon-eye-open"></i></button></td>
-                                        </tr>
-                                        <tr>
-                                            
-                                            <td>João</td>
-                                            <td>Inundação</td>
-                                            <td><button style="float: right" class="btn btn-primary"><i class="glyphicon glyphicon-eye-open"></i></button></td>
-                                        </tr>
-                                        <tr>
-                                            
-                                            <td>João</td>
-                                            <td>Morte do Segurado</td>
-                                            <td><button style="float: right" class="btn btn-primary"><i class="glyphicon glyphicon-eye-open"></i></button></td>
-                                        </tr>
+                                    <tbody id = "clientTableBody">
+                                      
                                     </tbody>
                                 </table>
                             </div>
@@ -294,6 +268,9 @@
     <!-- tawk chat JS
 		============================================ -->
     <script src="js/tawk-chat.js"></script>
+    <script src ="js/insurer/manageInsurances.js"></script>
+    <script src="node_modules/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="node_modules/alertifyjs/build/alertify.min.js"></script>
 </body>
 
 </html>

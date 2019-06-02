@@ -34,7 +34,6 @@ public class UserController {
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @GetMapping("/user/me")
-    @PreAuthorize("hasRole('USER')")
     public ResponseEntity<User> getCurrentUser(@CurrentUser UserPrincipal currentUser) {
     	User user = userRepository.findById(currentUser.getId())
     			.orElseThrow(() -> new ResourceNotFoundException("User", "id", currentUser.getId()));
