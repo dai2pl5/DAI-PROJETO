@@ -38,7 +38,7 @@ function getClients() {
             txt += "<p>Topologia : " + house.topologia + "</p>";
             txt += "</div></div></div></td>"; 
             txt += "<td style = 'display:none'>" + insurances[index].idInsurance + "</td></tr>"
-            
+            console.log("teste");
             
 
             index += 1;
