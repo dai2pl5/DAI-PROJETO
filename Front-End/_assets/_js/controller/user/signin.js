@@ -10,22 +10,27 @@ function signin(){
         };
         console.log(data);
         fetch('http://localhost:8080/api/auth/signin',{
-        headers: {'Content-Type': 'application/json'},
-        credentials: "include",
+        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
         method: 'POST',
+        credentials: 'include',
         body: JSON.stringify(data)
-        }).then(function(response){
-            if (!response.ok) {
-                render.innerHTML = swal("Erro!", "Tente novamente!", "error").then(function(){render.innerHTML = renderIfError});
-            } else {
-                render.innerHTML = swal("Logado com sucesso!", "A ser redirecionado!", "success").then(function(){redirectUser()});
+    })
+    .then(function (response) {
+        if (!response.ok) {
+            render.innerHTML = swal("Erro!", "Tente novamente!", "error").then(function(){render.innerHTML = renderIfError});
+        } else {
+            //render.innerHTML = swal("Logado com sucesso!", "A ser redirecionado!", "success").then(function(){redirectUser()});
+        }
+        return response.json();
+    })
+    .then(function (result) {
+        console.log(result);
+        setCookie('token', result.acessToken, 3, render);
         
-                }
-        }).then(function (result) {
-            console.log(result);
-        }).catch(function (err) {
-            console.log(err);
-        });
+    })
+    .catch (function (error) {
+        console.log('Request failed', error);
+    });
 }
 
 function redirectUser(){
@@ -54,4 +59,16 @@ function redirectUser(){
         });
 
     
+}
+
+
+function setCookie(name,value,days,render) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+    render.innerHTML = swal("Logado com sucesso!", "A ser redirecionado!", "success").then(function(){redirectUser()});
 }
