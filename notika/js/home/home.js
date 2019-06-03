@@ -32,6 +32,7 @@ function refresh() {
 
 function deleteHome(id){
     
+   
     console.log('delete a correr');
             console.log(id);
     fetch('http://localhost:8080/api/user/deleteHome/' + id,{
@@ -61,7 +62,18 @@ function passContentDelete(){
         table.rows[i].onclick = function(){
             id = this.cells[0].innerHTML;
             console.log(id);
-            deleteHome(id);
+            swal({
+                title: "Atenção!",
+                text: "Tem a certeza que quer eliminar esta casa?!",
+                icon: "warning",
+                buttons: ["Cancelar", true],
+                dangerMode: true,
+                })
+                .then((willDelete) => {
+                if (willDelete) {
+                    deleteHome(id);
+                    }
+                    });
             
         }
     }
@@ -89,6 +101,21 @@ function passContentUpdate(){
         }
     }
     
+}
+
+function confirmUpdate(){
+    swal({
+        title: "Atenção!",
+        text: "Tem a certeza que quer alterar?!",
+        icon: "warning",
+        buttons: ["Cancelar", true],
+        dangerMode: true,
+        })
+        .then((willDelete) => {
+        if (willDelete) {
+            	updateHome();
+            }
+            });
 }
 function updateHome(){
     console.log('update() foi corrido');

@@ -61,6 +61,11 @@
     <link rel="stylesheet" href="node_modules/alertifyjs/build/css/alertify.min.css" />
     <!-- include a theme -->
     <link rel="stylesheet" href="node_modules/alertifyjs/build/css/themes/default.min.css" />
+
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+
+    
 </head>
 
 <body>
@@ -213,21 +218,17 @@
                         <div class="curved-inner-pro">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <h2>Os seus seguros</h2>
-                                <table class="table table-sc-ex"> 
+                                <table class="table table-sc-ex" id = 'insuranceTable'> 
                                     <thead>
                                         <tr>
                                             <th style = "display: none">ID</th>
                                             <th>Habitação</th>
                                             <th>Seguro</th>
                                             <th>Estado</th>
-                                            <th style="text-align: right">Ações</th>
-                                            <th style='display:none;'>Ano</th>
-                                            <th style='display:none;'>Area</th>
-                                            <th style='display:none;'>Capital Imovel</th>
-                                            <th style='display:none;'>Topologia</th>
+                                            <th style="text-align: middle">Ações</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="userSeguros">
+                                    <tbody id="insuranceTableBody">
                                         
                                         
                                     </tbody>
@@ -316,14 +317,13 @@
     <!-- main JS
 		============================================ -->
     <script src="js/main.js"></script>
-    <!-- tawk chat JS
-		============================================ -->
-    <script src="js/tawk-chat.js"></script>
 
-    <script src="js/home/home.js"></script>
+
     <script src="js/user/logout.js"></script>
     <script src="node_modules/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="node_modules/alertifyjs/build/alertify.min.js"></script>
+    <script src="node_modules/alertifyjs/build/alertify.min.js"></script>~
+    <script src='js/user/insurance.js'></script>
+
 </body>
 
 </html>
