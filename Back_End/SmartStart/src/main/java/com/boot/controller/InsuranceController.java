@@ -83,8 +83,35 @@ public class InsuranceController {
 		InsurancesAndInsurerPayload insuranceAndInsurer = new InsurancesAndInsurerPayload(userInsurances, insurerNames);
 		
 		return ResponseEntity.ok().body(insuranceAndInsurer);
-		
-		
 	}
+		@GetMapping("/getActiveInsurances")
+		@PreAuthorize("hasRole('USER')")
+		public ResponseEntity<InsurancesAndInsurerPayload> getActiveInsurances(@CurrentUser UserPrincipal currentUser){
+			
+			String username = currentUser.getUsername();
+			User user = userRepository.findByUsername(username)
+	    			.orElseThrow(() -> new ResourceNotFoundException("User", "username", username));
+			
+			List<Insurance> userInsurances = new ArrayList<Insurance>();
+			List<String> insurerNames = new ArrayList<String>();
+			Set<Home> houses = user.getHouses();
+			User userList;
+			String name;
+			for(Home house : houses) {
+				Insurance insurance = insuranceRepository.findByHome(house);
+				if(insurance != null && insurance.isActive() == true) {
+				userInsurances.add(insurance);
+				userList = insurance.getUser();
+				name = userList.getName();
+				insurerNames.add(name);
+				}
+			}
+			
+			InsurancesAndInsurerPayload insuranceAndInsurer = new InsurancesAndInsurerPayload(userInsurances, insurerNames);
+			
+			return ResponseEntity.ok().body(insuranceAndInsurer);
+			
+		}
+	
 	
 }
