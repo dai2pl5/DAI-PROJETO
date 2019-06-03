@@ -1,4 +1,3 @@
-
 window.onload = function(){
     getActiveInsurances();
 }
@@ -6,16 +5,16 @@ window.onload = function(){
 function getActiveInsurances(){
 
     async function fetchAsync() {
-        const response = await fetch('http://localhost:8080/user/insurance/getActiveInsurances',{
+        const response = await fetch('http://localhost:8080/api/insurer/getActiveInsurances',{
         headers: {'Content-Type': 'application/json'},
         credentials: "include",
         method: 'GET',
         });
         const data = await response.json();
         const insurances = data.insurances;
-        const insurerNames = data.insurerNames;
+        const clients = data.clients;
         console.log(data);
-        showData(insurances, insurerNames);
+        showData(insurances, clients);
 
     }
         //chama a função fetchAsync()
@@ -27,7 +26,7 @@ function getActiveInsurances(){
 
 }
 
-function showData(insurances, insurerNames){
+function showData(insurances, clients){
 
     var render = document.getElementById("activeInsurances");
     let txt = "";
@@ -37,7 +36,7 @@ function showData(insurances, insurerNames){
         var house = insurance.home;
         var package = insurance.packageInsurer;
         txt += "<div class='col-md-3 col-sm-6'><div class='serviceBox'><div class='service-icon'><i class='fas fa-home'></i></div>";
-        txt += "<h3 class='title'>" + package.description + "</h3><h3 class='title'>" + insurerNames[index] + "</h3>";
+        txt += "<h3 class='title'>" + package.description + "</h3><h3 class='title'>" + clients[index].name + "</h3>";
         txt += "<p>Casa:"+ house.morada +" </p><p class='description'>Preço: " + insurance.price + "€</p>";
         var coverages = package.coverages;
         txt += "<p class='description'>Coberturas: "
