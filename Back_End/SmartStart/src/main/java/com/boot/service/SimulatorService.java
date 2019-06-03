@@ -1,5 +1,6 @@
 package com.boot.service;
 
+
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ import com.boot.model.User;
 import com.boot.payload.HomeRequest;
 @Service
 public class SimulatorService {
+
 	private List<Package> packagesSimulation;
 	
 	public List<Package> returnPackages(List<Package> packages, String[] names){

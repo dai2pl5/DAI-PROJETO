@@ -36,12 +36,13 @@ public class BuyInsuranceWithoutAHouseRequest {
 	private String topologia;
 	
 	private long idPackage;
+	private long idInsurer;
 	
 	public BuyInsuranceWithoutAHouseRequest() {}
 
 	public BuyInsuranceWithoutAHouseRequest(double price, Home home, User user, boolean active, boolean rejected,
 			String morada, int area, String ano, double capitalImovel, boolean owner, double solarPanels,
-			boolean prevention, String topologia, long idPackage) {
+			boolean prevention, String topologia, long idPackage,long idInsurer) {
 		this.price = price;
 		this.home = home;
 		this.user = user;
@@ -56,6 +57,7 @@ public class BuyInsuranceWithoutAHouseRequest {
 		this.prevention = prevention;
 		this.topologia = topologia;
 		this.idPackage = idPackage;
+		this.idInsurer = idInsurer;
 	}
 
 	public long getIdInsurance() {
@@ -185,6 +187,16 @@ public class BuyInsuranceWithoutAHouseRequest {
 	public void setRejected(boolean rejected) {
 		this.rejected = rejected;
 	}
+
+	public long getIdInsurer() {
+		return idInsurer;
+	}
+
+	public void setIdInsurer(long idInsurer) {
+		this.idInsurer = idInsurer;
+	}
+	
+	
 	
 	
 	

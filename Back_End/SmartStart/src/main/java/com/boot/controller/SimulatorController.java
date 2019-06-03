@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.boot.exception.ResourceNotFoundException;
 import com.boot.model.Home;
 import com.boot.model.Package;
+
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -52,6 +54,7 @@ public class SimulatorController {
 	@PostMapping("/execute/noDeal")
 	public ResponseEntity<FinalSimulatorRequest> executeWithoutHome(@CurrentUser UserPrincipal currentUser, @RequestBody SimulatorRequest2 simulatorRequest){
 		List<Package> packages = packageRepository.findAll();
+		List<String> insurerNames = new ArrayList<String>();
 		String morada = simulatorRequest.getMorada();
 		int area = simulatorRequest.getArea();
 		String ano = simulatorRequest.getAno();
@@ -64,9 +67,20 @@ public class SimulatorController {
 		String[] names = simulatorRequest.getNames();
 		List<Package> packagesSimulation = simulatorService.returnPackages(packages, names); 
 		Double[] finalPrices = simulatorService.finalPrice2(packagesSimulation, homeRequest);
+		
+		long[] idInsurers = new long[packagesSimulation.size()];
+		int index = 0;
+		for(Package packageAfter : packagesSimulation) {
+			idInsurers[index] = packageAfter.getUser().getId();
+			insurerNames.add(packageAfter.getUser().getName());
+			index += 1;
+		}
 		FinalSimulatorRequest finalSimulatorRequest = new FinalSimulatorRequest();
 		finalSimulatorRequest.setPackages(packagesSimulation);
 		finalSimulatorRequest.setFinalPrices(finalPrices);
+		finalSimulatorRequest.setIdInsurer(idInsurers);
+		finalSimulatorRequest.setInsurerNames(insurerNames);
+		
 		return ResponseEntity.ok().body(finalSimulatorRequest);
 	}
 	

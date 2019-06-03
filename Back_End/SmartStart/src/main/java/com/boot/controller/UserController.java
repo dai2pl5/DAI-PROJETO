@@ -8,7 +8,7 @@ import com.boot.repository.HomeRepository;
 import com.boot.repository.UserRepository;
 import com.boot.security.UserPrincipal;
 import com.boot.security.CurrentUser;
-
+import org.springframework.security.crypto.password.PasswordEncoder;
 import java.util.List;
 import java.util.Set;
 
@@ -17,6 +17,7 @@ import javax.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -30,6 +31,9 @@ public class UserController {
     
     @Autowired
     private HomeRepository homeRepository;
+    
+    @Autowired
+    PasswordEncoder passwordEncoder;
 
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
@@ -117,6 +121,24 @@ public class UserController {
     			.orElseThrow(() -> new ResourceNotFoundException("User", "id", currentUser.getId()));
     	Set<Home> homes = user.getHouses();
     	return ResponseEntity.ok().body(homes);
+    }
+    
+    @PutMapping("/user/updateInfo")
+    public ResponseEntity<?> updateInfo(@CurrentUser UserPrincipal currentUser, @RequestBody UserPayload userPayload){
+    	User user = userRepository.findById(currentUser.getId())
+    			.orElseThrow(() -> new ResourceNotFoundException("User", "id", currentUser.getId()));
+
+
+         
+         user.setUsername(userPayload.getUsername());
+         user.setEmail(userPayload.getEmail());
+         user.setPassword(userPayload.getPassword());
+         user.setName(userPayload.getName());
+
+         user.setPassword(passwordEncoder.encode(user.getPassword()));
+         userRepository.save(user);
+
+    	return ResponseEntity.ok(new ApiResponse(true,"Informação atualizada com sucesso!"));
     }
     
 }
