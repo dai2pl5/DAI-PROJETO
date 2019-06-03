@@ -9,7 +9,7 @@ function signin(){
                 password:password
         };
         console.log(data);
-        fetch('http://localhost:8080/api/auth/signin',{
+        fetch('http://35.222.187.200:8080/api/auth/signin',{
         headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
         method: 'POST',
         credentials: 'include',
@@ -36,7 +36,7 @@ function signin(){
 function redirectUser(){
 
     async function fetchAsync(){
-        const response = await fetch('http://localhost:8080/api/user/me',{
+        const response = await fetch('http://35.222.187.200:8080/api/user/me',{
         headers: {'Content-Type': 'application/json'},
         credentials: "include",
         method: 'GET',
