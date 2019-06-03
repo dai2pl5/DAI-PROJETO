@@ -5,10 +5,12 @@ function showData(response, afterSim){
     console.log(response);
     const packages = response.packages;
     const prices = response.finalPrices;
+    const insurerNames = response.insurerNames;
+    const idInsurers = response.idInsurer;
     txt += "<div class= 'container'><div class='row'>";
     for(const package of packages){
         txt += "<div class='col-md-3 col-sm-6'><div class='serviceBox'><div class='service-icon'><i class='fa fa-globe'></i></div>";
-        txt += "<h3 class='title'>" + package.description + "</h3><p class='description'>Preço base: " + package.basePrice + "€</p>";
+        txt += "<h3 class='title'>" + package.description + "</h3><h3 class='title'>" + insurerNames[index] + "</h3><p class='description'>Preço base: " + package.basePrice + "€</p>";
         var coverages = package.coverages;
         txt += "<p class='description'>Coberturas: "
         for(const coverage of coverages){
@@ -25,6 +27,7 @@ function showData(response, afterSim){
         txt += "<input type = 'hidden' name = 'formTopologia' style = 'display : none;' value =  '" + afterSim.topologia + "'></input>";
         txt += "<input type = 'hidden' name = 'formPackage' style = 'display : none;' value =  '" + package.idPackage + "'></input>";
         txt += "<input type = 'hidden' name = 'formPrice' style = 'display : none;' value =  '" + roundNumber(prices[index]) + "'></input>";
+        txt += "<input type = 'hidden' name = 'formIdInsurer' style = 'display : none;' value =  '" + idInsurers[index] + "'></input>"
         txt += "<button class='btnSimulation btn1Comprar'>Comprar</button>";
         txt += "</form></div></div>";
         index += 1;
@@ -128,7 +131,8 @@ function confirmation(e,form){
         prevention : form.formPrevention.value,
         topologia : form.formTopologia.value,
         price : form.formPrice.value,
-        idPackage : form.formPackage.value    
+        idPackage : form.formPackage.value,
+        idInsurer : form.formIdInsurer.value    
     }
 
     swal({

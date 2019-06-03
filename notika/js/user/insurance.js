@@ -23,21 +23,21 @@ function getInsurances(){
             txt += "<td>" + checkStatus(insurance.active, insurance.rejected) + "</td>";
             txt += "<td><a class='btn btn-primary' href='#popup"+ index + "'><i class='far fa-eye'></i></a>";
             txt += "<div id = 'popup" + index + "'class = 'overlay'><div class='popup'><a class='close' href='#'>&times;</a>";
-            txt += "<div class='content'><p>Seguradora: " + insurerNames[index] +  "</p><p>Pacote: " + insurance.packageInsurer.description + "</p>";
-            txt += "<p>Coberturas: ";
+            txt += "<div class='content'><div class = 'row'><div class='column'><h class = 'title'>&nbsp&nbspDados do seguro</h><p></p><p>&nbsp&nbspSeguradora: " + insurerNames[index] +  "</p><p>&nbsp&nbspPacote: " + insurance.packageInsurer.description + "</p>";
+            txt += "<p>&nbsp&nbspCoberturas: ";
             let coverages = insurance.packageInsurer.coverages;
             for(const coverage of coverages){
 
                 txt += "&nbsp" + checkCoverage(coverage.name) + "&nbsp";
             }
-            txt += "</p><p>Prémio: " + insurance.price + "</p>"
+            txt += "</p><p>&nbsp&nbspPrémio: " + insurance.price + "€</p></div>"
             let house = insurance.home;
-            txt += "<p>Morada: " + house.morada + "</p>"
+            txt += "<div class='column'><h class = 'title'>Dados da casa</h><p></p><p>Morada: " + house.morada + "</p>"
             txt += "<p>Area: " + house.area + "</p><p>Ano de construção: " + house.ano + "</p>"
             txt += "<p>Capital do Imovél: " + house.capitalImovel + "</p><p>Proprietário: " + checkOwner(house.owner) + "</p>"
             txt += "<p>Capital dos sistemas de microgeração: " + checkSolarPanels(house.solarPanels) + "</p><p>Meios de prevenção: " + checkPrevention(house.prevention) + "</p>"
-            txt += "<p>Topologia : " + house.topologia + "</p>";
-            txt += "</div></div></div></td>";
+            txt += "<p>Topologia : " + house.topologia + "</p></div></div>";
+            txt += "</div></div></div>";
             console.log("teste");
             index += 1;
         }

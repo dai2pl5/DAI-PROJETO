@@ -219,7 +219,17 @@
                                 </div>
                             </div>
                         </div>
+                        
+                        
                         <div class="form-example-int mg-t-15">
+                            <div class="form-group">
+                                <label>Nova password</label>
+                                <div class="nk-int-st">
+                                    <input type="password" class="form-control input-sm" id="formPassword" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-example-int mg-t-15" id = "cenas">
                             <div class="form-group">
                                 <label>E-mail</label>
                                 <div class="nk-int-st">
@@ -227,15 +237,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-example-int mg-t-15">
-                            <div class="form-group nk-datapk-ctm form-elet-mg" id="data_2">
-                                <label>Data de Nascimento</label>
-                                <div class="input-group date nk-int-st">
-                                    <span class="input-group-addon"></span>
-                                    <input type="text" class="form-control" value="03/10/1980" id="data" disabled>
-                                </div>
-                            </div>
-                        </div>
+        
                         <div class="form-example-int mg-t-15">
                             <button class="btn btn-primary notika-btn-primary" id="edit" onclick="edit()">Editar</button>
                             <button class="btn btn-primary notika-btn-primary" style="visibility: hidden" id="apply" onclick="edit()">Aplicar</button>
@@ -250,9 +252,6 @@
     <!-- Start Footer area-->
     
     <!-- End Footer area-->
-    <!-- SeeData JS
-    ============================================ -->
-    <script src="js/user/seeData.js"></script>
     <!-- Selects JS
 		============================================ -->
     <script src="selects.js"></script>
@@ -352,6 +351,9 @@
 
 
     <script src="js/user/logout.js"></script>
+    <script src="js/user/perfilUpdate.js"></script>
+    <script src="node_modules/alertifyjs/build/alertify.min.js"></script>
+    <script src="node_modules/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 
 </html>

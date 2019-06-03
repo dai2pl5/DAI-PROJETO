@@ -8,6 +8,7 @@
     border-radius: 20px/50px;
     background-clip: padding-box;
     text-align: center;
+    
   }
   
   
@@ -21,6 +22,7 @@
     transition: opacity 500ms;
     visibility: hidden;
     opacity: 0;
+    
   }
   .overlay:target {
     visibility: visible;
@@ -33,9 +35,10 @@
     padding: 20px;
     background: #fff;
     border-radius: 5px;
-    width: 30%;
+    width: 80%;
     position: relative;
-    transition: all 5s ease-in-out;
+    transition: all 2s ease-in-out;
+    overflow-x: hidden;
   }
   
   .popup h2 {
@@ -61,6 +64,20 @@
     overflow: auto;
   }
   
+  .column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 40%; /* Should be removed. Only for demonstration */
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
   @media screen and (max-width: 700px){
     .box{
       width: 70%;
@@ -69,3 +86,9 @@
       width: 70%;
     }
   }
+
+  .title{
+    font-size: 20px;
+  }
+
+  
