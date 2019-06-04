@@ -15,6 +15,8 @@ public interface SensorRepository extends MongoRepository<Sensor, String> {
 	public List<Sensor> findByIdInsuranceAndNameOrderByISODATADesc(int idInsurance,String name);
 	public List<Sensor> findByIdInsuranceLikeOrderByISODATADesc(int idInsurance);
 	public List<Sensor> findByIdInsuranceAndName(int idInsurance, String name);
+	public List<Sensor> findByValueAndName(int value,String name);
+	public List<Sensor> findAllByOrderByISODATADesc();
 	
 	
 }

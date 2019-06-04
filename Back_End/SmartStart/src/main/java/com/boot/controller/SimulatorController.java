@@ -37,17 +37,27 @@ public class SimulatorController {
 	
 	
 	@PostMapping("/execute/{id}")
-	public ResponseEntity<FinalSimulatorRequest> execute(@PathVariable(value = "id") Long id, @CurrentUser UserPrincipal currentUser, @RequestBody SimuladorRequest simuladorRequest){
+	public ResponseEntity<FinalSimulatorRequest> execute(@PathVariable(value = "id") Long id, @CurrentUser UserPrincipal currentUser, @RequestBody SimuladorRequest simulatorRequest){
 		List<Package> packages = packageRepository.findAll();
-		String[] names = simuladorRequest.getNames();
+		List<String> insurerNames = new ArrayList<String>();
 		Home home = homeRepository.findById(id)
-				.orElseThrow(() -> new ResourceNotFoundException("Home", "id", id));
+				.orElseThrow(() -> new ResourceNotFoundException("House", "id", id));
+		String[] names = simulatorRequest.getNames();
 		List<Package> packagesSimulation = simulatorService.returnPackages(packages, names); 
 		Double[] finalPrices = simulatorService.finalPrice(packagesSimulation, home);
 		
+		long[] idInsurers = new long[packagesSimulation.size()];
+		int index = 0;
+		for(Package packageAfter : packagesSimulation) {
+			idInsurers[index] = packageAfter.getUser().getId();
+			insurerNames.add(packageAfter.getUser().getName());
+			index += 1;
+		}
 		FinalSimulatorRequest finalSimulatorRequest = new FinalSimulatorRequest();
 		finalSimulatorRequest.setPackages(packagesSimulation);
 		finalSimulatorRequest.setFinalPrices(finalPrices);
+		finalSimulatorRequest.setIdInsurer(idInsurers);
+		finalSimulatorRequest.setInsurerNames(insurerNames);
 		return ResponseEntity.ok().body(finalSimulatorRequest);
 	}
 	

@@ -139,6 +139,39 @@ public class InsurerController {
 		
 	}
 	
+	@GetMapping("/getActiveInsurances")
+	@PreAuthorize("hasRole('INSURER')")
+	public ResponseEntity<InsuranceAndClients> getActiveInsurancesInsurer(@CurrentUser UserPrincipal currentUser){
+		
+		List<Insurance> insuranceList = insuranceRepository.findByUserId(currentUser.getId());
+		List<Insurance> insuranceFinalList = new ArrayList<Insurance>();
+		List<UserProjection> clientsList = new ArrayList<UserProjection>();
+		for(Insurance insurance : insuranceList) {
+			if(insurance.isActive() == true) {
+			insuranceFinalList.add(insurance);
+			Home home = insurance.getHome();
+			User user = home.getUser();
+			UserProjection userProjection = new UserProjection(user.getName(), user.getEmail());
+			clientsList.add(userProjection);
+			}
+		}
+		
+		InsuranceAndClients insuranceAndClients = new InsuranceAndClients(clientsList,insuranceFinalList);
+		
+		
+		return ResponseEntity.ok().body(insuranceAndClients);
 	
+		
+	}
 	
+	@GetMapping("/getPackages")
+	@PreAuthorize("hasRole('INSURER')")
+	public ResponseEntity<List<Package>> getPackages(@CurrentUser UserPrincipal currentUser){
+		User user = userRepository.findById(currentUser.getId())
+    			.orElseThrow(() -> new ResourceNotFoundException("User", "id", currentUser.getId()));
+		
+		List<Package> packages = packageRepository.findByUser(user);
+	
+	return ResponseEntity.ok().body(packages);
+	}
 }

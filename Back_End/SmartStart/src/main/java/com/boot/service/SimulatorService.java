@@ -42,8 +42,10 @@ public class SimulatorService {
 		double area = home.getArea();
 		double capital = home.getCapitalImovel();
 		boolean prevention = home.isPrevention();
+		boolean owner = home.isOwner();
+		double solarPanels = home.getSolarPanels();
 		Double[] finalPrices = new Double[packagesSimulation.size()];
-		System.out.println(finalPrices.length);
+		
 		int index = 0;
 		for(Package package1 : packagesSimulation) {
 			User user = package1.getUser();
@@ -51,19 +53,22 @@ public class SimulatorService {
 			double basePrice = package1.getBasePrice();
 			int indexFinal = 0;
 			System.out.println(finalPrice);
+			
 			Set<Configuration> configurations = user.getConfigurations();
 			for(Configuration configuration : configurations) {
 				String designation = configuration.getDesignation();
 				double tax = configuration.getTax();
+				System.out.println("Tamanho da lista de configs " + configurations.size());
 				if(designation.equals("capitalImovel")) {
-					finalPrice += capital*tax;
+					finalPrice = finalPrice + (capital*tax);
 					indexFinal +=1;
 					if(configurations.size() == indexFinal) {
 						finalPrices[index] = finalPrice;
-						}
+					}
 				}else if(designation.equals("areaImovel")) {
 						finalPrice += area * tax;
 						indexFinal +=1;
+						
 						if(configurations.size() == indexFinal) {
 							finalPrices[index] = finalPrice; 
 					}
@@ -71,12 +76,47 @@ public class SimulatorService {
 					if(prevention != true) {
 						finalPrice += basePrice * tax;
 						indexFinal +=1;
+					}else {
+						indexFinal +=1;
 					}
+					if(configurations.size() == indexFinal) {
+						finalPrices[index] = finalPrice; 
+					}
+				}else if(designation.equals("inquilinoTax")) {
+					if(owner == false) {
+					finalPrice += basePrice * tax;
 					indexFinal +=1;
+					}else {
+						
+						indexFinal += 1;
+					}
+					if(configurations.size() == indexFinal) {
+						finalPrices[index] = finalPrice; 
+					}
+				}else if(designation.equals("ownerTax")) {
+					
+					if(owner == true) {
+					finalPrice += basePrice * tax;
+					indexFinal +=1;
+					}else {
+						indexFinal += 1;
+					}
+					if(configurations.size() == indexFinal) {
+						finalPrices[index] = finalPrice; 
+					}
+				}else if(designation.equals("solarPanelsTax")) {
+					
+					if(solarPanels != 0) {
+					finalPrice += solarPanels * tax;
+					indexFinal +=1;
+					}else {
+						indexFinal += 1;
+					}
 					if(configurations.size() == indexFinal) {
 						finalPrices[index] = finalPrice; 
 					}
 				}
+				
 			}
 			index +=1;
 		}

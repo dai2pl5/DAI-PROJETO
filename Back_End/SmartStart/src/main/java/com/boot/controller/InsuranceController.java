@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.boot.payload.BuyInsuranceRequest;
 import com.boot.payload.BuyInsuranceWithoutAHouseRequest;
 import com.boot.exception.ResourceNotFoundException;
 import com.boot.model.Home;
@@ -24,7 +26,9 @@ import com.boot.repository.PackageRepository;
 import com.boot.repository.UserRepository;
 import com.boot.security.CurrentUser;
 import com.boot.security.UserPrincipal;
+import com.boot.projection.InsuranceAndClients;
 import com.boot.projection.InsurancesAndInsurerPayload;
+import com.boot.projection.UserProjection;
 
 @RestController
 @RequestMapping("/user/insurance")
@@ -40,9 +44,9 @@ public class InsuranceController {
 	private PackageRepository packageRepository;
 	
 	
-	@PostMapping("/buyInsurance")
+	@PostMapping("/buyInsuranceWithoutAHouse")
 	@PreAuthorize("hasRole('USER')")
-	public ResponseEntity<Insurance> buyInsurance(@CurrentUser UserPrincipal currentUser, @RequestBody BuyInsuranceWithoutAHouseRequest buyInsuranceWithoutAHouseRequest){
+	public ResponseEntity<Insurance> buyInsuranceWithoutAHouse(@CurrentUser UserPrincipal currentUser, @RequestBody BuyInsuranceWithoutAHouseRequest buyInsuranceWithoutAHouseRequest){
 		String username = currentUser.getUsername();
 		User user = userRepository.findByUsername(username)
     			.orElseThrow(() -> new ResourceNotFoundException("User", "username", username));
@@ -57,6 +61,22 @@ public class InsuranceController {
 		
 	}
 	
+	@PostMapping("/buyInsurance")
+	@PreAuthorize("hasRole('USER')")
+	public ResponseEntity<Insurance> buyInsurance(@CurrentUser UserPrincipal currentUser, @RequestBody BuyInsuranceRequest buyInsuranceRequest){
+		String username = currentUser.getUsername();
+		User user = userRepository.findByUsername(username)
+    			.orElseThrow(() -> new ResourceNotFoundException("User", "username", username));
+		Home home = homeRepository.findById(buyInsuranceRequest.getIdHome());
+		long idInsurer = buyInsuranceRequest.getIdInsurer();
+		User userInsurer = userRepository.findById(idInsurer);
+		Package packageInsurer = packageRepository.findById(buyInsuranceRequest.getIdPackage());
+		Insurance insurance = new Insurance(buyInsuranceRequest.getPrice(),home,userInsurer, false, false,packageInsurer);
+		insuranceRepository.save(insurance);
+		return ResponseEntity.ok().body(insurance);
+		
+	}
+	
 	@GetMapping("/getInsurances")
 	@PreAuthorize("hasRole('USER')")
 	public ResponseEntity<InsurancesAndInsurerPayload> getInsurances(@CurrentUser UserPrincipal currentUser){
@@ -64,10 +84,9 @@ public class InsuranceController {
 		User user = userRepository.findByUsername(username)
     			.orElseThrow(() -> new ResourceNotFoundException("User", "username", username));
 		
-		Set<Home> houses = user.getHouses();
-		
 		List<Insurance> userInsurances = new ArrayList<Insurance>();
 		List<String> insurerNames = new ArrayList<String>();
+		Set<Home> houses = user.getHouses();
 		User userList;
 		String name;
 		for(Home house : houses) {
@@ -83,7 +102,9 @@ public class InsuranceController {
 		InsurancesAndInsurerPayload insuranceAndInsurer = new InsurancesAndInsurerPayload(userInsurances, insurerNames);
 		
 		return ResponseEntity.ok().body(insuranceAndInsurer);
+		
 	}
+	
 		@GetMapping("/getActiveInsurances")
 		@PreAuthorize("hasRole('USER')")
 		public ResponseEntity<InsurancesAndInsurerPayload> getActiveInsurances(@CurrentUser UserPrincipal currentUser){
@@ -112,6 +133,7 @@ public class InsuranceController {
 			return ResponseEntity.ok().body(insuranceAndInsurer);
 			
 		}
-	
+		
+		
 	
 }

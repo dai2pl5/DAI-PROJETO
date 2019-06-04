@@ -4,13 +4,16 @@ import com.boot.exception.ResourceNotFoundException;
 import com.boot.model.Home;
 import com.boot.model.User;
 import com.boot.payload.*;
+import com.boot.projection.HousesAndInsurancesProjection;
 import com.boot.repository.HomeRepository;
+import com.boot.repository.InsuranceRepository;
 import com.boot.repository.UserRepository;
 import com.boot.security.UserPrincipal;
 import com.boot.security.CurrentUser;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import java.util.List;
 import java.util.Set;
+import com.boot.model.Insurance;
 
 import javax.validation.Valid;
 
@@ -33,7 +36,11 @@ public class UserController {
     private HomeRepository homeRepository;
     
     @Autowired
+    private InsuranceRepository insuranceRepository;
+    
+    @Autowired
     PasswordEncoder passwordEncoder;
+    
 
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
@@ -100,6 +107,9 @@ public class UserController {
     	home.setCapitalImovel(homeRequest.getCapitalImovel());
     	home.setMorada(homeRequest.getMorada());
     	home.setTopologia(homeRequest.getTopologia());
+    	home.setOwner(homeRequest.isOwner());
+    	home.setSolarPanels(homeRequest.getSolarPanels());
+    	home.setPrevention(homeRequest.isPrevention());
     	
     	homeRepository.save(home);
     	
@@ -116,11 +126,27 @@ public class UserController {
     
     @GetMapping("/user/getHouses")
     @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<Set<Home>> getHouses(@CurrentUser UserPrincipal currentUser){
+    public ResponseEntity<HousesAndInsurancesProjection> getHouses(@CurrentUser UserPrincipal currentUser){
     	User user = userRepository.findById(currentUser.getId())
     			.orElseThrow(() -> new ResourceNotFoundException("User", "id", currentUser.getId()));
     	Set<Home> homes = user.getHouses();
-    	return ResponseEntity.ok().body(homes);
+    	Boolean[] isInsured = new Boolean[homes.size()];
+    	int index = 0;
+    	for(Home home : homes) {
+    		Insurance insurance = insuranceRepository.findByHome(home);
+    		
+    		if(insurance != null) {
+    			System.out.println(insurance.getPrice());
+    			isInsured[index] = true;
+    			index += 1;
+    		}else {
+    			isInsured[index] = false;
+    			index += 1;
+    		}
+    	}
+    	
+    	HousesAndInsurancesProjection housesAndInsurancesProjection = new HousesAndInsurancesProjection(homes,isInsured);
+    	return ResponseEntity.ok().body(housesAndInsurancesProjection);
     }
     
     @PutMapping("/user/updateInfo")
@@ -141,4 +167,16 @@ public class UserController {
     	return ResponseEntity.ok(new ApiResponse(true,"Informação atualizada com sucesso!"));
     }
     
+    @PostMapping("/user/isHouseInsured")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<Boolean> isHouseInsured(@RequestBody HomeRequest homeRequest){
+    	Home home = homeRepository.findById(homeRequest.getIdHome());
+    	System.out.println(homeRequest.getIdHome());
+    	Insurance insurance = insuranceRepository.findByHome(home);
+	    if(insurance != null) {
+	    	return ResponseEntity.ok().body(true);
+	    }else {
+	    	return ResponseEntity.ok().body(false);
+	    }
+    }
 }
