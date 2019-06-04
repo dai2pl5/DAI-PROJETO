@@ -1156,12 +1156,12 @@ header .menu-responsive {
 }
 
 .heading .heading-content h2 {
-    color: #2C3459;
+    color: #fff;
     font-weight: 700;
 }
 
 .heading .heading-content h3 {
-    color: #2C3459;
+    color: #fff;
     font-weight: 300;
     line-height: 1.1em;
     margin: 20px 0 45px 0;
@@ -6202,25 +6202,25 @@ x sigin/signup popup
   animation: glowing 1500ms infinite;
 }
 @-webkit-keyframes glowing {
-  0% { background-color: #5A5ACD; -webkit-box-shadow: 0 0 3px #5A5ACD; }
-  50% { background-color: rgba( 145, 218, 50, 0.85 ); -webkit-box-shadow: 0 0 40px #ABD3AB; }
-  100% { background-color: #2C3459; -webkit-box-shadow: 0 0 3px #ACE6AC; }
+  0% { background-color: rgb(90, 142, 205); -webkit-box-shadow: 0 0 3px rgb(90, 157, 205); }
+  50% { background-color: rgba(50, 210, 218, 0.85); -webkit-box-shadow: 0 0 40px rgb(171, 210, 211); }
+  100% { background-color: rgb(44, 75, 89); -webkit-box-shadow: 0 0 3px rgb(172, 230, 223); }
 }
 
 @-moz-keyframes glowing {
-  0% { background-color: #5A5ACD; -moz-box-shadow: 0 0 3px #5A5ACD; }
-  50% { background-color: rgba( 145, 218, 50, 0.85 ); -moz-box-shadow: 0 0 40px #ABD3AB; }
-  100% { background-color: #2C3459; -moz-box-shadow: 0 0 3px #ACE6AC; }
+  0% { background-color: rgb(90, 205, 188); -moz-box-shadow: 0 0 3px rgb(90, 203, 205); }
+  50% { background-color: rgba(50, 210, 218, 0.85); -moz-box-shadow: 0 0 40px rgb(171, 207, 211); }
+  100% { background-color: rgb(44, 75, 89); -moz-box-shadow: 0 0 3px rgb(172, 222, 230); }
 }
 
 @-o-keyframes glowing {
-  0% { background-color: #5A5ACD; box-shadow: 0 0 3px #5A5ACD; }
-  50% { background-color: rgba( 145, 218, 50, 0.85 ); box-shadow: 0 0 40px #ABD3AB; }
-  100% { background-color: #2C3459; box-shadow: 0 0 3px #ACE6AC; }
+  0% { background-color: rgb(90, 199, 205); box-shadow: 0 0 3px rgb(90, 205, 197); }
+  50% { background-color: rgba(50, 210, 218, 0.85); box-shadow: 0 0 40px rgb(171, 200, 211); }
+  100% { background-color: rgb(44, 88, 89); box-shadow: 0 0 3px rgb(172, 227, 230); }
 }
 
 @keyframes glowing {
-  0% { background-color: #5A5ACD; box-shadow: 0 0 3px #5A5ACD; }
-  50% { background-color: rgba( 145, 218, 50, 0.85 ); box-shadow: 0 0 40px #ABD3AB; }
-  100% { background-color: #2C3459; box-shadow: 0 0 3px #ACE6AC; }
+  0% { background-color: rgb(90, 174, 205); box-shadow: 0 0 3px rgb(90, 203, 205); }
+  50% { background-color: rgba(50, 218, 212, 0.85); box-shadow: 0 0 40px rgb(171, 204, 211); }
+  100% { background-color: rgb(44, 81, 89); box-shadow: 0 0 3px rgb(172, 217, 230); }
 }
