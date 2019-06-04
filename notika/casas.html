@@ -57,11 +57,15 @@
     <!-- modernizr JS
 		============================================ -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    
 
     <link rel="stylesheet" href="node_modules/alertifyjs/build/css/alertify.min.css" />
     <!-- include a theme -->
     <link rel="stylesheet" href="node_modules/alertifyjs/build/css/themes/default.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" type="text/css" href="css/buttonsSimulation.css" />
+    <link rel="stylesheet" href="css/simulation.css">
+    
 </head>
 
 <body>
@@ -69,7 +73,8 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
     <!-- Start Header Top Area -->
-    <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    
+  <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -81,36 +86,82 @@
       </div>
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
-          <i class="fas fa-user prefix grey-text"></i>
-          <input type="text" id="ano" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="ano">Ano</label>
+          <i class="fas fa-wrench"></i>
+          <label data-error="wrong" data-success="right" for="ano">Ano de construção</label>
+          <div class="bootstrap-select fm-cmp-mg">
+            <select id = "ano" class="selectpicker form-control validate" >
+                <option value="Entre 1930 e 1960">Entre 1930 e 1960</option>
+                <option value="Entre 1960 e 1986">Entre 1960 e 1986</option>
+                <option value="Entre 1986 e 2000">Entre 1986 e 2000</option>
+                <option value="Depois de 2000">Depois de 2000</option>
+            </select>
+        </div>
+          
         </div>
         <div class="md-form mb-5">
-          <i class="fas fa-envelope prefix grey-text"></i>
-          <input type="email" id="areaHouse" class="form-control validate">
+          <i class="far fa-square"></i>
           <label data-error="wrong" data-success="right" for="areaHouse">Area</label>
+          <input type="email" id="area" class="form-control validate">
+          
         </div>
 
         <div class="md-form mb-4">
           <i class="fas fa-money-bill-alt"></i>
-          <input type="text" id="capitalImovel" class="form-control validate">
           <label data-error="wrong" data-success="right" for="capitalImovel">Capital Imovel</label>
+          <input type="text" id="capitalImovel" class="form-control validate">
+          
         </div>
         <div class="md-form mb-4">
-          <i class="fas fa-lock prefix grey-text"></i>
-          <input type="text" id="morada" class="form-control validate">
+          <i class="fas fa-address-card"></i>
           <label data-error="wrong" data-success="right" for="morada">Morada</label>
+          <input type="text" id="morada" class="form-control validate">
         </div>
         <div class="md-form mb-4">
-          <i class="fas fa-lock prefix grey-text"></i>
-          <input type="text" id="topologia" class="form-control validate">
+          <i class="far fa-building"></i>
           <label data-error="wrong" data-success="right" for="topologia">Topologia</label>
+          <div class="bootstrap-select fm-cmp-mg">
+              <select id = "topologia" class="selectpicker form-control validate" >
+                  <option value="T1">T1</option>
+                  <option value="T2">T2</option>
+                  <option value="T3">T3</option>
+                  <option value="T4">T4</option>
+                  <option value="T5">T5</option>   
+              </select>
+          </div>
+          
         </div>
+        <div class="md-form mb-4">
+          <i class="fas fa-solar-panel"></i>
+          <label data-error="wrong" data-success="right" for="solarPanels">Capital de sistemas de microgeração de energia</label>
+          <input type="text" class="form-control validate" id  = "solarPanels">
+        </div>
+        <div class="md-form mb-4">
+            <i class="fas fa-user-shield"></i>
+            <label data-error="wrong" data-success="right" for="owner">Proprietário ou Inquilino</label>
+            <div class="bootstrap-select fm-cmp-mg">
+                <select class="selectpicker form-control validate" id = "owner">
+                    <option value=true>Proprietario</option>
+                    <option value=false>Inquilino</option>  
+                </select>
+            </div>
+        </div>
+        <div class="md-form mb-4">
+            <i class="fas fa-solar-panel"></i>
+            <label data-error="wrong" data-success="right" for="prevention">Tem meios de prevenção?</label>
+            <div class="bootstrap-select fm-cmp-mg">
+                <select class="selectpicker form-control validate" id = "prevention">
+                    <option value=true>Sim</option>
+                    <option value=false>Não</option>  
+                </select>
+            </div>
+          </div>
         <div class="md-form mb-4" style="display: none">
           <i class="fas fa-lock prefix grey-text"></i>
           <input type="text" id="idHome" class="form-control validate">
           <label data-error="wrong" data-success="right" for="idHome">idHouse</label>
         </div>
+        
+        
 
       </div>
       <div class="modal-footer d-flex justify-content-center">
@@ -119,6 +170,131 @@
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="modalRegisterHouse" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header text-center">
+      <h4 class="modal-title w-100 font-weight-bold">Alterar dados</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body mx-3">
+      <div class="md-form mb-5">
+        <i class="fas fa-wrench"></i>
+        <label data-error="wrong" data-success="right" for="ano2">Ano de construção</label>
+        <div class="bootstrap-select fm-cmp-mg">
+          <select id = "ano2" class="selectpicker form-control validate" >
+              <option value="Entre 1930 e 1960">Entre 1930 e 1960</option>
+              <option value="Entre 1960 e 1986">Entre 1960 e 1986</option>
+              <option value="Entre 1986 e 2000">Entre 1986 e 2000</option>
+              <option value="Depois de 2000">Depois de 2000</option>
+          </select>
+      </div>
+        
+      </div>
+      <div class="md-form mb-5">
+        <i class="far fa-square"></i>
+        <label data-error="wrong" data-success="right" for="area2">Area</label>
+        <input type="email" id="area2" class="form-control validate">
+        
+      </div>
+
+      <div class="md-form mb-4">
+        <i class="fas fa-money-bill-alt"></i>
+        <label data-error="wrong" data-success="right" for="capitalImovel2">Capital Imovel</label>
+        <input type="text" id="capitalImovel2" class="form-control validate">
+        
+      </div>
+      <div class="md-form mb-4">
+        <i class="fas fa-address-card"></i>
+        <label data-error="wrong" data-success="right" for="morada2">Morada</label>
+        <input type="text" id="morada2" class="form-control validate">
+      </div>
+      <div class="md-form mb-4">
+        <i class="far fa-building"></i>
+        <label data-error="wrong" data-success="right" for="topologia2">Topologia</label>
+        <div class="bootstrap-select fm-cmp-mg">
+            <select id = "topologia2" class="selectpicker form-control validate" >
+                <option value="T1">T1</option>
+                <option value="T2">T2</option>
+                <option value="T3">T3</option>
+                <option value="T4">T4</option>
+                <option value="T5">T5</option>   
+            </select>
+        </div>
+        
+      </div>
+      <div class="md-form mb-4">
+        <i class="fas fa-solar-panel"></i>
+        <label data-error="wrong" data-success="right" for="solarPanels2">Capital de sistemas de microgeração de energia</label>
+        <input type="text" class="form-control validate" id  = "solarPanels2">
+      </div>
+      <div class="md-form mb-4">
+          <i class="fas fa-user-shield"></i>
+          <label data-error="wrong" data-success="right" for="owner2">Proprietário ou Inquilino</label>
+          <div class="bootstrap-select fm-cmp-mg">
+              <select class="selectpicker form-control validate" id = "owner2">
+                  <option value=true>Proprietario</option>
+                  <option value=false>Inquilino</option>  
+              </select>
+          </div>
+      </div>
+      <div class="md-form mb-4">
+          <i class="fas fa-solar-panel"></i>
+          <label data-error="wrong" data-success="right" for="prevention2">Tem meios de prevenção?</label>
+          <div class="bootstrap-select fm-cmp-mg">
+              <select class="selectpicker form-control validate" id = "prevention2">
+                  <option value=true>Sim</option>
+                  <option value=false>Não</option>  
+              </select>
+          </div>
+        </div>
+      <div class="md-form mb-4" style="display: none">
+        <i class="fas fa-lock prefix grey-text"></i>
+        <input type="text" id="idHome2" class="form-control validate">
+        <label data-error="wrong" data-success="right" for="idHome2">idHouse</label>
+      </div>
+      
+      
+
+    </div>
+    <div class="modal-footer d-flex justify-content-center">
+      <button class="btn btn-deep-orange" onclick="addHome()">Adicionar</button>
+    </div>
+  </div>
+</div>
+</div>
+<div class="modal fade" id="modalSimulation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header text-center">
+      <h4 class="modal-title w-100 font-weight-bold">Alterar dados</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="form-example-int mg-t-15">
+        <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
+            <label>Coberturas</label>
+        </div>
+        <div class="chosen-select-act fm-cmp-mg">
+            <select id = "coberturas" class="chosen" multiple data-placeholder="Escolhe as coberturas...">
+                <option value = "flood">Inundação</option>
+                <option value = "fire">Incêndios</option>
+                <option value = "natural_causes">Causas naturais</option>
+            </select>
+        </div>
+    </div>
+    <input type="hidden" id = "idHome3">
+    <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-deep-orange" onclick="simulate()">Confirmar</button>
+    </div>
+</div></div></div>
+
 
     <div class="header-top-area">
         <div class="container">
@@ -205,13 +381,18 @@
     
     <!-- End Status area-->
     <!-- area da cobertura -->
-    <div class="sale-statistic-area">
+    <div id = "info"></div>
+    <div class="sale-statistic-area" id = "habitacoes">
         <div class="container">
             <div class="row">
+              
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="sale-statistic-inner notika-shadow mg-tb-30">
                         <div class="curved-inner-pro">
+                          
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                               
+                        
                                 <h2>Habitações</h2>
                                 <table class="table table-sc-ex"  id="housesTable"> 
                                     <thead>
@@ -219,10 +400,14 @@
                                             <th>ID</th>
                                             <th>Habitação</th>
                                             <th style="text-align: right">Ações</th>
-                                            <th style='display:none;'>Ano</th>
                                             <th style='display:none;'>Area</th>
+                                            <th style='display:none;'>Ano</th>
                                             <th style='display:none;'>Capital Imovel</th>
+                                            <th style='display:none;'>Owner</th>
+                                            <th style='display:none;'>Solar Panels</th>
+                                            <th style='display:none;'>Prevention</th>
                                             <th style='display:none;'>Topologia</th>
+
                                         </tr>
                                     </thead>
                                     <tbody id="housesTableBody">
@@ -232,12 +417,7 @@
                                 </table>
                             </div>
                         </div>
-                        <div class="form-example-int mg-t-15">
-                                <a href="add-casa.html">
-                                  <button style="left:42%" class="btn btn-primary notika-btn-primary" href="seguradoras.html" id="edit"
-                                    onclick="edit()">Adicionar Habitação</button>
-                                </a>
-                              </div>
+                        <button type="button" data-toggle="modal" data-target="#modalRegisterHouse" style="float: right" class="btn btn-primary"><i class="fas fa-home"></i> Adicionar casa</button>
                     </div>
                     
                 </div>
@@ -323,9 +503,11 @@
 
 
     <script src="js/home/home.js"></script>
+    <script src="js/home/manageHouses.js"></script>
     <script src="js/user/logout.js"></script>
     <script src="node_modules/sweetalert/dist/sweetalert.min.js"></script>
     <script src="node_modules/alertifyjs/build/alertify.min.js"></script>
+    <script src="js/simulation/simulation.js"></script>
 </body>
 
 </html>

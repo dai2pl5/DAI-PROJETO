@@ -57,6 +57,7 @@
     <!-- modernizr JS
 		============================================ -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 </head>
 
 <body>
@@ -158,62 +159,22 @@
                         <div class="curved-inner-pro">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <h2>Pacotes</h2>
-                                <table class="table table-sc-ex">
+                                <table class="table table-sc-ex" id = "packagesTable">
                                     <thead>
                                         <tr>
                                             
                                             <th>Pacote</th>
+                                            <th>Preço</th>
                                             <th></th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            
-                                            
-                                            <td>Pacote1</td>
-                                            <td><button style="float: right" class="btn btn-primary"><i class="glyphicon glyphicon-eye-open"></i></button></td>
-                                        </tr>
-                                        <tr>
-                                            
-                                            
-                                            <td>Pacote2</td>
-                                            <td><button style="float: right" class="btn btn-primary"><i class="glyphicon glyphicon-eye-open" ></i></button></td>
-                                        </tr>
-                                        <tr>
-                                            
-                                            
-                                            <td>Pacote3</td>
-                                            <td><button style="float: right" class="btn btn-primary"><i class="glyphicon glyphicon-eye-open"></i></button></td>
-                                        </tr>
-                                        <tr>
-                                          
-                                            
-                                            <td>Pacote4</td>
-                                            <td><button style="float: right" class="btn btn-primary"><i class="glyphicon glyphicon-eye-open"></i></button></td>
-                                        </tr>
-                                        <tr>
-                                            
-                                            
-                                            <td>Pacote5</td>
-                                            <td><button style="float: right" class="btn btn-primary"><i class="glyphicon glyphicon-eye-open"></i></button></td>
-                                        </tr>
-                                        <tr>
-                                            
-                                            
-                                            <td>Pacote6</td>
-                                            <td><button style="float: right" class="btn btn-primary"><i class="glyphicon glyphicon-eye-open"></i></button></td>
-                                        </tr>
+                                    <tbody  id = "packagesTableBody">
+                                        
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-                        <div class="form-example-int mg-t-15">
-                                <a href="add-cobertura.html">
-                                  <button style="left:42%" class="btn btn-primary notika-btn-primary" href="coberturas.html" id="edit"
-                                    onclick="edit()">Adicionar Pacote</button>
-                                    
-                                </a>
-                              </div>
+                        <button type="button" data-toggle="modal" data-target="#modalRegisterHouse" style="float: right" class="btn btn-primary"><i class="fas fa-plus"></i> Adicionar pacote</button>
                     </div>
                 </div>
             </div>
@@ -296,6 +257,7 @@
 		============================================ -->
     <script src="js/main.js"></script>
     <script src = "js/user/logout.js"></script>
+    <script src = "js/insurer/managePackages.js"></script>
 </body>
 
 </html>

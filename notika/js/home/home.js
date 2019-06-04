@@ -1,10 +1,11 @@
 window.onload = function(){
-    refresh()
+    refresh2()
     
 }
 
 function refresh() {
     async function fetchAsync() {
+        
         const render = document.getElementById("housesTableBody");
         let txt = "";
         const response = await fetch('http://localhost:8080/api/user/getHouses/',{
@@ -14,10 +15,14 @@ function refresh() {
             });
         const houses = await response.json();
         console.log(houses);
+        console.log("123");
         //percorrer a variável users e por cada user cria a linha da tabela com os dados presentes
         for (const house of houses) {
-            txt += "<tr><td>" + house.idHome + "</td><td>" + house.morada + "</td><td><button type = 'button' onclick= 'passContentDelete()'style='float: right;' class='btn btn-primary'><i class='glyphicon glyphicon-trash'></i></button><button type = 'button' data-toggle='modal' data-target='#modalRegisterForm' style='float: right' onclick='passContentUpdate()' class='btn btn-primary'><i class='glyphicon glyphicon-edit'></i></button> </td>"
-            txt += "<td style= 'display:none'>" + house.ano + "</td><td style= 'display:none'>" + house.area + "</td><td style= 'display:none'>" + house.capitalImovel + "</td><td style= 'display:none'>" + house.topologia + "</td></tr>"
+            txt += "<tr><td>" + house.idHome + "</td><td>" + house.morada + "</td><td><button";
+            txt += "type = 'button' onclick= 'passContentDelete()'style='float: right;' class='btn btn-danger notika-btn-danger waves-effect'><i class='glyphicon glyphicon-trash'></i></button><button type = 'button' data-toggle='modal' data-target='#modalRegisterForm' style='float: right' onclick='passContentUpdate()'";
+            txt += "class='btn btn-info notika-btn-info waves-effect'><i class='glyphicon glyphicon-edit'></i> Editar</button></td>";
+            txt += "<td style= 'display:none'>" + house.area + "</td><td style= 'display:none'>" + house.ano + "</td><td style= 'display:none'>" + house.capitalImovel + "</td><td style= 'display:none'>" + house.owner + "</td><td style='display:none;'>"+ house.solarPanels + "</td>"
+            txt += "<td style='display:none;'>" + house.prevention + "</td><td style='display:none;'>" + house.topologia + "</td></tr>"
         }
         render.innerHTML = txt;
     }
@@ -83,20 +88,25 @@ function passContentUpdate(){
 
     var idHome = document.getElementById('idHome');
     var morada = document.getElementById('morada');
-    var area = document.getElementById('areaHouse');
+    var area = document.getElementById('area');
     var ano = document.getElementById('ano');
     var capitalImovel = document.getElementById('capitalImovel');
+    var owner = document.getElementById('owner');
+    var solarPanels = document.getElementById('solarPanels');
+    var prevention = document.getElementById('prevention');
     var topologia = document.getElementById('topologia');
     var table = document.getElementById('housesTable');
-    console.log
     for(var i = 0; i<table.rows.length; i++){
         table.rows[i].onclick = function(){
             idHome.value = this.cells[0].innerHTML;
             morada.value = this.cells[1].innerHTML;
-            area.value = this.cells[4].innerHTML;
-            ano.value = this.cells[3].innerHTML;
+            area.value = this.cells[3].innerHTML;
+            ano.value = this.cells[4].innerHTML;
             capitalImovel.value = this.cells[5].innerHTML;
-            topologia.value = this.cells[6].innerHTML;
+            owner.value = this.cells[6].innerHTML;
+            solarPanels.value = this.cells[7].innerHTML;
+            prevention.value = this.cells[8].innerHTML;
+            topologia.value = this.cells[9].innerHTML;
             
         }
     }
@@ -121,15 +131,21 @@ function updateHome(){
     console.log('update() foi corrido');
     var idHome = document.getElementById('idHome').value;
     var morada = document.getElementById('morada').value;
-    var area = document.getElementById('areaHouse').value;
+    var area = document.getElementById('area').value;
     var ano = document.getElementById('ano').value;
     var capitalImovel = document.getElementById('capitalImovel').value;
+    var owner = document.getElementById('owner').value;
+    var solarPanels = document.getElementById('solarPanels').value;
+    var prevention = document.getElementById('prevention').value;
     var topologia = document.getElementById('topologia').value;
     var data = {
            morada,
            area,
            ano,
            capitalImovel,
+           owner,
+           solarPanels,
+           prevention,
            topologia
     };
     console.log(data);
@@ -148,8 +164,9 @@ function updateHome(){
             }
     }).then(function (result) {
                 console.log(result);
+                refresh();
             }).catch(function (err) {
                     console.log(err);
                         });
-        refresh();
+        
 }

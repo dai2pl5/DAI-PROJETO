@@ -97,8 +97,44 @@ function showSensors(data, id){
     document.getElementById('temperatura').innerHTML = data[1];
     document.getElementById('humidade').innerHTML  = data[0];
     document.getElementById('pessoas').innerHTML  = data[2];
-    console.log(data[2]);
-    timer(id, content);
+    if(data[4] == "0"){
+        console.log("vale");
+        document.getElementById("gas").innerHTML = "Niveis estáveis";
+    }else{
+        document.getElementById("gas").innerHTML = "Niveis nocivos";
+    }
+    
+    if(data[3] == "1"){
+        swal({
+            title: "Atenção!",
+            text: "Casa a ser assaltada",
+            icon: "warning",
+            buttons: ["Cancelar", true],
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+                setMovimento();
+                timer(id, content);
+            }
+          });
+    }else if(data[4] == "1"){
+        swal({
+            title: "Atenção!",
+            text: "Nivel elevado de gases nocivos",
+            icon: "warning",
+            buttons: ["Cancelar", true],
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+                timer(id, content);
+            }
+          });
+    }else{
+        timer(id,content);
+    }
+    
 
 }
 
@@ -110,3 +146,30 @@ function timer(id,content){
     }
 }
 
+function setMovimento(){
+
+    fetch('http://localhost:8080/sensor/setMovimento',{
+        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+        method: 'PUT',
+        credentials: 'include',
+    })
+    .then(function (response) {
+        if (!response.ok) {
+            alertify.notify('Houve um erro!', 'error', 5, function(){  console.log('dismissed'); });
+            if (response.status === 409) {
+            } else {
+            throw Error(response.statusText);
+            }
+        } else {
+            alertify.notify('Sucesso!', 'success', 5, function(){  console.log('dismissed'); });
+            }
+        return response.json();
+    })
+    .then(function (result) {
+        console.log(result);
+        
+    })
+    .catch (function (error) {
+        console.log('Request failed', error);
+    });
+}
