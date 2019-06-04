@@ -131,8 +131,23 @@ function showSensors(data, id){
                 timer(id, content);
             }
           });
+          
+    }else if(data[5] == "1"){
+        swal({
+            title: "Atenção!",
+            text: "A sua casa está a inundar!",
+            icon: "warning",
+            buttons: ["Cancelar", true],
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+                timer(id, content);
+            }
+          });
+        
     }else{
-        timer(id,content);
+        timer(id, content);
     }
     
 
