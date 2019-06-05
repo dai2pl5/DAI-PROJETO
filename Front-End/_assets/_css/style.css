@@ -1701,7 +1701,7 @@ section.insurances-slider .content .descriptions .description {
 section.insurances-slider .content h2 {
     color: #2C3459;
     font-size: 32px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 section.insurances-slider .content p {
@@ -6223,4 +6223,30 @@ x sigin/signup popup
   0% { background-color: rgb(90, 174, 205); box-shadow: 0 0 3px rgb(90, 203, 205); }
   50% { background-color: rgba(50, 218, 212, 0.85); box-shadow: 0 0 40px rgb(171, 204, 211); }
   100% { background-color: rgb(44, 81, 89); box-shadow: 0 0 3px rgb(172, 217, 230); }
+  
 }
+
+.holder {
+    display: flex;
+    justify-content: center;
+}
+.imagem {
+  width: 200px;
+  margin: 5%;
+  position: relative;
+  text-align: center;
+}
+.imagem::after {
+  content: attr(data-title); /* estilo que coloco a legenda no lugar */
+  position: center;
+  width: 50%;
+  bottom: -20px;
+  left: 0;
+ text-transform: uppercase;
+  color:#0d6cba ;
+  border-bottom: 3px solid #0d6cba;
+  font-weight: 800;
+  font-size: 13px;
+  margin-left: 2px;
+}
+
