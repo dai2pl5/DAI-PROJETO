@@ -63,6 +63,10 @@
   <!-- datapicker CSS
     ============================================ -->
   <link rel="stylesheet" href="css/datapicker/datepicker3.css">
+
+  <link rel="stylesheet" href="node_modules/alertifyjs/build/css/alertify.min.css" />
+  <link rel="stylesheet" href="node_modules/alertifyjs/build/css/themes/default.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 </head>
 
 <body>
@@ -92,7 +96,7 @@
                     <a href="#">Alterar Dados</a>
                   </div>
                   <div class="hd-mg-va">
-                    <a href="#">LogOut</a>
+                      <a href="#" onclick="logout()">Logout</a>
                   </div>
                 </div>
               </li>
@@ -111,14 +115,12 @@
           <div class="mobile-menu">
             <nav id="dropdown">
               <ul class="mobile-menu-nav">
-                <li><a data-toggle="collapse" data-target="#Charts" href="index-4.html">Home</a>
+                <li><a data-toggle="collapse" data-target="#Charts" href="index-4.html">Perfil</a>
                 </li>
-                <li><a data-toggle="collapse" data-target="#demoevent" href="clientes4.html">Lista de Clientes</a>
-                </li>
+            
                 <li><a data-toggle="collapse" data-target="#democrou" href="seguradoras.html">Seguradoras</a>
                 </li>
-                <li><a data-toggle="collapse" data-target="#demoevent" href="administrador.html">Administrador</a>
-                </li>
+            
               </ul>
             </nav>
           </div>
@@ -134,14 +136,12 @@
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
-            <li><a href="index-4.html"><i class="notika-icon notika-house"></i>Home</a>
+            <li><a href="index-4.html"><i class="notika-icon notika-house"></i>Perfil</a>
             </li>
-            <li><a href="clientes4.html"><i class="notika-icon notika-edit"></i>Lista de Clientes</a>
-            </li>
+           
             <li class="active"><a href="seguradoras.html"><i class="notika-icon notika-edit"></i>Seguradoras</a>
             </li>
-            <li><a href="administrador.html"><i class="notika-icon notika-support"></i>Administrador</a>
-            </li>
+            
           </ul>
         </div>
       </div>
@@ -149,63 +149,78 @@
   </div>
   <!-- Main Menu area End-->
   <!-- Start Status area -->
+  <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Registar seguradora</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+            <i class="fas fa-user"></i>
+          <label data-error="wrong" data-success="right" for="areaHouse">Username</label>
+          <input type="text" id="username" class="form-control validate">
+        </div>
 
+        <div class="md-form mb-4">
+            <i class="fas fa-signature"></i>
+          <label data-error="wrong" data-success="right" for="name">Name</label>
+          <input type="text" id="name" class="form-control validate">
+          
+        </div>
+        <div class="md-form mb-4">
+            <i class="fas fa-at"></i>
+          <label data-error="wrong" data-success="right" for="email">E-mail</label>
+          <input type="email" id="email" class="form-control validate">
+          
+        </div>
+        <div class="md-form mb-4">
+          <i class="fas fa-unlock-alt"></i>
+          <label data-error="wrong" data-success="right" for="password">Password</label>
+          <input type="password" id="password" class="form-control validate">
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-deep-orange" onclick="registerInsurer()">Registar</button>
+      </div>
+    </div>
+  </div>
+</div>
   <!-- End Status area-->
   <!-- area da cobertura -->
   <div class="sale-statistic-area">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <div class="sale-statistic-inner notika-shadow mg-tb-30">
-            <div class="curved-inner-pro">
+      <div class="container">
+          <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <h2>Seguradoras</h2>
-                <table class="table table-sc-ex">
-                  <thead>
-                    <tr>
-                      
-                      <th>Nome da seguradora</th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      
-                      <td>Seguradora 1</td>
-                      <td><select class="selectpicker">
-                          <option value="active">Ativa</option>
-                          <option value="inactive">Inativa</option>
-                        </select></td>
-                    </tr>
-                    <td>Seguradora 2</td>
-                      <td><select class="selectpicker">
-                          <option value="active">Ativa</option>
-                          <option value="inactive">Inativa</option>
-                        </select></td>
-                    </tr>
-                    <td>Seguradora 3</td>
-                      <td><select class="selectpicker">
-                          <option value="active">Ativa</option>
-                          <option value="inactive">Inativa</option>
-                        </select></td>
-                    </tr>
-
-                  </tbody>
-                </table>
+                  <div class="sale-statistic-inner notika-shadow mg-tb-30">
+                      <div class="curved-inner-pro">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <h2>Seguradoras</h2>
+                              <table class="table table-sc-ex" id = "insurerTable">
+                                  <thead>
+                                      <tr>
+                                          
+                                          <th>Nome da seguradora</th>
+                                          <th>E-mail</th>
+                                          <th style = "text-align :right">Ações</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody id = "insurerTableBody">
+                                    
+                                  </tbody>
+                              </table>
+                          </div>
+                      </div>
+                      <button type="button" data-toggle="modal" data-target="#modalRegisterForm" style="float: right" class="btn btn-primary"><i class="fas fa-users"></i> Adicionar seguradora</button>
+                  </div>
               </div>
-            </div>
-            <div class="form-example-int mg-t-15">
-              <a href="add-seguradora.html">
-                <button style="left:42%" class="btn btn-primary notika-btn-primary" href="seguradoras.html" id="edit"
-                  onclick="edit()">Adicionar Seguradora</button>
-                  
-              </a>
-            </div>
           </div>
-
-        </div>
       </div>
-    </div>
   </div>
   <!-- End area da cobertura-->
   <!-- Start chart area-->
@@ -295,9 +310,11 @@
   <!-- main JS
 		============================================ -->
   <script src="js/main.js"></script>
-  <!-- tawk chat JS
-		============================================ -->
-  <script src="js/tawk-chat.js"></script>
+  
+  <script src="js/user/logout.js"></script>
+  <script src="js/admin/manageInsurer.js"></script>
+  <script src="node_modules/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="node_modules/alertifyjs/build/alertify.min.js"></script>
 </body>
 
 </html>

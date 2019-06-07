@@ -68,17 +68,22 @@ function simular(){
 function simulate(){
 
     var names = [];
-    var select = document.getElementById("coberturas");
-    var options = select && select.options;
-    var opt;
-    for (var i=0, iLen=options.length; i<iLen; i++) {
-      opt = options[i];
-  
-      if (opt.selected) {
-        names.push(opt.value || opt.text);
-      }
+    var fire = document.getElementById("fire");
+    var flood = document.getElementById("flood");
+    var naturalcauses = document.getElementById("natural_causes");
+
+    if(fire.checked == true){
+        names.push(fire.value);
     }
-    console.log(names[0]);
+
+    if(flood.checked == true){
+        names.push(flood.value);
+    }
+    if(naturalcauses.checked == true){
+        names.push(natural_causes.value);
+    }
+  
+    console.log(names);
     data = {names};
     var id = document.getElementById("idHome3").value;
     fetch('http://localhost:8080/simulator/execute/' + id,{

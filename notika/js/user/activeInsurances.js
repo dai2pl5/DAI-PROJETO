@@ -1,6 +1,7 @@
 
 window.onload = function(){
     getActiveInsurances();
+    mostrarDados();
 }
 
 function getActiveInsurances(){
@@ -188,3 +189,70 @@ function setMovimento(){
         console.log('Request failed', error);
     });
 }
+
+function mostrarDados(){
+    var table = document.getElementById("sensorsTableBody");
+    async function fetchAsync() {
+        const response = await fetch('http://localhost:8080/sensor/getSensores',{
+        headers: {'Content-Type': 'application/json'},
+        credentials: "include",
+        method: 'GET',
+        });
+        const sensors = await response.json();
+        let txt = "";
+        for(const sensor of sensors){
+            txt += "<tr><td> " + nome(sensor.name) + "</td><td>" + value(sensor.name,sensor.value) + "</td></tr>";
+
+        }
+
+        table.innerHTML = txt;
+
+    }
+        //chama a função fetchAsync()
+        fetchAsync().then(function(data){
+        console.log('ok');
+        }).catch(function(reason){
+            console.log(reason.message);
+        });
+    
+}
+
+function nome(name){
+    if(name == "sensor humidade"){
+        return "Sensor de humidade";
+    }else if(name == "sensor temperatura"){
+        return "Sensor de temperatura";
+    }else if(name == "sensor permanência"){
+        return "Sensor de permanência";
+    }else if(name == "sensor movimento"){
+        return "Sensor de movimento";
+    }else if(name == "sensor gas"){
+        return "Sensor de gas";
+    }else if(name == "sensor agua"){
+        return "Sensor de água";
+    }
+}
+
+function value(name, valor){
+    if(valor == "0" && name == "sensor gas"){
+        return "Niveis estaveis de gases nocivos";
+    }else if(valor == "1" && name == "sensor gas"){
+        return "Niveis nocivos gases nocivos"
+    }else if(name == "sensor temperatura"){
+        return "Temperatura da casa: " + valor + "ºC";
+    }else if(name == "sensor agua" && valor == "0"){
+        return "Normal";
+    }else if(name == "sensor agua" && valor == "1"){
+        return "Houve uma inundação";
+    }else if(name == "sensor movimento"){
+        return "O sensor detetou movimento"
+    }else if(name == "sensor permanência" && valor == "1"){
+        return "A casa foi assaltada";
+    }else if(name == "sensor permanência" && valor == "0"){
+        return "Alarme está ativo";
+    }else if(name == "sensor humidade"){
+        return "Nivel de humidade: " + valor;
+    }
+    
+}
+

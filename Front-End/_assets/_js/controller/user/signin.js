@@ -47,9 +47,9 @@ function redirectUser(){
         if(role === "ROLE_USER"){
             window.location.href = "../notika/perfil.html";
         }else if(role === "ROLE_INSURER"){
-            window.location.href = "../notika/seguradoraIndex.html";
+            window.location.href = "../notika/perfil-3.html";
         }else if(role === "ROLE_ADMIN"){
-            //window.location.href("ainda não sei");
+            window.location.href = "../notika/index-4.html";
         }
     }
         //chama a função fetchAsync()

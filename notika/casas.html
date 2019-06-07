@@ -176,7 +176,7 @@ aria-hidden="true">
 <div class="modal-dialog" role="document">
   <div class="modal-content">
     <div class="modal-header text-center">
-      <h4 class="modal-title w-100 font-weight-bold">Alterar dados</h4>
+      <h4 class="modal-title w-100 font-weight-bold">Adiconar casa</h4>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -272,23 +272,23 @@ aria-hidden="true">
 <div class="modal-dialog" role="document">
   <div class="modal-content">
     <div class="modal-header text-center">
-      <h4 class="modal-title w-100 font-weight-bold">Alterar dados</h4>
+      <h4 class="modal-title w-100 font-weight-bold">Simulação</h4>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
-    <div class="form-example-int mg-t-15">
-        <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
-            <label>Coberturas</label>
-        </div>
-        <div class="chosen-select-act fm-cmp-mg">
-            <select id = "coberturas" class="chosen" multiple data-placeholder="Escolhe as coberturas...">
-                <option value = "flood">Inundação</option>
-                <option value = "fire">Incêndios</option>
-                <option value = "natural_causes">Causas naturais</option>
-            </select>
-        </div>
-    </div>
+    <div class="nk-int-mk sl-dp-mn sm-res-mg-t-10">
+      <label>Coberturas</label>
+  </div>
+  <div class="chosen-select-act fm-cmp-mg">
+      
+      <input type="checkbox" class ="i-checks"id="fire" name="fogo" value = "fire">
+      <label for="fogo">Incêndio</label>
+      <input type="checkbox" id="flood" name="inundacao" value = "flood">
+      <label for="inundacao">Inundações</label>
+      <input type="checkbox" id="natural_causes" name="causas_naturais" value = "natural_causes">
+      <label for="causas_naturais">Causas naturais</label>
+  </div>
     <input type="hidden" id = "idHome3">
     <div class="modal-footer d-flex justify-content-center">
         <button class="btn btn-deep-orange" onclick="simulate()">Confirmar</button>

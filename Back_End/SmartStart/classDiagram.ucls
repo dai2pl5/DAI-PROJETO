@@ -1,0 +1,1108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.3" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="com.boot.SmartStartApplication" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/SmartStartApplication.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="136" width="215" x="6455" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="com.boot.payload.FinalSimulatorRequest" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/payload/FinalSimulatorRequest.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="336" width="491" x="8970" y="733"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="com.boot.payload.SimuladorRequest" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/payload/SimuladorRequest.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="176" width="214" x="3181" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="com.boot.controller.InsuranceController" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/controller/InsuranceController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="176" width="787" x="12947" y="733"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="com.boot.payload.JwtAuthenticationResponse" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/payload/JwtAuthenticationResponse.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="216" width="270" x="1232" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="com.boot.payload.UserPayload" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/payload/UserPayload.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="336" width="302" x="7249" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="com.boot.security.JwtAuthenticationEntryPoint" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/security/JwtAuthenticationEntryPoint.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="136" width="602" x="13774" y="733"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="com.boot.exception.ResourceNotFoundException" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/exception/ResourceNotFoundException.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="236" width="375" x="2766" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="9" language="java" name="com.boot.repository.HomeRepository" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/repository/HomeRepository.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="116" width="191" x="12947" y="1869"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="10" language="java" name="com.boot.security.CookieExpiryRefresher" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/security/CookieExpiryRefresher.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="116" width="482" x="8170" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="com.boot.config.WebMvcConfig" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/config/WebMvcConfig.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="136" width="290" x="4022" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="com.boot.model.Configuration" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/model/Configuration.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="336" width="258" x="8170" y="3241"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="com.boot.security.CustomUserDetailsService" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/security/CustomUserDetailsService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="136" width="316" x="12591" y="733"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="com.boot.exception.AppException" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/exception/AppException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="136" width="251" x="5077" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <annotation id="15" language="java" name="com.boot.security.CurrentUser" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/security/CurrentUser.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="76" width="156" x="6259" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </annotation>  
+  <class id="16" language="java" name="com.boot.payload.SignUpRequest" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/payload/SignUpRequest.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="336" width="203" x="3435" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="com.boot.projection.InsurancesAndInsurerPayload" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/projection/InsurancesAndInsurerPayload.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="196" width="438" x="9501" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="18" language="java" name="com.boot.repository.SensorRepository" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/repository/SensorRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="216" width="547" x="15450" y="733"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="19" language="java" name="com.boot.projection.UserProjection" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/projection/UserProjection.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="216" width="225" x="12326" y="733"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="20" language="java" name="com.boot.repository.RoleRepository" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/repository/RoleRepository.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="96" width="307" x="10435" y="1869"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="21" language="java" name="com.boot.controller.SimulatorController" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/controller/SimulatorController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="136" width="704" x="14397" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="com.boot.controller.SensorController" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/controller/SensorController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="196" width="359" x="15638" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="com.boot.payload.ValidateInsuranceRequest" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/payload/ValidateInsuranceRequest.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="176" width="253" x="9208" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="24" language="java" name="com.boot.repository.UserRepository" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/repository/UserRepository.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="216" width="407" x="11653" y="1869"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="25" language="java" name="com.boot.controller.AuthController" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/controller/AuthController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="236" width="622" x="10435" y="733"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="com.boot.payload.PackageRequest" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/payload/PackageRequest.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="336" width="286" x="7823" y="1869"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="com.boot.model.Role" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/model/Role.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="216" width="206" x="7835" y="3241"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <enumeration id="28" language="java" name="com.boot.model.RoleName" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/model/RoleName.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="156" width="229" x="7835" y="3617"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <class id="29" language="java" name="com.boot.payload.UserProfile" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/payload/UserProfile.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="336" width="287" x="5932" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="com.boot.controller.FileController" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/controller/FileController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="176" width="457" x="15141" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" name="com.boot.model.Package" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/model/Package.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="376" width="278" x="8947" y="1869"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="32" language="java" name="com.boot.payload.ApiResponse" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/payload/ApiResponse.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="216" width="234" x="5658" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="33" language="java" name="com.boot.service.DBFileStorageService" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/service/DBFileStorageService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="136" width="235" x="15141" y="733"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="34" language="java" name="com.boot.payload.InsuranceRequest" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/payload/InsuranceRequest.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="416" width="416" x="8059" y="733"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="35" language="java" name="com.boot.projection" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/projection" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="62" width="199" x="8692" y="37"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="36" language="java" name="com.boot.model.Home" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/model/Home.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="696" width="488" x="8170" y="1869"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="37" language="java" name="com.boot.service.SimulatorService" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/service/SimulatorService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="156" width="415" x="9980" y="733"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="38" language="java" name="com.boot.payload.CoverageRequest" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/payload/CoverageRequest.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="236" width="237" x="8931" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="39" language="java" name="com.boot.model.Insurance" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/model/Insurance.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="476" width="418" x="9501" y="733"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="40" language="java" name="com.boot.config.AuditingConfig" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/config/AuditingConfig.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="96" width="154" x="7055" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="41" language="java" name="com.boot.controller.HouseController" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/controller/HouseController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="96" width="167" x="7591" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="42" language="java" name="com.boot.payload.SimulatorRequest2" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/payload/SimulatorRequest2.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="656" width="595" x="1842" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="43" language="java" name="com.boot.model.audit.DateAudit" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/model/audit/DateAudit.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="236" width="209" x="8698" y="1869"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="44" language="java" name="com.boot.payload.HomeRequest" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/payload/HomeRequest.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="656" width="509" x="683" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="45" language="java" name="com.boot.exception.MyFileNotFoundException" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/exception/MyFileNotFoundException.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="136" width="336" x="4352" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="46" language="java" name="com.boot.controller.InsurerController" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/controller/InsurerController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="256" width="588" x="11097" y="733"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="47" language="java" name="com.boot.projection.HousesAndInsurancesProjection" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/projection/HousesAndInsurancesProjection.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="196" width="415" x="8515" y="733"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="48" language="java" name="com.boot.exception.BadRequestException" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/exception/BadRequestException.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="136" width="309" x="4728" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="49" language="java" name="com.boot.config.SecurityConfig" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/config/SecurityConfig.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="196" width="395" x="13182" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="50" language="java" name="com.boot.model.User" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/model/User.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="596" width="326" x="8170" y="2605"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="51" language="java" name="com.boot.model.Sensor" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/model/Sensor.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="416" width="250" x="5368" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="52" language="java" name="com.boot.payload.ConfigurationRequest" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/payload/ConfigurationRequest.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="336" width="316" x="7446" y="1869"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="53" language="java" name="com.boot.payload.UserIdentityAvailability" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/payload/UserIdentityAvailability.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="156" width="249" x="2477" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="54" language="java" name="com.boot.payload.BuyInsuranceRequest" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/payload/BuyInsuranceRequest.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="336" width="332" x="7798" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="55" language="java" name="com.boot.security.JwtAuthenticationFilter" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/security/JwtAuthenticationFilter.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="156" width="536" x="10456" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="56" language="java" name="com.boot.security.UserPrincipal" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/security/UserPrincipal.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="536" width="630" x="7500" y="2605"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="57" language="java" name="com.boot.repository.DBFileRepository" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/repository/DBFileRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="76" width="178" x="15141" y="1869"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="58" language="java" name="com.boot.repository.PackageRepository" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/repository/PackageRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="116" width="255" x="13220" y="1869"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="59" language="java" name="com.boot.payload.BuyInsuranceWithoutAHouseRequest" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/payload/BuyInsuranceWithoutAHouseRequest.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="1096" width="986" x="7033" y="733"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="60" language="java" name="com.boot.exception.FileStorageException" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/exception/FileStorageException.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="136" width="304" x="3678" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="61" language="java" name="com.boot.model.Coverage" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/model/Coverage.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="236" width="200" x="8947" y="2605"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="62" language="java" name="com.boot.projection.InsuranceAndClients" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/projection/InsuranceAndClients.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="176" width="437" x="9979" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="63" language="java" name="com.boot.repository.CoverageRepository" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/repository/CoverageRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="116" width="235" x="10960" y="1869"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="64" language="java" name="com.boot.controller.UserController" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/controller/UserController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="336" width="561" x="11725" y="733"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="65" language="java" name="com.boot.model.DBFile" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/model/DBFile.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="356" width="212" x="44" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="66" language="java" name="com.boot.payload.UserSummary" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/payload/UserSummary.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="336" width="305" x="6710" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="67" language="java" name="com.boot.payload.UploadFileResponse" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/payload/UploadFileResponse.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="336" width="347" x="296" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="68" language="java" name="com.boot.repository.ConfigurationRepository" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/repository/ConfigurationRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="96" width="301" x="11235" y="1869"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="69" language="java" name="com.boot.payload.LoginRequest" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/payload/LoginRequest.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="216" width="260" x="1542" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="70" language="java" name="com.boot.repository.InsuranceRepository" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/repository/InsuranceRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="136" width="266" x="12100" y="1869"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="71" language="java" name="com.boot.security.JwtTokenProvider" project="SmartStartSensor" 
+    file="/SmartStartSensor/src/main/java/com/boot/security/JwtTokenProvider.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="216" width="282" x="9940" y="1869"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="72">    
+    <end type="SOURCE" refId="46" navigable="false">      
+      <attribute id="73" name="userRepository"/>      
+      <multiplicity id="74" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="75">    
+    <end type="SOURCE" refId="39" navigable="false">      
+      <attribute id="76" name="packageInsurer"/>      
+      <multiplicity id="77" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="31" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="78">    
+    <end type="SOURCE" refId="33" navigable="false">      
+      <attribute id="79" name="dbFileRepository"/>      
+      <multiplicity id="80" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="57" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="81">    
+    <end type="SOURCE" refId="59" navigable="false">      
+      <attribute id="82" name="home"/>      
+      <multiplicity id="83" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="84">    
+    <end type="SOURCE" refId="50"/>    
+    <end type="TARGET" refId="43"/>  
+  </generalization>  
+  <association id="85">    
+    <end type="SOURCE" refId="37" navigable="false">      
+      <attribute id="86" name="packagesSimulation"/>      
+      <multiplicity id="87" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="31" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="88">    
+    <end type="SOURCE" refId="50" navigable="false">      
+      <attribute id="89" name="houses"/>      
+      <multiplicity id="90" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="91">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="92" name="homeRepository"/>      
+      <multiplicity id="93" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="94">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="95" name="DBFileStorageService"/>      
+      <multiplicity id="96" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="33" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="97">    
+    <bendpoint x="9949" y="733"/>    
+    <end type="SOURCE" refId="55" navigable="false">      
+      <attribute id="98" name="tokenProvider"/>      
+      <multiplicity id="99" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="71" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="100">    
+    <end type="SOURCE" refId="52" navigable="false">      
+      <attribute id="101" name="user"/>      
+      <multiplicity id="102" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="50" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="103">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="104" name="tokenProvider"/>      
+      <multiplicity id="105" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="71" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="106">    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="107" name="user"/>      
+      <multiplicity id="108" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="50" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="109">    
+    <end type="SOURCE" refId="31" navigable="false">      
+      <attribute id="110" name="coverages"/>      
+      <multiplicity id="111" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="61" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="112">    
+    <end type="SOURCE" refId="36" navigable="false">      
+      <attribute id="113" name="user"/>      
+      <multiplicity id="114" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="50" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="115">    
+    <end type="SOURCE" refId="34" navigable="false">      
+      <attribute id="116" name="home"/>      
+      <multiplicity id="117" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="118">    
+    <bendpoint x="14427" y="733"/>    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="119" name="packageRepository"/>      
+      <multiplicity id="120" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="58" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="121">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="122" name="packageRepository"/>      
+      <multiplicity id="123" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="58" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="124">    
+    <end type="SOURCE" refId="46" navigable="false">      
+      <attribute id="125" name="coverageRepository"/>      
+      <multiplicity id="126" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="63" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="127">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="128" name="sensorRepository"/>      
+      <multiplicity id="129" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="130">    
+    <end type="SOURCE" refId="62" navigable="false">      
+      <attribute id="131" name="insurances"/>      
+      <multiplicity id="132" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="39" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="133">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="134" name="user"/>      
+      <multiplicity id="135" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="50" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="136">    
+    <end type="SOURCE" refId="31" navigable="false">      
+      <attribute id="137" name="user"/>      
+      <multiplicity id="138" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="50" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="139">    
+    <end type="SOURCE" refId="50" navigable="false">      
+      <attribute id="140" name="packages"/>      
+      <multiplicity id="141" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="31" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="142">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="143" name="roleRepository"/>      
+      <multiplicity id="144" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="145">    
+    <end type="SOURCE" refId="64" navigable="false">      
+      <attribute id="146" name="userRepository"/>      
+      <multiplicity id="147" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="148">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="149" name="packages"/>      
+      <multiplicity id="150" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="31" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="151">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="152" name="userRepository"/>      
+      <multiplicity id="153" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="154">    
+    <end type="SOURCE" refId="56" navigable="false">      
+      <attribute id="155" name="roles"/>      
+      <multiplicity id="156" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="27" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="157">    
+    <end type="SOURCE" refId="46" navigable="false">      
+      <attribute id="158" name="packageRepository"/>      
+      <multiplicity id="159" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="58" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="160">    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="161" name="simulatorService"/>      
+      <multiplicity id="162" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="37" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="163">    
+    <bendpoint x="8139" y="1869"/>    
+    <end type="SOURCE" refId="34" navigable="false">      
+      <attribute id="164" name="user"/>      
+      <multiplicity id="165" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="50" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="166">    
+    <bendpoint x="7792" y="1869"/>    
+    <end type="SOURCE" refId="59" navigable="false">      
+      <attribute id="167" name="user"/>      
+      <multiplicity id="168" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="50" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="169">    
+    <end type="SOURCE" refId="55" navigable="false">      
+      <attribute id="170" name="customUserDetailsService"/>      
+      <multiplicity id="171" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="172">    
+    <end type="SOURCE" refId="50" navigable="false">      
+      <attribute id="173" name="configurations"/>      
+      <multiplicity id="174" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="175">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="176" name="insurances"/>      
+      <multiplicity id="177" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="39" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="178">    
+    <end type="SOURCE" refId="39" navigable="false">      
+      <attribute id="179" name="home"/>      
+      <multiplicity id="180" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="181">    
+    <end type="SOURCE" refId="49" navigable="false">      
+      <attribute id="182" name="unauthorizedHandler"/>      
+      <multiplicity id="183" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="184">    
+    <end type="SOURCE" refId="50" navigable="false">      
+      <attribute id="185" name="roles"/>      
+      <multiplicity id="186" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="27" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="187">    
+    <end type="SOURCE" refId="46" navigable="false">      
+      <attribute id="188" name="insuranceRepository"/>      
+      <multiplicity id="189" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="70" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="190">    
+    <end type="SOURCE" refId="64" navigable="false">      
+      <attribute id="191" name="homeRepository"/>      
+      <multiplicity id="192" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="193">    
+    <end type="SOURCE" refId="49" navigable="false">      
+      <attribute id="194" name="customUserDetailsService"/>      
+      <multiplicity id="195" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="196">    
+    <end type="SOURCE" refId="46" navigable="false">      
+      <attribute id="197" name="configurationRepository"/>      
+      <multiplicity id="198" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="68" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="199">    
+    <bendpoint x="9255" y="1869"/>    
+    <end type="SOURCE" refId="39" navigable="false">      
+      <attribute id="200" name="user"/>      
+      <multiplicity id="201" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="50" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="202">    
+    <end type="SOURCE" refId="64" navigable="false">      
+      <attribute id="203" name="insuranceRepository"/>      
+      <multiplicity id="204" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="70" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="205">    
+    <bendpoint x="14406" y="733"/>    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="206" name="homeRepository"/>      
+      <multiplicity id="207" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="208">    
+    <end type="SOURCE" refId="47" navigable="false">      
+      <attribute id="209" name="houses"/>      
+      <multiplicity id="210" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="211">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="212" name="name"/>      
+      <multiplicity id="213" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="214">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="215" name="homeRepository"/>      
+      <multiplicity id="216" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="217">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="218" name="userRepository"/>      
+      <multiplicity id="219" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="220">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="221" name="insuranceRepository"/>      
+      <multiplicity id="222" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="70" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="223">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="224" name="userRepository"/>      
+      <multiplicity id="225" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="226">    
+    <end type="SOURCE" refId="34" navigable="false">      
+      <attribute id="227" name="packageInsurer"/>      
+      <multiplicity id="228" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="31" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="229">    
+    <end type="SOURCE" refId="62" navigable="false">      
+      <attribute id="230" name="clients"/>      
+      <multiplicity id="231" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

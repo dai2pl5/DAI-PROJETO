@@ -5,6 +5,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,6 +34,7 @@ import com.boot.projection.InsuranceAndClients;
 import com.boot.projection.UserProjection;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -61,27 +63,52 @@ public class InsurerController {
 		String username = currentUser.getUsername();
 		User user = userRepository.findByUsername(username)
     			.orElseThrow(() -> new ResourceNotFoundException("User", "username", username));
-		Package package1 = new Package(packageRequest.getDescription(), packageRequest.getBasePrice(), user);
+		Set<Coverage> packageCoverages = new HashSet<Coverage>();
+		String[] coverages = packageRequest.getCoverages();
+		for(int i = 0; i < coverages.length; i++) {
+			Coverage coverage = coverageRepository.findByName(coverages[i]);
+			packageCoverages.add(coverage);
+		}
+		
+		Package package1 = new Package(packageRequest.getDescription(), packageRequest.getBasePrice(), user, packageCoverages);
 		packageRepository.save(package1);
-		return ResponseEntity.ok().body(new ApiResponse(true, "Package added sucessfuly"));
+
+		return ResponseEntity.ok().body(new ApiResponse(true, "Pacote adicionado com sucesso!"));
 	}
 	
-	@PutMapping("/addCoverage/{id}")
-	@PreAuthorize("hasRole('INSURER')")
-	public ResponseEntity<ApiResponse> addCobertura(@PathVariable(value = "id") Long id, @RequestBody CoverageRequest coverageRequest){
-		Package package1 = packageRepository.findById(id)
-				.orElseThrow(() -> new ResourceNotFoundException("Package", "id", id));
-		Set<Coverage> coverages = package1.getCoverages();
-		System.out.println(coverageRequest.getName());
-		String name = coverageRequest.getName();
-		Coverage coverage = coverageRepository.findByName(name);
-		System.out.println(coverage + "     " + package1);
-		coverages.add(coverage);
-		package1.setCoverages(coverages);
-		packageRepository.save(package1);
+	@PutMapping("/updatePackage/{id}")
+    @PreAuthorize("hasRole('INSURER')")
+	public ResponseEntity<Package> updatePackage(@PathVariable(value="id") long id,@Valid @RequestBody PackageRequest packageRequest){
 		
-		return ResponseEntity.ok().body(new ApiResponse(true, "Coverage added to package sucessfully"));
+		Set<Coverage> packageCoverages = new HashSet<Coverage>();
+		String[] coverages = packageRequest.getCoverages();
+		for(int i = 0; i < coverages.length; i++) {
+			Coverage coverage = coverageRepository.findByName(coverages[i]);
+			packageCoverages.add(coverage);
+		}
+		
+		Package package1 = packageRepository.findById(id);
+		package1.setCoverages(packageCoverages);
+		package1.setBasePrice(packageRequest.getBasePrice());
+		package1.setDescription(packageRequest.getDescription());
+		packageRepository.save(package1);
+
+		return ResponseEntity.ok().body(package1);
 	}
+	
+	@DeleteMapping("/deletePackage/{id}")
+    @PreAuthorize("hasRole('INSURER')")
+	public ResponseEntity<ApiResponse> deletePackage(@PathVariable(value="id") long id){
+		
+		Package package1 = packageRepository.findById(id);
+		System.out.println("Nome do pacote" + package1.getDescription());
+		packageRepository.delete(package1);
+
+		return ResponseEntity.ok().body(new ApiResponse(true, "Pacote eliminado com sucesso!"));
+	}
+	
+	
+
 	
 	
 	@PostMapping("/addConfig")

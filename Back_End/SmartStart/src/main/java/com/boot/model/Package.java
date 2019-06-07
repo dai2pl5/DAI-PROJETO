@@ -1,6 +1,6 @@
 package com.boot.model;
 
-import java.util.HashSet;
+
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -47,16 +47,17 @@ public class Package {
 	@JoinTable(name = "pack_has_coverage",
     joinColumns = @JoinColumn(name = "package_id"),
     inverseJoinColumns = @JoinColumn(name = "coverage_id"))
+	@OnDelete(action = OnDeleteAction.CASCADE)
 	private Set<Coverage> coverages;
 	
 	public Package() {}
 	
-	public Package(String description, double basePrice, User user) {
+	public Package(String description, double basePrice, User user,Set<Coverage> coverages) {
 		
 		this.description = description;
 		this.basePrice = basePrice;
 		this.user = user;
-		this.coverages = new HashSet<Coverage>();
+		this.coverages = coverages;
 	}
 
 	public long getIdPackage() {

@@ -109,8 +109,7 @@
                     <div class="mobile-menu">
                         <nav id="dropdown">
                             <ul class="mobile-menu-nav">
-                                <li><a data-toggle="collapse" data-target="#Charts" href="seguradoraIndex.html">Home</a>
-                                </li>
+                                
                                 <li><a data-toggle="collapse" data-target="#Charts" href="clientes.html">Lista de Clientes</a>
                                 </li>
                                 <li><a data-toggle="collapse" data-target="#demoevent" href="sensores.html">Sensores dos Clientes</a>
@@ -134,8 +133,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
-                        <li><a href="seguradoraIndex.html"><i class="notika-icon notika-house"></i>Home</a>
-                        </li>
+                       
                         <li><a href="clientes.html"><i class="notika-icon notika-edit"></i>Lista de Clientes</a>
                         </li>
                         <li class="active"><a href="sensores.html"><i class="notika-icon notika-edit"></i>Sensores dos Clientes</a>
@@ -199,23 +197,36 @@
     <!-- End Status area-->
     <!-- End area da cobertura-->
     <!-- Start chart area-->
-    <div class="notika-email-post-area">
+    <div class="sale-statistic-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="sale-statistic-inner notika-shadow mg-tb-30">
-                        <div class="curved-ctn">
-                            <h2>Humidade Mensal</h2>
-                            <div class="bar-chart-wp">
-                                <canvas height="140vh" width="180vw" id="barchart1"></canvas>
+                        <div class="curved-inner-pro">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <h2>Histórico de sensores</h2>
+                                <table class="table table-sc-ex" id = 'sensorsTableBody'> 
+                                    <thead>
+                                        <tr>
+            
+                                            <th>Sensor</th>
+                                            <th>Descrição</th>
+                                            
+                
+                                        </tr>
+                                    </thead>
+                                    <tbody id="sensorsTableBody">
+                    
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
     </div>
-  </div>
     <!-- End area da cobertura-->
     <!-- Start chart area-->
     <!-- Start Footer area-->
@@ -293,6 +304,7 @@
     <script src="js/main.js"></script>
     <script src = "js/user/logout.js"></script>
     <script src = "js/insurer/insurancesSensor.js"></script>
+    <script src="js/insurer/sensorsTable.js"></script>
 </body>
 
 </html>

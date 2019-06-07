@@ -44,7 +44,7 @@ public class SensorController {
 	}
 	
 	@GetMapping("/ordem/{id}")
-	public String[] ordem(@PathVariable(value="id") int id){
+	public String[] getSensorsValues(@PathVariable(value="id") int id){
 		//List<Sensor> listaOrdem = sensorRepository.findByNameLikeOrderByISODATADesc("sensor humidade");
 		List<Sensor> listaHumidade = sensorRepository.findByIdInsuranceAndNameOrderByISODATADesc(id, "sensor humidade");
 		List<Sensor> listaTemperatura = sensorRepository.findByIdInsuranceAndNameOrderByISODATADesc(id, "sensor temperatura");

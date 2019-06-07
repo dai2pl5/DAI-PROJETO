@@ -127,8 +127,7 @@
                         <div class="mobile-menu">
                             <nav id="dropdown">
                                 <ul class="mobile-menu-nav">
-                                    <li><a data-toggle="collapse" data-target="#Charts" href="seguradoraIndex.html">Home</a>
-                                    </li>
+                                
                                     <li><a data-toggle="collapse" data-target="#Charts" href="clientes.html">Lista de Clientes</a>
                                     </li>
                                     <li><a data-toggle="collapse" data-target="#demoevent" href="sensores.html">Sensores dos Clientes</a>
@@ -152,8 +151,7 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
-                            <li><a href="seguradoraIndex.html"><i class="notika-icon notika-house"></i>Home</a>
-                            </li>
+                           
                             <li><a href="clientes.html"><i class="notika-icon notika-edit"></i>Lista de Clientes</a>
                             </li>
                             <li><a href="sensores.html"><i class="notika-icon notika-edit"></i>Sensores dos Clientes</a>
@@ -195,63 +193,65 @@
     <!-- Breadcomb area End-->
     <!-- Form Examples area start-->
     <div class="form-example-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="form-example-wrap">
-                        <div class="cmp-tb-hd">
-                            <p>As ofertas que irão ser fornecidas serão baseadas apenas no que irá ser inserido no formulário, irá ser um valor base do seu prémio.</p>
-                        </div>
-                        <div class="form-example-int">
-                            <div class="form-group">
-                                <label>Nome</label>
-                                <div class="nk-int-st">
-                                    <input type="text" class="form-control input-sm" id="name" disabled>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-example-wrap">
+                            <div class="cmp-tb-hd">
+                                <p>As ofertas que irão ser fornecidas serão baseadas apenas no que irá ser inserido no formulário, irá ser um valor base do seu prémio.</p>
+                            </div>
+                            <div class="form-example-int">
+                                <div class="form-group">
+                                    <label>Nome</label>
+                                    <div class="nk-int-st">
+                                        <input type="text" class="form-control input-sm" id="name" disabled>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-example-int mg-t-15">
-                            <div class="form-group">
-                                <label>Username</label>
-                                <div class="nk-int-st">
-                                    <input type="text" class="form-control input-sm" id="username" disabled>
+                            <div class="form-example-int mg-t-15">
+                                <div class="form-group">
+                                    <label>Username</label>
+                                    <div class="nk-int-st">
+                                        <input type="text" class="form-control input-sm" id="username" disabled>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-example-int mg-t-15">
-                            <div class="form-group">
-                                <label>E-mail</label>
-                                <div class="nk-int-st">
-                                    <input type="text" class="form-control input-sm" id="mail" disabled>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-example-int mg-t-15">
-                            <div class="form-group nk-datapk-ctm form-elet-mg" id="data_2">
-                                <label>Data de Nascimento</label>
-                                <div class="input-group date nk-int-st">
-                                    <span class="input-group-addon"></span>
-                                    <input type="text" class="form-control" value="03/10/1980" id="data" disabled>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-example-int mg-t-15">
-                            <button class="btn btn-primary notika-btn-primary" id="edit" onclick="edit()">Editar</button>
-                            <button class="btn btn-primary notika-btn-primary" style="visibility: hidden" id="apply" onclick="edit()">Aplicar</button>
-                        </div>
                             
+                            
+                            <div class="form-example-int mg-t-15">
+                                <div class="form-group">
+                                    <label>Nova password</label>
+                                    <div class="nk-int-st">
+                                        <input type="password" class="form-control input-sm" id="formPassword" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-example-int mg-t-15" id = "cenas">
+                                <div class="form-group">
+                                    <label>E-mail</label>
+                                    <div class="nk-int-st">
+                                        <input type="text" class="form-control input-sm" id="mail" disabled>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="form-example-int mg-t-15">
+                                <button class="btn btn-primary notika-btn-primary" id="edit" onclick="edit()">Editar</button>
+                                <button class="btn btn-primary notika-btn-primary" style="visibility: hidden" id="apply" onclick="edit()">Aplicar</button>
+                            </div>
+                                
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     <!-- Form Examples area End-->
     <!-- Start Footer area-->
     
     <!-- End Footer area-->
     <!-- SeeData JS
     ============================================ -->
-    <script src="js/user/seeData.js"></script>
+    
     <!-- Selects JS
 		============================================ -->
     <script src="selects.js"></script>
@@ -351,6 +351,7 @@
     <!-- tawk chat JS
 		============================================ -->
     <script src = "js/user/logout.js"></script>
+    <script src="js/user/perfilUpdate.js"></script>
 </body>
 
 </html>

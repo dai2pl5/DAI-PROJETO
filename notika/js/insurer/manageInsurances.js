@@ -103,7 +103,7 @@ function rejectInsurance(id){
             throw Error(response.statusText);
             }
         } else {
-            alertify.notify('Seguro validado com sucesso!', 'success', 5, function(){  console.log('dismissed'); });
+            alertify.notify('Seguro rejeitado com sucesso!', 'success', 5, function(){  console.log('dismissed'); });
             
             
             }

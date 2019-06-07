@@ -87,7 +87,7 @@
                                         <a href="#">Alterar Dados</a>
                                     </div>
                                     <div class="hd-mg-va">
-                                        <a href="#">LogOut</a>
+                                        <a href="#" onclick="logout()">Logout</a>
                                     </div>
                                 </div>
                             </li>
@@ -106,14 +106,12 @@
                     <div class="mobile-menu">
                         <nav id="dropdown">
                             <ul class="mobile-menu-nav">
-                                <li><a data-toggle="collapse" data-target="#Charts" href="index-4.html">Home</a>
+                                <li><a data-toggle="collapse" data-target="#Charts" href="index-4.html">Perfil</a>
                                 </li>
-                                <li><a data-toggle="collapse" data-target="#demoevent" href="clientes4.html">Lista de Clientes</a>
-                                </li>
+                              
                                 <li><a data-toggle="collapse" data-target="#democrou" href="seguradoras.html">Seguradoras</a>
                                 </li>
-                                <li><a data-toggle="collapse" data-target="#democrou" href="administrador.html">Administrador</a>
-                                </li>
+                                
                                 
                             </ul>
                         </nav>
@@ -130,14 +128,12 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
-                        <li class="active"><a href="index-4.html"><i class="notika-icon notika-house"></i> Home</a>
+                        <li class="active"><a href="index-4.html"><i class="notika-icon notika-house"></i> Perfil</a>
                         </li>
-                        <li><a href="clientes4.html"><i class="notika-icon notika-support"></i> Lista de Clientes</a>
-                        </li>
+                  
                         <li><a href="seguradoras.html"><i class="notika-icon notika-edit"></i>Seguradoras</a>
                         </li>
-                        <li><a href="administrador.html"><i class="notika-icon notika-edit"></i>Administrador</a>
-                        </li>
+                    
                         
                                                 
                     </ul>
@@ -149,80 +145,59 @@
     <!-- Start Status area -->
         <!-- End Status area-->
     <!-- area da cobertura -->
-    <div class="sale-statistic-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="sale-statistic-inner notika-shadow mg-tb-30">
-                            <div class="curved-inner-pro">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <h2>Seguradoras</h2>
-                                    <table class="table table-sc-ex">
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Nome</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Seguradora1</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Seguradora2</td>
-                                            </tr>
-                                            
-                                        </tbody>
-                                    </table>
+    <div class="form-example-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-example-wrap">
+                        <div class="cmp-tb-hd">
+                            <p>As ofertas que irão ser fornecidas serão baseadas apenas no que irá ser inserido no formulário, irá ser um valor base do seu prémio.</p>
+                        </div>
+                        <div class="form-example-int">
+                            <div class="form-group">
+                                <label>Nome</label>
+                                <div class="nk-int-st">
+                                    <input type="text" class="form-control input-sm" id="name" disabled>
                                 </div>
                             </div>
                         </div>
+                        <div class="form-example-int mg-t-15">
+                            <div class="form-group">
+                                <label>Username</label>
+                                <div class="nk-int-st">
+                                    <input type="text" class="form-control input-sm" id="username" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="form-example-int mg-t-15">
+                            <div class="form-group">
+                                <label>Nova password</label>
+                                <div class="nk-int-st">
+                                    <input type="password" class="form-control input-sm" id="formPassword" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-example-int mg-t-15" id = "cenas">
+                            <div class="form-group">
+                                <label>E-mail</label>
+                                <div class="nk-int-st">
+                                    <input type="text" class="form-control input-sm" id="mail" disabled>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="form-example-int mg-t-15">
+                            <button class="btn btn-primary notika-btn-primary" id="edit" onclick="edit()">Editar</button>
+                            <button class="btn btn-primary notika-btn-primary" style="visibility: hidden" id="apply" onclick="edit()">Aplicar</button>
+                        </div>
+                            
                     </div>
                 </div>
             </div>
         </div>
-    <!-- End area da cobertura-->
-    <!-- Start chart area-->
-    <div class="sale-statistic-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="sale-statistic-inner notika-shadow mg-tb-30">
-                            <div class="curved-inner-pro">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <h2>Utilizadores</h2>
-                                    <table class="table table-sc-ex">
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Nome</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>João Araújo</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Joãozinho</td>
-                                            </tr>
-                                            <tr>
-                                                    <td>3</td>
-                                                    <td>Jonytail</td>
-                                                </tr>
-                                            
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    </div>
     <!-- Start Footer area-->
     <!-- End Footer area-->
     <!-- jquery
@@ -298,6 +273,8 @@
     <!-- tawk chat JS
 		============================================ -->
     <script src="js/tawk-chat.js"></script>
+    <script src="js/user/seeData.js"></script>
+    <script scr="js/user/logout.js"></script>
 </body>
 
 </html>

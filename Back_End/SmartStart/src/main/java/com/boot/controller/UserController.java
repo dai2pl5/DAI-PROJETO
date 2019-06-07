@@ -94,7 +94,7 @@ public class UserController {
     	
     	homeRepository.save(home);
     	
-    	return ResponseEntity.ok().body(new ApiResponse(true, "User added to home successfully"));
+    	return ResponseEntity.ok().body(new ApiResponse(true, "Casa adiconada com sucesso!"));
     }
     
     @PutMapping("/user/alterHome/{id}")
